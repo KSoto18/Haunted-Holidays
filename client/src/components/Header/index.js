@@ -13,15 +13,17 @@ const Header = () => {
     <header>
 
       <div>
-        <Link className="homelink" to="/">
-          <h1>Haunted Locations<GiGhost /></h1>
+        <Link className="headertitle" to="/">
+          <h1>Haunted Holiday<GiGhost /></h1>
         </Link>
         <p className="subheader">
           Find your next spooky experience.
         </p>
       </div>
 
-      <div>
+
+
+      <div className='account-btns'>
 
         {Auth.loggedIn() ? (
           <>

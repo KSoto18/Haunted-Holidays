@@ -12,38 +12,56 @@ body {
 }
 
 header {
+  margin-top: 10px;
+  margin-left: 15px;
   height: 150px;
 }
 
 /* site name + home link in header  */
-.homelink {
+.headertitle {
   text-decoration: none;
-  color: white;
+  font-family: 'Rubik Vinyl';
 }
 
 /* subheader until header pg title  */
 .subheader {
-  color: white;
+  padding-left: 2px;
 }
 
+/* positioning for login/signup/logout buttons */
+.account-btns {
+  margin-top: -48px;
+  margin-left: 88.75%;
+}
+
+/* styling for login/signup/logout buttons */
 .login-btn,
 .signup-btn,
 .logout-btn {
-  border: white 1px solid;
-  border-radius: 10px 10px;
-  padding: 8px 8px;
+  /* border: white 1px solid; */
+  border-radius: 5px 5px;
+  padding: 5px 5px;
   background-color: gray;
   margin: 2px 2px;
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  opacity: 0.6;
+  /* font-weight: bold; */
+}
+
+/* hover effect for login/signup/logout buttons */
+.login-btn:hover,
+.signup-btn:hover,
+.logout-btn:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 /* footer  */
 .footercopyright {
   bottom: 0;
+  width: 100%;
   position: fixed;
   font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
