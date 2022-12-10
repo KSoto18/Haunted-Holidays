@@ -19,7 +19,7 @@ const PlaceForm = () => {
 
         cache.writeQuery({
           query: QUERY_PLACES,
-          data: { places: [addPlaces, ...places] },
+          data: { places: [addPlace, ...places] },
         });
       } catch (e) {
         console.error(e);
@@ -31,7 +31,7 @@ const PlaceForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addPlaces({
+      const { data } = await addPlace({
         variables: {
           placeText,
           placeAuthor: Auth.getProfile().data.username,
@@ -60,9 +60,8 @@ const PlaceForm = () => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
           </p>

@@ -18,7 +18,7 @@ const CommentForm = ({ placesId }) => {
     try {
       const { data } = await addComment({
         variables: {
-          placeId,
+          placesId,
           commentText,
           commentAuthor: Auth.getProfile().data.username,
         },
@@ -46,9 +46,8 @@ const CommentForm = ({ placesId }) => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}

@@ -7,7 +7,7 @@ import PlaceForm from '../components/PlaceForm';
 import { QUERY_PLACES } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PlACES);
+  const { loading, data } = useQuery(QUERY_PLACES);
   const places = data?.places || [];
 
   return (
