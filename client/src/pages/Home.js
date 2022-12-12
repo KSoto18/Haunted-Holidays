@@ -8,7 +8,7 @@ import { QUERY_REVIEWS } from '../utils/queries';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
-  const places = data?.reviews || [];
+  const reviews = data?.reviews || [];
 
   return (
     <main>
@@ -24,7 +24,7 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
             <ReviewsList
-              places={places}
+              reviews={reviews}
               title="Some Feed for Review(s)..."
             />
           )}
