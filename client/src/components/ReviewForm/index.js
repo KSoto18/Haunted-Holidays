@@ -2,43 +2,51 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_PLACE } from '../../utils/mutations';
-import { QUERY_PLACES } from '../../utils/queries';
+import { ADD_REVIEW } from '../../utils/mutations';
+import { QUERY_REVIEWS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const PlaceForm = () => {
-  const [placeText, setPlaceText] = useState('');
+const ReviewForm = () => {
+  const [reviewText, setReviewText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addPlace, { error }] = useMutation(ADD_PLACE, {
-    update(cache, { data: { addPlace } }) {
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+    update(cache, { data: { addReview } }) {
       try {
-        const { places } = cache.readQuery({ query: QUERY_PLACES });
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
 
         cache.writeQuery({
-          query: QUERY_PLACES,
-          data: { places: [addPlace, ...places] },
+          query: QUERY_REVIEWS,
+          data: { reviews: [addReview, ...reviews] },
         });
       } catch (e) {
         console.error(e);
       }
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+      });
     },
   });
+
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addPlace({
+      const { data } = await addReview({
         variables: {
-          placeText,
-          placeAuthor: Auth.getProfile().data.username,
+          reviewText,
+          reviewAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setPlaceText('');
+      setReviewText('');
     } catch (err) {
       console.error(err);
     }
@@ -47,46 +55,44 @@ const PlaceForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'placeText' && value.length <= 280) {
-      setPlaceText(value);
+    if (name === 'reviewText' && value.length <= 280) {
+      setReviewText(value);
       setCharacterCount(value.length);
     }
   };
 
   return (
-    <div className='homepgcontainer'>
-      <h2>Ready for a piss in your pants experience?</h2>
+    <div>
+      <h3>Tell us about your frightening sighting!</h3>
 
       {Auth.loggedIn() ? (
         <>
-          <h3>Enter a new place:</h3>
           <p
             className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
-              }`}>
+              }`}
+          >
             Character Count: {characterCount}/280
           </p>
-
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="placeText"
-                placeholder="Here's a new place..."
-                value={placeText}
-                className="addplace-form-input"
+                name="reviewText"
+                type="text"
+                placeholder="Who's haunting you..."
+                value={reviewText}
+                className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-
-              <button className="addaplace-btn" type="submit">
-                Add Place
+              <button className="btn btn-primary btn-block py-3" type="submit">
+                Add Sighting
               </button>
-
             </div>
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
@@ -94,16 +100,15 @@ const PlaceForm = () => {
               </div>
             )}
           </form>
-
         </>
       ) : (
-        <p className='login-signup-redirect'>
-          You need to be logged in to explore or share places.
-          <br />
-          Please{' '} <Link to="/login">login</Link> or <Link to="/signup">signup</Link>.</p>
+        <p>
+          You need to be logged in to share your sightings. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
       )}
     </div>
   );
 };
 
-export default PlaceForm;
+export default ReviewForm;

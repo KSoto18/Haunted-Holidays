@@ -22,8 +22,8 @@ const Header = () => {
       <nav>
         <ul>
 
-          <li><Link className='navlink' to="/Home">Home</Link></li>
-          <li><Link className='navlink' to="/dashboard">Dashboard</Link></li>
+          <li><Link className='navlink' to="/">Home</Link></li>
+          <li><Link className='navlink' to="/profile">Profile</Link></li>
           <li><Link className='navlink' to="/about">About</Link></li>
           <li><Link className='navlink' to="/contact">Contact</Link></li>
 
