@@ -90,32 +90,67 @@ nav li {
   text-align: center;
 }
 
-/* card containing login info */
-.form-body {
+/* beginning of css for login/signup pg  */
+/* styling for pg title  */
+.signup-pgtitle,
+.loginpg-title {
+  padding-bottom: 15px;
+  text-align: center;
+  color: black;
+}
+
+/* card containing signup info */
+.signup-form,
+.login-form {
   border: 1px solid white;
   border-radius: 8px 8px;
-  width: 24%;
+  width: 40%;
   padding: 10px;
   margin-left: 1%;
   backdrop-filter: blur(5px);
+  box-sizing: border-box;
+}
+
+/* input containers for each field in signup pg */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon-signuppg,
+.icon-loginpg {
+  padding: 8px;
+  border-radius: 3px 3px;
+  background: black;
+  color: white;
+  min-width: 50px;
+  text-align: center;
 }
 
 .form-input {
-  width: 250px;
-  margin: 8px;
+  text-align: center;
+  width: 100%;
+  border: none;
+  border-radius: 3px 3px;
   color: black;
+}
+
+.form-input:focus {
+  border: 2px solid black;
 }
 
 .loginsubmit-btn,
 .signupsubmit-btn {
+  width: 99%;
   border: none;
   border-radius: 5px 5px;
-  padding: 5px 5px;
-  background-color: gray;
+  padding: 10px 10px;
+  background-color: black;
   margin: 2px 2px;
   text-decoration: none;
   color: white;
-  margin-left: 3%;
+  /* margin-left: 3%; */
   /* opacity: 0.6; */
 }
 
@@ -123,7 +158,8 @@ nav li {
 .login-redirect {
   font-size: 12px;
   padding-top: 5px;
-  margin-left: 3%;
+  text-align: center;
+  /* margin-left: 3%; */
 }
 
 .homepgcontainer {
@@ -161,6 +197,7 @@ nav li {
 }
 
 /* beginning of css for about pg */
+/* container with about us info  */
 .aboutuspg-div {
   margin-bottom: 50px;
 }
@@ -192,4 +229,21 @@ nav li {
 /* styling for contact icons in about pg  */
 .contactlinks {
   margin: 3px;
+}
+
+/* beginning css for contact pg */
+/* container with contact form */
+.contact-container {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1px solid white;
+  border-radius: 5px 5px;
+  backdrop-filter: blur(5px);
+  padding: 15px;
+}
+
+/* contact us pg title */
+.contactus-pgtitle {
+  text-align: center;
 }
