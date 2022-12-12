@@ -1,26 +1,19 @@
 const db = require('../config/connection');
-const { User, Thought } = require('../models');
+
 const userSeeds = require('./userSeeds.json');
-const thoughtSeeds = require('./thoughtSeeds.json');
+const locationData = require('./locationsJSON.json');
+
+
+const { User, Location } = require('../models');
 
 db.once('open', async () => {
   try {
-    await Thought.deleteMany({});
     await User.deleteMany({});
+    await Location.deleteMany({});
 
     await User.create(userSeeds);
+    const locations = await Location.insertMany(locationData);
 
-    for (let i = 0; i < thoughtSeeds.length; i++) {
-      const { _id, thoughtAuthor } = await Thought.create(thoughtSeeds[i]);
-      const user = await User.findOneAndUpdate(
-        { username: thoughtAuthor },
-        {
-          $addToSet: {
-            thoughts: _id,
-          },
-        }
-      );
-    }
   } catch (err) {
     console.error(err);
     process.exit(1);

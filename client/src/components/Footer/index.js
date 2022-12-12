@@ -1,13 +1,14 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const location = useLocation();
+  // const navigate = useNavigate();
+
   return (
     <footer>
 
-      <div className="container text-center mb-5">
+      {/* <div className="container text-center mb-5">
         {location.pathname !== '/' && (
 
           <button
@@ -16,13 +17,13 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
+         </div> */}
 
-        <p className='footercopyright'>
-          © 2022 Four Loopin' Ladies
-        </p>
+      <p className='footercopyright'>
+        © 2022 Four Loopin' Ladies
+      </p>
 
-      </div>
-    </footer>
+    </footer >
   );
 };
 

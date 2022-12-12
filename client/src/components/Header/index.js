@@ -11,16 +11,25 @@ const Header = () => {
   };
   return (
     <header>
+      {/* link to home in pg title  */}
+      <Link className="headertitle" to="/">
+        <h1>Haunted Holiday<GiGhost /></h1>
+      </Link>
+      <p className="subheader">
+        Find your next spooky experience.
+      </p>
+      {/* navbar  */}
+      <nav>
+        <ul>
 
-      <div>
-        <Link className="headertitle" to="/">
-          <h1>Haunted Holiday<GiGhost /></h1>
-        </Link>
-        <p className="subheader">
-          Find your next spooky experience.
-        </p>
-      </div>
+          <li><Link className='navlink' to="/Home">Home</Link></li>
+          <li><Link className='navlink' to="/dashboard">Dashboard</Link></li>
+          <li><Link className='navlink' to="/about">About</Link></li>
+          <li><Link className='navlink' to="/contact">Contact</Link></li>
 
+
+        </ul>
+      </nav>
 
 
       <div className='account-btns'>
@@ -35,8 +44,8 @@ const Header = () => {
         ) : (
           <>
             <Link className="login-btn" to="/login">
-              Login
-            </Link>
+              Login</Link>
+
             <Link className="signup-btn" to="/signup">
               Signup
             </Link>

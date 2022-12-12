@@ -12,15 +12,39 @@ body {
 }
 
 header {
-  margin-top: 10px;
-  margin-left: 15px;
+  margin-top: 1px;
+  margin-left: 8px;
   height: 150px;
 }
 
 /* site name + home link in header  */
 .headertitle {
   text-decoration: none;
-  font-family: 'Rubik Vinyl';
+}
+
+.headertitle h1 {
+  text-decoration: none;
+  color: black;
+  /* font-family: 'Creepster', cursive; */
+  font-size: 45px;
+}
+
+/* navbar */
+nav {
+  margin-left: 47%;
+  margin-top: -50px;
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+}
+
+/* Links in li  */
+.navlink {
+  text-decoration: none;
+  margin: 12px;
+  font-size: 18px;
 }
 
 /* subheader until header pg title  */
@@ -30,7 +54,7 @@ header {
 
 /* positioning for login/signup/logout buttons */
 .account-btns {
-  margin-top: -48px;
+  margin-top: -20px;
   margin-left: 88.75%;
 }
 
@@ -64,4 +88,108 @@ header {
   position: fixed;
   font-size: 12px;
   text-align: center;
+}
+
+/* card containing login info */
+.form-body {
+  border: 1px solid white;
+  border-radius: 8px 8px;
+  width: 24%;
+  padding: 10px;
+  margin-left: 1%;
+  backdrop-filter: blur(5px);
+}
+
+.form-input {
+  width: 250px;
+  margin: 8px;
+  color: black;
+}
+
+.loginsubmit-btn,
+.signupsubmit-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 5px 5px;
+  background-color: gray;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  margin-left: 3%;
+  /* opacity: 0.6; */
+}
+
+.signup-redirect,
+.login-redirect {
+  font-size: 12px;
+  padding-top: 5px;
+  margin-left: 3%;
+}
+
+.homepgcontainer {
+  border: none;
+}
+
+.addaplace-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 5px 5px;
+  background-color: gray;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  margin-left: 1%;
+  /* opacity: 0.6; */
+}
+
+.addplace-form-input {
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  color: black;
+  margin-left: 1%;
+}
+
+.login-signup-redirect {
+  text-align: center;
+  padding: 15px 15px;
+  border: 1px solid white;
+  border-radius: 5px 5px;
+  width: 35%;
+  backdrop-filter: blur(5px);
+
+}
+
+/* beginning of css for about pg */
+.aboutuspg-div {
+  margin-bottom: 50px;
+}
+
+/* each card with indiv. about info */
+.individual-aboutinfo {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: gray;
+}
+
+.nametitle {
+  color: black;
+  font-size: 28px;
+}
+
+/* profile img in indiv. about info */
+.profileimg {
+  width: 100%;
+}
+
+/* container containing contact icon links in indiv. about info */
+.contactlinks-container {
+  background-color: black;
+}
+
+/* styling for contact icons in about pg  */
+.contactlinks {
+  margin: 3px;
 }

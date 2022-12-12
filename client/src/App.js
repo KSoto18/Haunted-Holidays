@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,13 +7,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SinglePlace from './pages/SinglePlace';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Dashboard from './components/Dashboard';
+import About from './components/About';
+import Contact from './components/Contact';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -46,26 +48,24 @@ function App() {
       <Router>
         <div>
           <Header />
+
           <div>
             <Routes>
-              <Route
-                path="/"
-                element={<Home />}
-              />
-              <Route
-                path="/login"
-                element={<Login />}
-              />
-              <Route
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route
-                path="/placess/:placesId"
-                element={<SinglePlace />}
-              />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+
+              <Route path="/placess/:placesId" element={<SinglePlace />} />
+
+
+
             </Routes>
+
           </div>
+
           <Footer />
         </div>
       </Router>
