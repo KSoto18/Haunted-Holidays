@@ -7,18 +7,18 @@ import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
-import { QUERY_SINGLE_PLACE } from '../utils/queries';
+import { QUERY_SINGLE_REVIEW } from '../utils/queries';
 
-const Places= () => {
+const SingleReview= () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { placeId } = useParams();
+  const { reviewId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_PLACE, {
+  const { loading, data } = useQuery(QUERY_SINGLE_REVIEW, {
     // pass URL parameter
-    variables: { placeId: placeId },
+    variables: { reviewId: reviewId },
   });
 
-  const place= data?.place|| {};
+  const review= data?.review|| {};
 
   if (loading) {
     return <div>Loading...</div>;
@@ -26,9 +26,9 @@ const Places= () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {place.placeAuthor} <br />
+        {review.reviewAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          CHECK THIS PLACE OUT {place.createdAt}
+          Post Your Own Sighting! {review.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -41,18 +41,18 @@ const Places= () => {
             lineHeight: '1.5',
           }}
         >
-          {place.placeText}
+          {review.reviewText}
         </blockquote>
       </div>
 
       <div className="my-5">
-        <CommentList comments={place.comments} />
+        <CommentList comments={review.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm placeId={place._id} />
+        <CommentForm reviewId={review._id} />
       </div>
     </div>
   );
 };
 
-export default Places;
+export default SingleReview;

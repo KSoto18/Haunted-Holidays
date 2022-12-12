@@ -24,12 +24,12 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_PLACE = gql`
-  mutation addPlace($placeText: String!, $placeAuthor: String!) {
-    addPlace(placeText: $placeText, placeAuthor: $placeAuthor) {
+export const ADD_REVIEW = gql`
+  mutation addReview ($reviewText: String!, $reviewAuthor: String!) {
+    addReview(reviewText: $reviewText, reviewAuthor: $reviewAuthor) {
       _id
-      placeText
-      placeAuthor
+      reviewText
+      reviewAuthor
       createdAt
       comments {
         _id
@@ -41,18 +41,18 @@ export const ADD_PLACE = gql`
 
 export const ADD_COMMENT = gql`
   mutation addComment(
-    $placeId: ID!
+    $reviewId: ID!
     $commentText: String!
     $commentAuthor: String!
   ) {
     addComment(
-      placeId: $placeId
+      reviewId: $reviewId
       commentText: $commentText
       commentAuthor: $commentAuthor
     ) {
       _id
-      placeText
-      placeAuthor
+      reviewText
+      reviewAuthor
       createdAt
       comments {
         _id

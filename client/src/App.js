@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SinglePlace from './pages/SinglePlace';
+import SingleReview from './pages/SingleReview';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -61,8 +61,8 @@ function App() {
                 element={<Signup />} 
               />
               <Route 
-                path="/placess/:placesId" 
-                element={<SinglePlace />} 
+                path="/reviews/:reviewId" 
+                element={<SingleReview />} 
               />
             </Routes>
           </div>

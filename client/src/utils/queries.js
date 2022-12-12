@@ -6,32 +6,32 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      places {
+      reviews {
         _id
-        placesText
+        reviewsText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_PLACES = gql`
-  query getPlaces {
-    places {
+export const QUERY_REVIEWS = gql`
+  query getReviews {
+    reviews {
       _id
-      placeText
-      placeAuthor
+      reviewText
+      reviewAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_PLACE = gql`
-  query getSinglePlace($placeId: ID!) {
-    place(placeId: $placeId) {
+export const QUERY_SINGLE_REVIEW = gql`
+  query getSingleReview($reviewId: ID!) {
+    review(reviewId: $reviewId) {
       _id
-      placeText
-      placeAuthor
+      reviewText
+      reviewAuthor
       createdAt
       comments {
         _id

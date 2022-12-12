@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_PLACE } from '../../utils/mutations';
-import { QUERY_PLACES } from '../../utils/queries';
+import { ADD_REVIEW } from '../../utils/mutations';
+import { QUERY_REVIEWS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
-const PlaceForm = () => {
-  const [placeText, setPlaceText] = useState('');
+const ReviewForm = () => {
+  const [reviewText, setReviewText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addPlace, { error }] = useMutation(ADD_PLACE, {
-    update(cache, { data: { addPlace } }) {
+  const [addReview, { error }] = useMutation(ADD_REVIEW, {
+    update(cache, { data: { addReview } }) {
       try {
-        const { places } = cache.readQuery({ query: QUERY_PLACES });
+        const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
 
         cache.writeQuery({
-          query: QUERY_PLACES,
-          data: { places: [addPlaces, ...places] },
+          query: QUERY_REVIEWS,
+          data: { reviews: [addReview, ...reviews] },
         });
       } catch (e) {
         console.error(e);
@@ -31,14 +31,14 @@ const PlaceForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addPlaces({
+      const { data } = await addReview({
         variables: {
-          placeText,
-          placeAuthor: Auth.getProfile().data.username,
+          reviewText,
+          reviewAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setPlaceText('');
+      setReviewText('');
     } catch (err) {
       console.error(err);
     }
@@ -47,15 +47,15 @@ const PlaceForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'placeText' && value.length <= 280) {
-      setPlaceText(value);
+    if (name === 'reviewText' && value.length <= 280) {
+      setReviewText(value);
       setCharacterCount(value.length);
     }
   };
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>What's your spooky sighting?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -73,8 +73,9 @@ const PlaceForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="placeText"
-                placeholder="Here's a new place..."
-                value={placeText}
+                type="text"
+                placeholder="Who's haunting you..."
+                value={reviewText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
@@ -83,7 +84,7 @@ const PlaceForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Place
+                Add Sighting
               </button>
             </div>
             {error && (
@@ -95,7 +96,7 @@ const PlaceForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your places. Please{' '}
+          You need to be logged in to share your sightings. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
@@ -103,4 +104,4 @@ const PlaceForm = () => {
   );
 };
 
-export default PlaceForm;
+export default ReviewForm;

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import PlacesList from '../components/PlacesList';
-import PlaceForm from '../components/PlaceForm';
+import ReviewsList from '../components/ReviewsList';
+import ReviewForm from '../components/ReviewForm';
 
-import { QUERY_PLACES } from '../utils/queries';
+import { QUERY_REVIEWS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_PlACES);
-  const places = data?.places || [];
+  const { loading, data } = useQuery(QUERY_REVIEWS);
+  const places = data?.reviews || [];
 
   return (
     <main>
@@ -17,15 +17,15 @@ const Home = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: '1px dotted #1a1a1a' }}
         >
-          <PlaceForm />
+          <ReviewForm />
         </div>
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <PlacesList
+            <ReviewsList
               places={places}
-              title="Some Feed for Place(s)..."
+              title="Some Feed for Review(s)..."
             />
           )}
         </div>
