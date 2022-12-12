@@ -1,10 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
 import PlacesList from '../components/PlacesList';
 import PlaceForm from '../components/PlaceForm';
-
 import { QUERY_PLACES } from '../utils/queries';
+// import EnterPg from '../components/EnterPg.js';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PLACES);
@@ -12,14 +11,18 @@ const Home = () => {
 
   return (
     <main>
+
+      {/* <EnterPg /> */}
       <div className="flex-row justify-center">
+
         <div
           className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
+          style={{ border: '1px dotted #1a1a1a' }}>
           <PlaceForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+
+        {/* DIV that says "No Haunted Places Yet" */}
+        <div className="">
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -29,7 +32,9 @@ const Home = () => {
             />
           )}
         </div>
+
       </div>
+
     </main>
   );
 };
