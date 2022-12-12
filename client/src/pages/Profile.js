@@ -3,11 +3,12 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import ReviewForm from '../components/ReviewForm';
-import ReviewList from '../components/ReviewsList';
+import ReviewsList from '../components/ReviewsList';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -42,8 +43,12 @@ const Profile = () => {
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
+        <div>
+        <MapContainer />
+      </div>
+
         <div className="col-12 col-md-10 mb-5">
-          <ReviewList
+          <ReviewsList
             reviews={user.reviews}
             title={`${user.username}'s reviews...`}
             showTitle={false}
@@ -59,6 +64,7 @@ const Profile = () => {
           </div>
         )}
       </div>
+     
     </div>
   );
 };

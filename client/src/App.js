@@ -15,6 +15,7 @@ import SingleReview from './pages/SingleReview';
 import Profile from './pages/Profile'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MapContainer from './components/MapContainer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -68,12 +69,16 @@ function App() {
               <Route 
                 path="/profiles/:username" 
                 element={<Profile />}
+
               />
+             
               <Route 
                 path="/reviews/:reviewId" 
                 element={<SingleReview />} 
               />
             </Routes>
+            <MapContainer
+              />
           </div>
           <Footer />
         </div>
