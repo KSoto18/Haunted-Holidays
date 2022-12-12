@@ -72,8 +72,7 @@ const ReviewForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="placeText"
-                type="text"
+                name="reviewText"
                 placeholder="Who's haunting you..."
                 value={reviewText}
                 className="form-input w-100"
