@@ -24,8 +24,16 @@ const ReviewForm = () => {
       } catch (e) {
         console.error(e);
       }
+        // update me object's cache
+        // const { me } = cache.readQuery({ query: QUERY_ME });
+        // cache.writeQuery({
+        //   query: QUERY_ME,
+        //   data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+        // });
     },
   });
+
+  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -72,7 +80,7 @@ const ReviewForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="placeText"
+                name="reviewText"
                 type="text"
                 placeholder="Who's haunting you..."
                 value={reviewText}
