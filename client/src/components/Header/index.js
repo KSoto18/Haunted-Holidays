@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GiGhost } from 'react-icons/gi';
 
 import Auth from '../../utils/auth';
 
@@ -9,34 +10,50 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">Haunted Locations</h1>
-          </Link>
-          <p className="m-0">Get into the mind of a programmer.</p>
-        </div>
-        <div>
-          {Auth.loggedIn() ? (
-            <>
-              <span>Hey there, {Auth.getProfile().data.username}!</span>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
-          )}
-        </div>
+    <header>
+      {/* link to home in pg title  */}
+      <Link className="headertitle" to="/">
+        <h1>Haunted Holiday<GiGhost /></h1>
+      </Link>
+      <p className="subheader">
+        Find your next spooky experience.
+      </p>
+      {/* navbar  */}
+      <nav>
+        <ul>
+
+          <li><Link className='navlink' to="/">Home</Link></li>
+          <li><Link className='navlink' to="/profile">Profile</Link></li>
+          <li><Link className='navlink' to="/about">About</Link></li>
+          <li><Link className='navlink' to="/contact">Contact</Link></li>
+
+
+        </ul>
+      </nav>
+
+
+      <div className='account-btns'>
+
+        {Auth.loggedIn() ? (
+          <>
+            <span>Hello, {Auth.getProfile().data.username}!</span>
+            <button className="logout-btn" onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link className="login-btn" to="/login">
+              Login</Link>
+
+            <Link className="signup-btn" to="/signup">
+              Signup
+            </Link>
+          </>
+        )}
+
       </div>
+
     </header>
   );
 };

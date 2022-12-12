@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -39,11 +37,15 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main className="">
+
+      <div className="">
+
+        <div className="form-body">
+
+          <h4 className="">Sign Up</h4>
+
+          <div className="">
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -59,6 +61,7 @@ const Signup = () => {
                   value={formState.name}
                   onChange={handleChange}
                 />
+
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -67,6 +70,7 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+
                 <input
                   className="form-input"
                   placeholder="******"
@@ -75,13 +79,18 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+
                 <button
-                  className="btn btn-block btn-primary"
+                  className="signupsubmit-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
-                >
-                  Submit
+                >Submit
                 </button>
+
+                <p className='login-redirect'>
+                  Already have an account? Sign in <a href="/login">here</a>.
+                </p>
+
               </form>
             )}
 
@@ -90,9 +99,13 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+
           </div>
+
         </div>
+
       </div>
+
     </main>
   );
 };
