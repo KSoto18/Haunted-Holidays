@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
-
+// import { useTheme } from './ThemeContext';
 import Auth from '../../utils/auth';
+
 
 const Header = () => {
   const logout = (event) => {
@@ -13,7 +14,7 @@ const Header = () => {
     <header>
       {/* link to home in pg title  */}
       <Link className="headertitle" to="/">
-        <h1>Haunted Holiday<GiGhost /></h1>
+        <h1>Haunted Holidays<GiGhost /></h1>
       </Link>
       <p className="subheader">
         Find your next spooky experience.
