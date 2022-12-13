@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { ADD_REVIEW } from '../../utils/mutations';
-import { QUERY_REVIEWS, QUERY_ME } from '../../utils/queries';
+import { QUERY_REVIEWS } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 
@@ -25,11 +25,11 @@ const ReviewForm = () => {
         console.error(e);
       }
         // update me object's cache
-        const { me } = cache.readQuery({ query: QUERY_ME });
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: { ...me, reviews: [...me.reviews, addReview] } },
-        });
+        // const { me } = cache.readQuery({ query: QUERY_ME });
+        // cache.writeQuery({
+        //   query: QUERY_ME,
+        //   data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+        // });
     },
   });
 

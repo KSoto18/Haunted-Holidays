@@ -8,7 +8,8 @@ export const QUERY_USER = gql`
       email
       reviews {
         _id
-        reviewsText
+        reviewText
+        reviewAuthor
         createdAt
       }
     }
@@ -42,18 +43,18 @@ export const QUERY_SINGLE_REVIEW = gql`
   }
 `;
 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
-      reviews {
-        _id
-        reviewText
-        reviewAuthor
-        createdAt
-      }
-    }
-  }
-`;
+// export const QUERY_ME = gql`
+//   query me {
+//     me {
+//       _id
+//       username
+//       email
+//       reviews {
+//         _id
+//         reviewText
+//         reviewAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;

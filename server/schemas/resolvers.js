@@ -7,8 +7,10 @@ const resolvers = {
     users: async () => {
       return User.find().populate('reviews');
     },
-    user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('reviews');
+    user: async (parent, args, context) => {
+      if (context.user){
+      return User.findOne({ _id:context.user._id}).populate('reviews')
+    };
     },
     reviews: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -17,6 +19,7 @@ const resolvers = {
     review: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
     },
+   
   },
 
   Mutation: {
