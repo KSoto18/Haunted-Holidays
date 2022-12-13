@@ -10,19 +10,20 @@ const Footer = () => {
   return (
     
     <footer>
-      <Button sx={{ color: "orange" }} variant="contained">Contained</Button>
-  <div>
-    <button
-        className="openModalBtn"
+      
+  
+    <Button sx={{ background: "black",  position:"absolute",
+  bottom:0, left:"90%"}} variant = "contained"
+        
         onClick={() => {
           setModalOpen(true);
         }}
       >
         What's this?
-      </button>
+      </Button>
 
       {modalOpen && <Modal setOpenModal={setModalOpen} />}
-    </div>
+    
    
     </footer>
    

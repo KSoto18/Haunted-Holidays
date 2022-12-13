@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
 // import { useTheme } from './ThemeContext';
 import Auth from '../../utils/auth';
-import Modal from "../Modal/Modal";
+
 
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     event.preventDefault();
     Auth.logout();
   };
-  const [modalOpen, setModalOpen] = useState(false);
+  
   return (
     <header>
       {/* link to home in pg title  */}
@@ -21,18 +21,7 @@ const Header = () => {
       <p className="subheader">
         Find your next spooky experience.
       </p>
-      <div className="App">
-      <button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        What's this?
-      </button>
-
-      {modalOpen && <Modal setOpenModal={setModalOpen} />}
-    </div>
+     
       {/* navbar  */}
       <nav>
         <ul>

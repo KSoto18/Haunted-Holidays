@@ -211,11 +211,3 @@ nav li {
     url("./Fonts/ChillyUIBold.ttf") format("truetype");
 }
 
-.openModalBtn {
-  border-radius: 12px;
-  color: black;
-  position:absolute;
-  bottom:0;
-  left:90%;
-  
-}
