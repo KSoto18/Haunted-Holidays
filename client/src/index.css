@@ -8,7 +8,14 @@
 body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
-  background-size: cover;
+  background-size: auto;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.dark-mode {
+  background-image: url('./assets/img/scarygirl.png');
+  color: white;
 }
 
 header {
@@ -121,7 +128,6 @@ nav li {
   border-radius: 5px 5px;
   width: 35%;
   backdrop-filter: blur(5px);
-
 }
 
 /* beginning of css for login/signup/contact pg  */
@@ -204,17 +210,34 @@ nav li {
   text-align: center;
 }
 
+.success-msg {
+  text-align: center;
+  color: black;
+}
+
 /* beginning of css for about pg */
 /* container with about us info  */
 .aboutuspg-div {
   margin-bottom: 50px;
 }
 
+.show-contrib-btn {
+  background-color: black;
+  border: none;
+  border-radius: 5px 5px;
+  padding: 5px 5px;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  /* opacity: 0.6; */
+}
+
 /* each card with indiv. about info */
 .individual-aboutinfo {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin: auto;
+  border-radius: 10px 10px;
+  margin: auto auto 10px auto;
   text-align: center;
   background-color: gray;
 }

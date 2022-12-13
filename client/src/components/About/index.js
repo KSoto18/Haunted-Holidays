@@ -19,22 +19,29 @@ const About = () => {
             {/* subtitle paragraph section */}
 
             <section className="aboutussection">
-                We are the "<i>Four Loopin' Ladies</i>"!
-                <br /><br />
                 <p class="fourloopinladies">
 
-                    <button onClick={handleClick} title="See Iia's about info.">Iia Wolak</button>
+                    We are the "<i>Four Loopin' Ladies</i>"!
+                    <br /><br />
+
+                    We met while enrolled in the Full-Stack Web Development Coding Bootcamp at UCF, and were tasked together to develop this application. <br /><br />
+                    This project took a lot of time and dedication, and we will keep working on it to improve it's functionality and appearance with the skills we will continue to learn and develop while enrolled in the Coding Bootcamp.
+                </p>
+
+                <button className="show-contrib-btn" onClick={handleClick} title='See the contributors.'>
+                    Meet the Contributors
+                </button>
+
+                {/* not functioning showing all cards - come back to this later */}
+                {/* buttons to go to individual profile cards */}
+                {/* <button onClick={handleClick} title="See Iia's about info.">Iia Wolak</button>
                     &nbsp;&nbsp;&nbsp;
                     <button onClick={handleClick} title="See Karina's about info.">Karina Drummond</button>
                     &nbsp;&nbsp;&nbsp;
                     <button onClick={handleClick} title="See Khris's about info.">Khris Soto</button>
                     &nbsp;&nbsp;&nbsp;
-                    <button onClick={handleClick} title="See Maggie's about info.">Maggie Lively</button>
+                    <button onClick={handleClick} title="See Maggie's about info.">Maggie Lively</button> */}
 
-                    <br /><br />
-                    We met while enrolled in the Full-Stack Web Development Coding Bootcamp at UCF, and were tasked together to develop this application. <br /><br />
-                    This project took a lot of time and dedication, and we will keep working on it to improve it's functionality and appearance with the skills we will continue to learn and develop while enrolled in the Coding Bootcamp.
-                </p>
             </section>
 
             {/* iia's about info */}
@@ -70,7 +77,7 @@ const About = () => {
             </div>
 
             {/* karina's about info */}
-            <section id="karina" className="individual-aboutinfo"
+            <div id="karina" className="individual-aboutinfo"
                 style={{ display: toggle ? 'block' : 'none' }}>
 
                 {/* profile img */}
@@ -98,10 +105,10 @@ const About = () => {
                     <a className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
                         href="https://github.com/kdrummond528"><FaGithub size={"1.5em"} /></a>
                 </div>
-            </section>
+            </div>
 
             {/* khris's about info */}
-            <section id="khris" className="individual-aboutinfo"
+            <div id="khris" className="individual-aboutinfo"
                 style={{ display: toggle ? 'block' : 'none' }}>
 
                 {/* profile img */}
@@ -126,10 +133,10 @@ const About = () => {
                     <a class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
                         href="https://github.com/ksoto18"><FaGithub size={"1.5em"} /></a>
                 </div>
-            </section>
+            </div>
 
             {/* maggie's about info */}
-            <section id="maggie" className="individual-aboutinfo"
+            <div id="maggie" className="individual-aboutinfo"
                 style={{ display: toggle ? 'block' : 'none' }}>
 
                 {/* profile img */}
@@ -161,7 +168,7 @@ const About = () => {
                         href="https://github.com/mmllively"><FaGithub size={"1.5em"} /></a>
                 </div>
 
-            </section>
+            </div>
 
         </div >
     )
