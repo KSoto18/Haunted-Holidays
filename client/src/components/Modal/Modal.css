@@ -12,7 +12,7 @@
     width: 500px;
     height: 500px;
     border-radius: 12px;
-    background-color: white;
+    background-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
     height: 45px;
     margin: 10px;
     border: none;
-    background-color: cornflowerblue;
+    background-color: gray;
     color: white;
     border-radius: 8px;
     font-size: 20px;
@@ -66,5 +66,5 @@
   }
   
   #cancelBtn {
-    background-color: crimson;
+    background-color: black;
   }
