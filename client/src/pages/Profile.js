@@ -8,6 +8,7 @@ import ReviewsList from '../components/ReviewsList';
 import { QUERY_USER } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
   // const { username: userParam } = useParams();
@@ -67,7 +68,10 @@ console.log(data);
           <div>
             <ReviewForm />
           </div>
-        
+    
+      </div>
+      <div>
+        <MapContainer />
       </div>
     </div>
   );

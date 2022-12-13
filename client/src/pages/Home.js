@@ -5,6 +5,7 @@ import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
 
 import { QUERY_REVIEWS } from '../utils/queries';
+import MapContainer from '../components/MapContainer';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
@@ -12,6 +13,8 @@ const Home = () => {
 
   return (
     <main>
+
+      
       <div className="flex-row justify-center">
         <div
           className="col-12 col-md-10 mb-3 p-3"
