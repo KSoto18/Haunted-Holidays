@@ -2,19 +2,22 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Chilly";
+  font-size: large;
 }
 
 body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
   margin-top: 1px;
   margin-left: 8px;
   height: 150px;
+  
 }
 
 /* site name + home link in header  */
@@ -25,8 +28,8 @@ header {
 .headertitle h1 {
   text-decoration: none;
   color: black;
-  /* font-family: 'Creepster', cursive; */
-  font-size: 45px;
+  font-family: "Bloody";
+  font-size: 80px;
 }
 
 /* navbar */
@@ -50,6 +53,8 @@ nav li {
 /* subheader until header pg title  */
 .subheader {
   padding-left: 2px;
+  font-family: "Chilly";
+  
 }
 
 /* positioning for login/signup/logout buttons */
@@ -237,4 +242,16 @@ nav li {
 /* styling for contact icons in about pg  */
 .contactlinks {
   margin: 3px;
+}
+/*font*/
+@font-face {
+  font-family: "Bloody";   
+  src: local("BloodyFont"),
+    url("../src/Fonts/BLOODY.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Chilly";   
+  src: local("Chilly"),
+    url("./Fonts/ChillyUIBold.ttf") format ("truetype");
 }

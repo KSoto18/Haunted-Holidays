@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import {
   ApolloClient,
   InMemoryCache,
@@ -18,6 +18,9 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Contact from './components/Contact';
 import MapContainer from './components/MapContainer';
+
+import "./Fonts/BLOODY.ttf"
+import "./Fonts/ChillyUIBold.ttf"
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,13 +47,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
+
 function App() {
+  
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Header />
-
+         
           <div>
             <Routes>
               <Route path="/" 
@@ -58,7 +66,8 @@ function App() {
               />
 
               <Route path="/login" 
-              element={<Login />} 
+              element={<Login />}
+               
               />
 
               <Route path="/signup" 
@@ -91,8 +100,11 @@ function App() {
           <Footer />
         </div>
       </Router>
+      
     </ApolloProvider>
+    
   );
+  
 }
 
 export default App;
