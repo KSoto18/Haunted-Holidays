@@ -1,18 +1,22 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+query user {
+  user {
+    email
+    _id
+    username
+    reviews {
       _id
-      username
-      email
-      reviews {
-        _id
-        reviewsText
-        createdAt
+      reviewAuthor
+      reviewText
+      comments {
+        commentText
+        commentAuthor
       }
     }
   }
+}
 `;
 
 export const QUERY_REVIEWS = gql`
@@ -42,18 +46,18 @@ export const QUERY_SINGLE_REVIEW = gql`
   }
 `;
 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      email
-      reviews {
-        _id
-        reviewText
-        reviewAuthor
-        createdAt
-      }
-    }
-  }
-`;
+// export const QUERY_ME = gql`
+//   query me {
+//     me {
+//       _id
+//       username
+//       email
+//       reviews {
+//         _id
+//         reviewText
+//         reviewAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;

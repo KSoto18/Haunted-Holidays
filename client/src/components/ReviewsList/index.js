@@ -7,7 +7,7 @@ const ReviewsList = ({
 showTitle = true,
 showUsername = true,
  }) => {
-  if (!reviews.length) {
+  if (!reviews) {
     return <h3>No Haunted Stories Yet</h3>;
   }
 
