@@ -19,7 +19,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import ThemeComponent from './components/ThemeComponent/ThemeComponent';
 import ThemeProvider from './components/ThemeComponent/ThemeContext';
-
+import "./Fonts/BLOODY.ttf"
 
 
 // Construct our main GraphQL API endpoint
