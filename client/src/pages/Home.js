@@ -5,6 +5,7 @@ import ReviewsList from '../components/ReviewsList';
 import { QUERY_REVIEWS } from '../utils/queries';
 
 import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
+import Switch from '@mui/material/Switch';
 
 import MapContainer from '../components/MapContainer';
 
@@ -47,7 +48,7 @@ const Home = () => {
 
       {/* <p id="demo"></p> */}
 
-      <button onClick={darkMode} className='darkmode-btn'>Enable dark mode</button>
+      <Switch onClick={darkMode} className='darkmode-btn'>Enable dark mode</Switch>
 
       <ReviewsList reviews={reviews}
         title="Some Feed for Review(s)..." />

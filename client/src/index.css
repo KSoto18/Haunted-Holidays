@@ -96,14 +96,21 @@ nav li {
 }
 
 /* footer  */
-.footer {
+.footertag {
   bottom: 0;
   width: 100%;
-  position: fixed;
+ 
   font-size: 12px;
   text-align: center;
   color: gray;
   font-size: 15px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+  
+ 
 }
 .homepgcontainer {
   border: none;

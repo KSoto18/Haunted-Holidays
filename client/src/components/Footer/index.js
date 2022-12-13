@@ -26,7 +26,7 @@ const Footer = () => {
       {modalOpen && <Modal setOpenModal={setModalOpen} />}
       <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, elevation: 3}}>
       <BottomNavigation sx={{background: "black"}}>
-        <p className="footer">Four Loopin Ladies</p>
+        <p className="footertag">Four Loopin Ladies</p>
    
     
    
