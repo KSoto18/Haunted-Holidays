@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 
 import About from './components/About';
 import Contact from './components/Contact';
+import MapContainer from './components/MapContainer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -85,7 +86,6 @@ function App() {
                  />
 
             </Routes>
-
           </div>
 
           <Footer />
