@@ -24,6 +24,8 @@ query locations{
 locations{
   latitude
   longitude
+  location
+  _id
 }
 }
 `;
