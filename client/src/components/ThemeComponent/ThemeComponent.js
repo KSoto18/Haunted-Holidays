@@ -13,10 +13,10 @@ export default function ThemeComponent() {
     background: darkTheme
       ? '-webkit-linear-gradient(top left, #150C17, #535353)'
       : '-webkit-linear-gradient(bottom, #FFFFFF, #EDBAAB)',
-    padding: '10rem',
-    margin: '10rem',
-    borderRadius: '30px',
-    color: darkTheme ? '#FAFAFA' : '#363537',
+    // padding: '10rem',
+    // margin: '10rem',
+    // borderRadius: '30px',
+    // color: darkTheme ? '#FAFAFA' : '#363537',
   };
 
   return (
