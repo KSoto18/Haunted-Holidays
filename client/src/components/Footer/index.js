@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { useLocation, useNavigate } from 'react-router-dom';
+import Modal from "../Modal/Modal";
 
 const Footer = () => {
   // const location = useLocation();
   // const navigate = useNavigate();
-
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <footer>
+     
 
       {/* <div className="container text-center mb-5">
         {location.pathname !== '/' && (
@@ -22,7 +24,18 @@ const Footer = () => {
       <p className='footercopyright'>
         © 2022 Four Loopin' Ladies
       </p>
+      <div>
+<button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        What's this?
+      </button>
 
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+    </div>
     </footer >
   );
 };

@@ -214,5 +214,8 @@ nav li {
 .openModalBtn {
   border-radius: 12px;
   color: black;
+  position:absolute;
+  bottom:0;
+  left:90%;
   
 }
