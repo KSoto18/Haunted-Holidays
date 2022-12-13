@@ -3,7 +3,7 @@
   padding: 0;
   color: white;
   font-family: "Chilly";
-  font-size: large;
+  font-size: 30px;
 }
 
 body {
@@ -29,7 +29,7 @@ header {
   text-decoration: none;
   color: black;
   font-family: "Bloody";
-  font-size: 80px;
+  font-size: 100px;
 }
 
 /* navbar */
@@ -208,5 +208,11 @@ nav li {
 @font-face {
   font-family: "Chilly";   
   src: local("Chilly"),
-    url("./Fonts/ChillyUIBold.ttf") format ("truetype");
+    url("./Fonts/ChillyUIBold.ttf") format("truetype");
+}
+
+.openModalBtn {
+  border-radius: 12px;
+  color: black;
+  
 }

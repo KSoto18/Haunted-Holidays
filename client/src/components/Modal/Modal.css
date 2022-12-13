@@ -12,17 +12,35 @@
     width: 500px;
     height: 500px;
     border-radius: 12px;
-    background-color: transparent;
+    background-image: url("https://cdn.pixabay.com/photo/2018/10/27/20/18/silhouette-3777403_960_720.jpg");
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 25px;
   }
   
+  
   .modalContainer .title {
     display: inline-block;
     text-align: center;
     margin-top: 10px;
+    font-family: "Bloody";
+    font-size: 80px;
+    position: relative;
+    
+  }
+   
+  .modalheader{
+    font-family: "Bloody";
+    font-size: 100px;
+    color: red;
+    text-align: center;
+    position: relative;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+   
+
   }
   
   .titleCloseBtn {
@@ -68,3 +86,15 @@
   #cancelBtn {
     background-color: black;
   }
+  /*font*/
+/* @font-face {
+    font-family: "Bloody";   
+    src: local("BloodyFont"),
+      url("/Haunted-Holidays/client/src/Fonts/BLOODY.ttf") format("truetype");
+  } */
+  
+  /* @font-face {
+    font-family: "Chilly";   
+    src: local("Chilly"),
+      url("/Haunted-Holidays/client/src/Fonts/ChillyUIBold.ttf") format("truetype");
+  } */

@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main>
      
-      <h1>HOME PAGE INFO</h1>
+      
 
     </main>
   );

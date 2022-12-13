@@ -21,18 +21,7 @@ const Header = () => {
       <p className="subheader">
         Find your next spooky experience.
       </p>
-      <div className="App">
-      <button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        About
-      </button>
-
-      {modalOpen && <Modal setOpenModal={setModalOpen} />}
-    </div>
+      
       {/* navbar  */}
       <nav>
         <ul>
@@ -68,7 +57,18 @@ const Header = () => {
         )}
 
       </div>
+      <div className="App">
+      <button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      >
+        What's this?
+      </button>
 
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+    </div>
     </header>
   );
 };
