@@ -1,5 +1,8 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { useQuery } from '@apollo/client';
+
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 
 const MapContainer = () => {
   
@@ -9,6 +12,11 @@ const MapContainer = () => {
   
   const defaultCenter = {
     lat: 40, lng: -100
+  }
+
+  const spookyMarkers = {
+
+    
   }
   
   return (
