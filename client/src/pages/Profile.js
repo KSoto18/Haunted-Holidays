@@ -10,6 +10,8 @@ import { QUERY_USER } from '../utils/queries';
 import Auth from '../utils/auth';
 import MapContainer from '../components/MapContainer';
 
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
 const Profile = () => {
   // const { username: userParam } = useParams();
   // const reviews = data?.reviews || [];

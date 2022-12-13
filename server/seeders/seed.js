@@ -6,15 +6,11 @@ const locationData = require('./locationsJSON.json');
 
 
 const { User, Location } = require('../models');
-const locationData = require('./locationsJSON.json');
 
-
-const { User, Location } = require('../models');
 
 db.once('open', async () => {
   try {
     await User.deleteMany({});
-    await Location.deleteMany({});
     await Location.deleteMany({});
 
     await User.create(userSeeds);
