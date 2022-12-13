@@ -48,6 +48,8 @@ const Login = (props) => {
     <div className="login-form">
 
       <h2 className="loginpg-title">Login</h2>
+      <p className='login-subtitle'>Please fill in this form to log in to your account.</p>
+
 
       {data ? (
         <p>
@@ -57,7 +59,7 @@ const Login = (props) => {
       ) : (
         <form onSubmit={handleFormSubmit}>
           <div className='input-container'>
-            <AiOutlineMail className='icon-loginpg' />
+            <AiOutlineMail size={'1.25em'} className='icon-loginpg' />
             <input
               className="form-input"
               placeholder="Your email"
@@ -69,7 +71,7 @@ const Login = (props) => {
           </div>
 
           <div className='input-container'>
-            <GiKey className='icon-loginpg' />
+            <GiKey size={'1.25em'} className='icon-loginpg' />
             <input className="form-input"
               placeholder="******" name="password" type="password"
               value={formState.password} onChange={handleChange} />

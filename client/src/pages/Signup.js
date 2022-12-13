@@ -44,6 +44,8 @@ const Signup = () => {
     <div className="signup-form">
 
       <h2 className="signup-pgtitle">Sign Up</h2>
+      <p className='signup-subtitle'>Please fill in this form to create an account.</p>
+
 
       {data ? (
         <p>
@@ -65,7 +67,7 @@ const Signup = () => {
           </div>
 
           <div className='input-container'>
-            <AiOutlineMail className='icon-signuppg' />
+            <AiOutlineMail size={'1.25em'} className='icon-signuppg' />
             <input
               className="form-input"
               placeholder="Your email"
@@ -77,7 +79,7 @@ const Signup = () => {
           </div>
 
           <div className='input-container'>
-            <GiKey className='icon-signuppg' />
+            <GiKey size={'1.25em'} className='icon-signuppg' />
             <input
               className="form-input"
               placeholder="******"
