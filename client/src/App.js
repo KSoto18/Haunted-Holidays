@@ -17,9 +17,8 @@ import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
 import About from './components/About';
 import Contact from './components/Contact';
-import ThemeComponent from './components/ThemeComponent/ThemeComponent';
-import ThemeProvider from './components/ThemeComponent/ThemeContext';
 import "./Fonts/BLOODY.ttf"
+import "./Fonts/ChillyUIBold.ttf"
 
 
 // Construct our main GraphQL API endpoint
@@ -55,9 +54,6 @@ function App() {
   return (
     
     <ApolloProvider client={client}>
-       <ThemeProvider>
-      <ThemeComponent />
-    </ThemeProvider>
       <Router>
         <div>
           <Header />

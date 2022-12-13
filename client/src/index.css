@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Chilly";
+  font-size: large;
 }
 
 body {
@@ -16,6 +17,7 @@ header {
   margin-top: 1px;
   margin-left: 8px;
   height: 150px;
+  
 }
 
 /* site name + home link in header  */
@@ -27,7 +29,7 @@ header {
   text-decoration: none;
   color: black;
   font-family: "Bloody";
-  font-size: 45px;
+  font-size: 80px;
 }
 
 /* navbar */
@@ -51,6 +53,8 @@ nav li {
 /* subheader until header pg title  */
 .subheader {
   padding-left: 2px;
+  font-family: "Chilly";
+  
 }
 
 /* positioning for login/signup/logout buttons */
@@ -196,7 +200,13 @@ nav li {
 }
 /*font*/
 @font-face {
-  font-family: "Bloody";   /*Can be any text*/
+  font-family: "Bloody";   
   src: local("BloodyFont"),
     url("../src/Fonts/BLOODY.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Chilly";   
+  src: local("Chilly"),
+    url("./Fonts/ChillyUIBold.ttf") format ("truetype");
 }
