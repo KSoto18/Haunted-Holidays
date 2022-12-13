@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+// import { EnterPg } from '../components/EnterPg.js'
 
 import Auth from '../utils/auth';
 
@@ -48,7 +49,10 @@ const Login = (props) => {
         <div className="form-body">
 
           <h4 className="">Login</h4>
-
+          
+          {/* <button>
+            <EnterPg />
+          </button> */}
           <div className="">
             {data ? (
               <p>

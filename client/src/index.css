@@ -9,6 +9,7 @@ body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
