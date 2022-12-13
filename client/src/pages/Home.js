@@ -3,7 +3,11 @@ import { useQuery } from '@apollo/client';
 import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
 import { QUERY_REVIEWS } from '../utils/queries';
+
 import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
+
+import MapContainer from '../components/MapContainer';
+
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
@@ -25,6 +29,7 @@ const Home = () => {
   }
 
   return (
+
     <div className=''>
 
       {/* <audio id='scare-sound' autoplay> */}
@@ -48,6 +53,7 @@ const Home = () => {
         title="Some Feed for Review(s)..." />
 
     </div>
+
 
   );
 };

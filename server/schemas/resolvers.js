@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Review } = require('../models');
+const { User, Review, Location } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -20,8 +20,13 @@ const resolvers = {
     review: async (parent, { reviewId }) => {
       return Review.findOne({ _id: reviewId });
     },
+
+    locations: async ()=> {
+      return Location.find({})
+    }
    
   },
+
 
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
+
 import Auth from '../../utils/auth';
 // import Whispering from '../../assets/mp3/whispering.mp3';
+
+// import { useTheme } from './ThemeContext';
+import Modal from "../Modal/Modal";
+
 
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
-
   // var scareEffect = document.getElementById('scare-sound');
   // const playEffect = () => {
   //   scareEffect.play();
   // }
-
+const [modalOpen, setModalOpen] = useState(false);
   return (
     <div>
 
@@ -69,6 +73,7 @@ const Header = () => {
 
       </header >
     </div >
+    
   );
 };
 

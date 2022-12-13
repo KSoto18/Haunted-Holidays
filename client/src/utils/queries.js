@@ -19,6 +19,15 @@ query user {
 }
 `;
 
+export const QUERY_MARKERS = gql`
+query locations{
+locations{
+  latitude
+  longitude
+}
+}
+`;
+
 export const QUERY_REVIEWS = gql`
   query getReviews {
     reviews {
