@@ -10,7 +10,16 @@ body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
   background-size: cover;
+
+  background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.dark-mode {
+  background-image: url('./assets/img/scarygirl.png');
+  color: white;
+
 }
 
 header {
@@ -126,7 +135,6 @@ nav li {
   border-radius: 5px 5px;
   width: 35%;
   backdrop-filter: blur(5px);
-
 }
 
 /* beginning of css for login/signup/contact pg  */
@@ -146,6 +154,7 @@ nav li {
 /* styling for pg title  */
 .signup-pgtitle,
 .loginpg-title,
+.aboutpg-title,
 .contactus-pgtitle {
   padding-bottom: 5px;
   text-align: center;
@@ -209,17 +218,63 @@ nav li {
   text-align: center;
 }
 
+.success-msg {
+  text-align: center;
+  color: black;
+}
+
 /* beginning of css for about pg */
 /* container with about us info  */
+.aboutpg-subtitle {
+  /* color: black; */
+  padding-bottom: 5px;
+}
+
 .aboutuspg-div {
   margin-bottom: 50px;
+}
+
+.aboutus-section {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 8px 8px;
+  backdrop-filter: blur(3px);
+  padding: 15px;
+  text-align: center;
+}
+
+.fourloopinladies-p {
+  padding-bottom: 10px;
+}
+
+.meet-contrib-btn {
+  background-color: black;
+  width: 100%;
+  border: none;
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  /* opacity: 0.6; */
+}
+
+/* container containing indiv cards */
+.contrib-cards {
+  display: flex;
+  width: auto;
 }
 
 /* each card with indiv. about info */
 .individual-aboutinfo {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
+  max-width: 275px;
+  border-radius: 10px 10px;
+  margin-left: 15px;
+  margin-right: 15px;
   text-align: center;
   background-color: gray;
 }
@@ -232,17 +287,28 @@ nav li {
 /* profile img in indiv. about info */
 .profileimg {
   width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 /* container containing contact icon links in indiv. about info */
 .contactlinks-container {
   background-color: black;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 /* styling for contact icons in about pg  */
 .contactlinks {
   margin: 3px;
 }
+
+
+.indiv-about-p {
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 5px;
+
 /*font*/
 @font-face {
   font-family: "Bloody";   
