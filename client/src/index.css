@@ -89,6 +89,13 @@ nav li {
   opacity: 1;
 }
 
+.backtotop-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  cursor: pointer;
+}
+
 /* footer  */
 .footercopyright {
   bottom: 0;
