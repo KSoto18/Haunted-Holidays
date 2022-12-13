@@ -1,31 +1,18 @@
 import React, { useState } from 'react';
 // import { useLocation, useNavigate } from 'react-router-dom';
 import Modal from "../Modal/Modal";
+import Button from '@mui/material/Button';
+
 
 const Footer = () => {
-  // const location = useLocation();
-  // const navigate = useNavigate();
+  
   const [modalOpen, setModalOpen] = useState(false);
   return (
+    
     <footer>
-     
-
-      {/* <div className="container text-center mb-5">
-        {location.pathname !== '/' && (
-
-          <button
-            className="btn btn-dark mb-3"
-            onClick={() => navigate(-1)}>
-            &larr; Go Back
-          </button>
-        )}
-         </div> */}
-
-      <p className='footercopyright'>
-        © 2022 Four Loopin' Ladies
-      </p>
-      <div>
-<button
+      <Button sx={{ color: "orange" }} variant="contained">Contained</Button>
+  <div>
+    <button
         className="openModalBtn"
         onClick={() => {
           setModalOpen(true);
@@ -36,8 +23,12 @@ const Footer = () => {
 
       {modalOpen && <Modal setOpenModal={setModalOpen} />}
     </div>
-    </footer >
+   
+    </footer>
+   
+   
   );
 };
 
 export default Footer;
+

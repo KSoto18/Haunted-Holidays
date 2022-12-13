@@ -21,6 +21,8 @@ import "./Fonts/BLOODY.ttf"
 import "./Fonts/ChillyUIBold.ttf"
 
 
+
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -54,7 +56,9 @@ function App() {
   return (
     
     <ApolloProvider client={client}>
+      
       <Router>
+      
         <div>
           <Header />
          
@@ -100,6 +104,7 @@ function App() {
 
           <Footer />
         </div>
+        
       </Router>
       
     </ApolloProvider>
