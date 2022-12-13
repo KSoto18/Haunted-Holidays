@@ -1,5 +1,5 @@
 {
-  "name": "programming-thoughts",
+  "name": "Haunted-Holidays",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -19,5 +19,7 @@
   "dependencies": {
     "react-icons": "^4.7.1",
     "styled-components": "^5.3.6"
-  }
+    "react-icons": "^4.7.1"
+    "@react-google-maps/api": "^2.17.1"
+  },
 }

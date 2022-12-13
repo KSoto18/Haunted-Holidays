@@ -5,21 +5,29 @@ import { useQuery } from '@apollo/client';
 import ReviewForm from '../components/ReviewForm';
 import ReviewsList from '../components/ReviewsList';
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_USER } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
-  const { username: userParam } = useParams();
+  // const { username: userParam } = useParams();
   // const reviews = data?.reviews || [];
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam },
-  });
+  const { loading, data } = useQuery(QUERY_USER);
 
-  const user = data?.me || data?.user || {};
+console.log(data);
+
+  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_REVIEWS);
+
+  // const user = Auth.getProfile();
+  const user = data?.user || {};
+
+  // const user = data?.me || data?.user || {};
+ 
+  console.log(user);
   // navigate to personal profile page if username is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  // if (Auth.loggedIn()) {
   //   return <Navigate to="/profile" />;
   // }
 
@@ -38,10 +46,10 @@ const Profile = () => {
 
   return (
     <div>
-
+{/* {loading && <div>loading...</div>} */}
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          Viewing {user? `${user.username}'s` : 'your'} profile.
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
@@ -52,14 +60,18 @@ const Profile = () => {
             showUsername={false}
           />
         </div>
-        {!userParam && (
+        {/* {!user && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
-          >
+          > */}
+          <div>
             <ReviewForm />
           </div>
-        )}
+    
+      </div>
+      <div>
+        <MapContainer />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const ReviewsList = ({
 showTitle = true,
 showUsername = true,
  }) => {
-  if (!reviews.length) {
+  if (!reviews) {
     return <h3>No Haunted Stories Yet</h3>;
   }
 
@@ -21,7 +21,7 @@ showUsername = true,
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${review.reviewAuthor}`}
+                  to={`/profile/${review.reviewAuthor}`}
                 >
                   {review.reviewAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
