@@ -96,14 +96,15 @@ nav li {
 }
 
 /* footer  */
-.footercopyright {
+.footer {
   bottom: 0;
   width: 100%;
   position: fixed;
   font-size: 12px;
   text-align: center;
+  color: gray;
+  font-size: 15px;
 }
-
 .homepgcontainer {
   border: none;
 }
@@ -308,7 +309,7 @@ nav li {
   padding: 5px;
   font-size: 15px;
   margin-bottom: 5px;
-
+}
 /*font*/
 @font-face {
   font-family: "Bloody";   

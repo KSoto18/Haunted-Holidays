@@ -6,7 +6,7 @@ import Auth from '../../utils/auth';
 // import Whispering from '../../assets/mp3/whispering.mp3';
 
 // import { useTheme } from './ThemeContext';
-import Modal from "../Modal/Modal";
+
 
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
   // const playEffect = () => {
   //   scareEffect.play();
   // }
-const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div>
 

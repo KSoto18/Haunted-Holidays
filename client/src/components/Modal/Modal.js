@@ -1,10 +1,13 @@
 import React from "react";
 import "./Modal.css";
 
+
+
 function Modal({ setOpenModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
+      
         <div className="titleCloseBtn">
           <button
             onClick={() => {
@@ -15,11 +18,9 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1>Are You Sure You Want to Continue?</h1>
+          <h1 className= "modalheader">BOO!</h1>
         </div>
-        <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
-        </div>
+        
         <div className="footer">
           <button
             onClick={() => {
@@ -27,9 +28,9 @@ function Modal({ setOpenModal }) {
             }}
             id="cancelBtn"
           >
-            Cancel
+            That was Scary! GO BACK!
           </button>
-          <button>Continue</button>
+        
         </div>
       </div>
     </div>
