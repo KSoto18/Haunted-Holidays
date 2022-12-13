@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import { AiOutlineMail } from 'react-icons/ai';
+import { GiKey } from 'react-icons/gi';
+
 
 import Auth from '../utils/auth';
 
@@ -41,67 +44,59 @@ const Login = (props) => {
   };
 
   return (
-    <main className="">
 
-      <div className="">
+    <div className="login-form">
 
-        <div className="form-body">
+      <h2 className="loginpg-title">Login</h2>
+      <p className='login-subtitle'>Please fill in this form to log in to your account.</p>
 
-          <h4 className="">Login</h4>
 
-          <div className="">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/profile"> to your profile.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-
-                <button
-                  className="loginsubmit-btn"
-                  style={{ cursor: 'pointer' }}
-                  type="submit">Submit
-                </button>
-
-                <p className='signup-redirect'>
-                  Don't have an account? Sign up <a href="/signup">here</a>.
-                </p>
-
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
-
+      {data ? (
+        <p>
+          Success! You may now head{' '}
+          <Link to="/profile"> to your profile.</Link>
+        </p>
+      ) : (
+        <form onSubmit={handleFormSubmit}>
+          <div className='input-container'>
+            <AiOutlineMail size={'1.25em'} className='icon-loginpg' />
+            <input
+              className="form-input"
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </div>
 
+          <div className='input-container'>
+            <GiKey size={'1.25em'} className='icon-loginpg' />
+            <input className="form-input"
+              placeholder="******" name="password" type="password"
+              value={formState.password} onChange={handleChange} />
+          </div>
+
+          <button
+            className="loginsubmit-btn"
+            style={{ cursor: 'pointer' }}
+            type="submit">Submit
+          </button>
+
+          <p className='signup-redirect'>
+            Don't have an account? Sign up <a href="/signup">here</a>.
+          </p>
+
+        </form>
+      )}
+
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
         </div>
+      )}
 
-      </div>
-
-    </main>
+    </div>
   );
 };
 
