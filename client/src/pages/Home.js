@@ -63,9 +63,6 @@ const Home = () => {
 
           {/* <p id="demo"></p> */}
 
-          {/* <Switch onClick={darkMode} className='darkmode-btn'>Enable dark mode</Switch> */}
-        </Stack>
-
         <ReviewsList reviews={reviews}
           title="Some Feed for Review(s)..." />
 

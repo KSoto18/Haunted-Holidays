@@ -28,7 +28,6 @@ const Header = () => {
         <source src={Whispering} type='audio/mp3'></source>
       </audio> */}
 
-
       <header>
 
         {/* link to home in pg title  */}
@@ -69,12 +68,9 @@ const Header = () => {
               </div>
             </>
           )}
+          </header>
 
         </div>
-
-      </header>
-    </div>
-
   );
 };
 
