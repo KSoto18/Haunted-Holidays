@@ -62,3 +62,17 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+export const REMOVE_REVIEW = gql`
+mutation removeReview ($reviewText: String!, $reviewAuthor: String!) {
+  removeReview(reviewText: $reviewText, reviewAuthor: $reviewAuthor) {
+    _id
+    reviewText
+    reviewAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+    }
+  }
+}
+`;

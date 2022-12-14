@@ -1,5 +1,7 @@
 import React from 'react';
+import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import { REMOVE_REVIEW } from '../../utils/mutations';
 
 
 const ReviewsList = ({
@@ -8,9 +10,28 @@ const ReviewsList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+  const [removeReview, {error}] = useMutation(REMOVE_REVIEW)
+
   if (!reviews) {
     return <h3>No Haunted Stories Yet</h3>;
   }
+
+  const handleRemoveReview = async (review) => {
+    try {
+      const { data } = await removeReview({
+        variables: { review },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (!reviews.length) {
+    return <h3>No Reviews Yet</h3>;
+  }
+
+
+
   return (
     <div>
 
@@ -34,6 +55,7 @@ const ReviewsList = ({
                   <span style={{ fontSize: '1rem' }}>
                     had this thought on {review.createdAt}
                   </span>
+
                 </Link>
 
               ) : (
@@ -57,8 +79,14 @@ const ReviewsList = ({
               to={`/reviews/${review._id}`}>
               Join the discussion on this sighting.
             </Link>
-
+            <button
+                      className="btn btn-sm btn-danger ml-auto"
+                      onClick={() => handleRemoveReview(review)}
+                    >
+                      Delete
+                    </button>
           </div>
+          
 
         ))}
 
