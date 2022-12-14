@@ -60,9 +60,11 @@ nav li {
 }
 
 /* subheader until header pg title  */
+p
 .subheader {
   padding-left: 2px;
   font-family: "Chilly";
+  font-size: large;
   
 }
 
@@ -96,14 +98,22 @@ nav li {
 }
 
 /* footer  */
-.footercopyright {
+.footertag {
   bottom: 0;
   width: 100%;
-  position: fixed;
+ 
   font-size: 12px;
   text-align: center;
+  color: gray;
+  font-size: 15px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+  
+ 
 }
-
 .homepgcontainer {
   border: none;
 }
@@ -321,4 +331,20 @@ nav li {
   font-family: "Chilly";   
   src: local("Chilly"),
     url("./Fonts/ChillyUIBold.ttf") format ("truetype");
+}
+
+#menuBtn {
+  margin: 0;
+  position: fixed;
+  bottom: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bottomCopyright{
+  color:white;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

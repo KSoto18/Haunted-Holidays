@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
 
 import Auth from '../../utils/auth';
 // import Whispering from '../../assets/mp3/whispering.mp3';
 
 // import { useTheme } from './ThemeContext';
-import Modal from "../Modal/Modal";
+
 
 
 const Header = () => {
@@ -18,39 +22,56 @@ const Header = () => {
   // const playEffect = () => {
   //   scareEffect.play();
   // }
-const [modalOpen, setModalOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div>
-
-      {/* <audio id='scare-sound'>
-        <source src={Whispering} type='audio/mp3'></source>
-      </audio> */}
-
+      <div>
       <header>
+    
         {/* link to home in pg title  */}
         <Link className="headertitle" to="/">
-          <h1>Haunted Holiday<GiGhost /></h1>
+          <h1>Haunted Holidays</h1>
         </Link>
-        <p className="subheader">
-          Find your next spooky experience.
+        <p style={{color: "offwhite" }}>
+        <GiGhost /><GiGhost /><GiGhost /> Find your next spooky experience! <GiGhost /><GiGhost /><GiGhost />
         </p>
-        {/* navbar  */}
-        <nav>
-          <ul>
+        </header>
+        </div>
+        <div id="menuBtn">
+        <Button sx={{ color:"black", fontSize:"50", background:"transparent", size:"large" }}
+        variant='contained'
+     
+      onClick={handleClick}
+    >
+      Menu
+    </Button>
+    <Menu  
+    sx={{ color:"black", fontSize:"50" }} variant = "outlined" className='menu'
+      
+    
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      TransitionComponent={Fade}
+    >
+      <MenuItem sx={{ color:"black" }} onClick={event =>  window.location.href='/'}>Home</MenuItem>
+      <MenuItem  sx={{ color:"black" }}onClick={event =>  window.location.href='/profile'}>Profile</MenuItem>
+      <MenuItem sx={{ color:"black" }} onClick={event =>  window.location.href='/about'}>About Us</MenuItem>
+      <MenuItem sx={{ color:"black" }} onClick={event =>  window.location.href='/contact'}>Contact</MenuItem>
+    </Menu>
+    </div>
 
-            <li><Link className='navlink' to="/">Home</Link></li>
-            <li><Link className='navlink' to="/profile">Profile</Link></li>
-            <li><Link className='navlink' to="/about">About Us</Link></li>
-            <li><Link className='navlink' to="/contact">Contact</Link></li>
+  <div className='account-btns'>
 
-
-          </ul>
-        </nav>
-
-
-        <div className='account-btns'>
-
-          {Auth.loggedIn() ? (
+  {Auth.loggedIn() ? (
             <>
               <span>Hello, {Auth.getProfile().data.username}!</span>
               <button className="logout-btn" onClick={logout}
@@ -70,9 +91,10 @@ const [modalOpen, setModalOpen] = useState(false);
           )}
 
         </div>
+       
 
-      </header >
-    </div >
+     
+   </div>
     
   );
 };
