@@ -2,7 +2,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 ​
 export const MapContainer = () => {
   
-  const locations = [];
+  const locations = []
     
   
   

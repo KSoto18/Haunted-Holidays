@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_MARKERS } from '../../utils/queries';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-
+import Ghost from '../../assets/img/icons8-ghost-64.png'
 
 const MapContainer = () => {
   const { loading, data } = useQuery(QUERY_MARKERS);
@@ -40,7 +40,9 @@ const locations = data?.locations;
                 lng: parseInt(location.longitude)
               }
               return (
-              <Marker key={location.location} position={locationObject}/>
+              <Marker key={location.location} position={locationObject}
+              icon={Ghost}
+              />
               )
             })
          }
