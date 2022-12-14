@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: "Chilly";
+  font-family: "Arial";
   font-size: large;
 }
 
@@ -10,7 +10,6 @@ body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
   background-size: cover;
-
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -19,15 +18,12 @@ body {
 .dark-mode {
   background-image: url('./assets/img/scarygirl.png');
   color: white;
-
 }
 
 header {
   margin-top: 1px;
   margin-left: 8px;
-
   height: 150px;
-
 }
 
 /* site name + home link in header  */
@@ -38,20 +34,17 @@ header {
 .headertitle h1 {
   text-decoration: none;
   color: black;
-
   text-align: right;
-  margin-right: 150px;
-  margin-top: -30px;
-
+  margin-right: 40px;
+  margin-top: -60px;
   font-family: "Bloody";
-  font-size: 80px;
-
+  font-size: 75px;
 }
 
 /* subheader until header pg title  */
 .subheader {
   text-align: right;
-  margin-right: 150px;
+  margin-right: 15px;
   margin-bottom: 40px;
 }
 
@@ -104,10 +97,18 @@ header {
 }
 
 .opennav {
-  left: 3;
+  padding: 5px 5px;
   width: 25%;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
+}
+
+.nav-title {
+  margin-top: -35px;
+  margin-left: 40px;
+  font-size: 25px;
+  color: rgb(190, 185, 185);
+  font-family: Bloody;
 }
 
 .closenav {
@@ -119,22 +120,15 @@ header {
   color: white;
 }
 
-#body-closenav {
-  transition: margin-left .5s;
-  padding: 16px;
-
-/* subheader until header pg title  */
-p
-.subheader {
-  padding-left: 2px;
-  font-family: "Chilly";
-  font-size: large;
-  }
-
 /* positioning for login/signup/logout buttons */
-.account-btns {
-  margin-top: 20px;
-  /* margin-left: 88.75%; */
+.login-signup-btn-container {
+  margin-top: -110px;
+  margin-left: 2px;
+}
+
+.logout-btn-container {
+  margin-top: -120px;
+  margin-left: 2px;
 }
 
 /* styling for login/signup/logout buttons */
@@ -143,15 +137,18 @@ p
 .logout-btn {
   border: none;
   border-radius: 5px 5px;
-  padding: 5px 5px;
+  padding: 8px 8px;
   background-color: gray;
   margin: 2px 2px;
   text-decoration: none;
   color: white;
   opacity: 0.7;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  /* font-weight: bold; */
+}
+
+.hello-user-msg {
+  margin-bottom: 8px;
 }
 
 /* hover effect for login/signup/logout buttons */
@@ -170,23 +167,6 @@ p
   cursor: pointer;
 }
 
-/* footer  */
-.footertag {
-  bottom: 0;
-  width: 100%;
- 
-  font-size: 12px;
-  text-align: center;
-  color: gray;
-  font-size: 15px;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%)
-  
- 
-}
 .homepgcontainer {
   border: none;
 }
@@ -388,7 +368,6 @@ p
   margin: 3px;
 }
 
-
 .indiv-about-p {
   padding: 5px;
   font-size: 15px;
@@ -397,29 +376,31 @@ p
 
 /*font*/
 @font-face {
-  font-family: "Bloody";   
+  font-family: "Bloody";
   src: local("BloodyFont"),
     url("../src/Fonts/BLOODY.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Chilly";   
-  src: local("Chilly"),
-    url("./Fonts/ChillyUIBold.ttf") format ("truetype");
+/* footer  */
+.footertag {
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: gray;
+  font-size: 15px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
 }
 
-#menuBtn {
-  margin: 0;
+.footer-copyright {
+  color: white;
   position: fixed;
-  bottom: 90%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.bottomCopyright{
-  color:white;
   font-size: 15px;
-  position: absolute;
   bottom: 0;
-  right: 0;
+  margin-bottom: 17px;
+  margin-left: 10px;
 }
