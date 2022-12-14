@@ -9,6 +9,7 @@ const MapContainer = () => {
   const { loading, data } = useQuery(QUERY_MARKERS);
 // console.log(data?.locations[0]);
 
+// var secretkey = config.SECRET_KEY;
 const locations = data?.locations;
 
 const [ selected, setSelected ] = useState({});

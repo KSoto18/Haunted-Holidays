@@ -12,6 +12,11 @@ import Switch from '@mui/material/Switch';
 import MapContainer from '../components/MapContainer';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Card from '@mui/material/Card';
+
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
 const theme = createTheme({
   status: {
     danger: '#e53e3e',
@@ -65,10 +70,15 @@ const Home = () => {
 
    
      </Stack> 
-
-      <ReviewsList reviews={reviews}
-        title="Some Feed for Review(s)..." />
-
+     <Card className="reviewCard"sx={{ background:"black"}}>
+     <CardContent >
+     <Typography sx={{ fontSize: 20 }}  gutterBottom>
+     <ReviewsList  reviews={reviews}
+        title="Spooky Sightings!" />
+        </Typography>
+     
+        </CardContent>
+</Card>
     </div>
 
     </ThemeProvider>
