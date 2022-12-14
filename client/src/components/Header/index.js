@@ -19,6 +19,7 @@ const Header = () => {
   //   scareEffect.play();
   // }
 
+
   return (
     <div>
 
@@ -68,10 +69,11 @@ const Header = () => {
               </div>
             </>
           )}
+          </div>
           </header>
-
+          
         </div>
-  );
-};
+      );
+          }  
 
 export default Header;
