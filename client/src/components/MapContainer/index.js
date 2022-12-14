@@ -12,13 +12,24 @@ const MapContainer = () => {
 const locations = data?.locations;
 
 const [ selected, setSelected ] = useState({});
+const [isOpen, setisOpen] = useState(false);
+const [location, setLocation] = useState({});
+// const [coordinates, setCoordinates] = useState({});
   
-const onSelect = location => {
-    setSelected(location);
+const onSelect = (object, location) => {
+  console.log(location);
+    setSelected(object);
+    setisOpen(true);
+    setLocation(location);
+    // console.log(location.latitude);
+    // const locationClick = {
+    //   lat: parseInt(location.latitude),
+    //   lng: parseInt(location.longitude),
+    // };
+    // setCoordinates(locationClick);
+    
 
   }
-
-
   
   const mapStyles = {        
     height: "100vh",
@@ -27,7 +38,6 @@ const onSelect = location => {
   const defaultCenter = {
     lat: 40, lng: -100
   }
-
   
   return (
      <LoadScript
@@ -37,35 +47,31 @@ const onSelect = location => {
           zoom={5}
           center={defaultCenter}>
 
-{/* <Marker key={"test"} position={{lat: 42.9621061, lng: -85.50489309999999}}/> */}
-
              {
-            locations?.map(location => {
+            locations?.map((location, index) => {
               const locationObject = {
                 lat: parseInt(location.latitude),
                 lng: parseInt(location.longitude),
               }
              
               return (
-              <Marker key={location.location} position={locationObject}
-              icon={Ghost} onClick={() => onSelect(location)}
+              <Marker key={index} position={locationObject}
+              icon={Ghost} onClick={() => onSelect(locationObject, location)}
               />
               )
             })
          }
          {
-
-            selected.location &&
+          
+            isOpen &&
             (
-              
               <InfoWindow 
-              marker={selected.location}
+              position={selected}
               clickable={true}
-              onCloseClick={() => setSelected({})}
+              onCloseClick={() => setisOpen(false)}
             >
-              <p>{selected.location.location}</p>
+              <h1 style={{ color: "black"}}>{location.location}</h1>
             </InfoWindow>
-
             )
          }
 
