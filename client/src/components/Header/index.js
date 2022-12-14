@@ -30,19 +30,16 @@ const Header = () => {
         <p className="subheader">
           Find your next spooky experience.
         </p>
-        {/* navbar  */}
-        <nav>
-          <ul>
 
+        {/* navbar  */}
+        {/* <nav>
+          <ul>
             <li><Link className='navlink' to="/">Home</Link></li>
             <li><Link className='navlink' to="/profile">Profile</Link></li>
             <li><Link className='navlink' to="/about">About Us</Link></li>
             <li><Link className='navlink' to="/contact">Contact</Link></li>
-
-
           </ul>
-        </nav>
-
+        </nav> */}
 
         <div className='account-btns'>
 
