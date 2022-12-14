@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_MARKERS } from '../../utils/queries';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import {useState} from 'react'
 
 
 const MapContainer = () => {
@@ -16,6 +17,12 @@ const locations = data?.locations;
   
   const defaultCenter = {
     lat: 40, lng: -100
+  }
+
+  const [ selected, setSelected ] = useState({});
+  
+  const onSelect = location => {
+    setSelected(location);
   }
 
   const spookyMarkers = {
@@ -37,14 +44,32 @@ const locations = data?.locations;
             locations?.map(location => {
               const locationObject = {
                 lat: parseInt(location.latitude),
-                lng: parseInt(location.longitude)
+                lng: parseInt(location.longitude),
+                name: location.location,
               }
+            // console.log(locationObject);
               return (
-              <Marker key={location.location} position={locationObject}/>
+              <Marker key={location._id} position={locationObject}
+              onClick={() => onSelect(location)}
+              />
               )
             })
          }
-
+         
+{
+  
+  selected.location &&
+  (
+    <InfoWindow
+    position={selected.location}
+    clickable = {true}
+    onCloseClick ={() => setSelected({})}
+    >
+      
+      <p>{selected.location}</p>
+    </InfoWindow>
+  )
+}
           </GoogleMap>
         
      </LoadScript>

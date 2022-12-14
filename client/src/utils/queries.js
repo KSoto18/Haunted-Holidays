@@ -22,8 +22,10 @@ query user {
 export const QUERY_MARKERS = gql`
 query locations{
 locations{
+  _id
   latitude
   longitude
+  location
 }
 }
 `;
