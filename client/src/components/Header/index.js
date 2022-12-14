@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
+import SideNav from '../SideNav';
 // import Whispering from '../../assets/mp3/whispering.mp3';
 
 const Header = () => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+  // const logout = (event) => {
+  //   event.preventDefault();
+  //   Auth.logout();
+  // };
 
   // var scareEffect = document.getElementById('scare-sound');
   // const playEffect = () => {
@@ -18,11 +19,14 @@ const Header = () => {
   return (
     <div>
 
+      <SideNav />
+
       {/* <audio id='scare-sound'>
         <source src={Whispering} type='audio/mp3'></source>
       </audio> */}
 
       <header>
+
         {/* link to home in pg title  */}
         <Link className="headertitle" to="/">
           <h1>Haunted Holiday<GiGhost /></h1>
@@ -31,17 +35,7 @@ const Header = () => {
           Find your next spooky experience.
         </p>
 
-        {/* navbar  */}
-        {/* <nav>
-          <ul>
-            <li><Link className='navlink' to="/">Home</Link></li>
-            <li><Link className='navlink' to="/profile">Profile</Link></li>
-            <li><Link className='navlink' to="/about">About Us</Link></li>
-            <li><Link className='navlink' to="/contact">Contact</Link></li>
-          </ul>
-        </nav> */}
-
-        <div className='account-btns'>
+        {/* <div className='account-btns'>
 
           {Auth.loggedIn() ? (
             <>
@@ -62,7 +56,7 @@ const Header = () => {
             </>
           )}
 
-        </div>
+        </div> */}
 
       </header >
     </div >

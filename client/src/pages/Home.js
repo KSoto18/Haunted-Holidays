@@ -9,11 +9,6 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
   const reviews = data?.reviews || [];
 
-  const darkMode = () => {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-  }
-
   var scareEffect = document.getElementById('scare-sound');
   // .autoplay;
   // document.getElementById('demo').innerHTML = scareEffect;
@@ -41,8 +36,6 @@ const Home = () => {
       </button>
 
       {/* <p id="demo"></p> */}
-
-      <button onClick={darkMode} className='darkmode-btn'>Enable dark mode</button>
 
       <ReviewsList reviews={reviews}
         title="Some Feed for Review(s)..." />
