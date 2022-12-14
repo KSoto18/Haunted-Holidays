@@ -45,33 +45,28 @@ const Home = () => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className=''>
 
-        {/* <audio id='scare-sound' autoplay> */}
-        <audio id='scare-sound'>
-          <source src={ScareSound} type='audio/mp3'></source>
-        </audio>
-        <Stack direction="row" spacing={2}>
-          <Button size="small" variant="contained" color="neutral" onClick={playEffect} type="button" className='sound-btn'>
-            Enter at your own risk...
-          </Button>
+    <div className=''>
 
-          <Button size="small" variant="contained" color='primary' font-weight="bold" onClick={pauseEffect} type="button" className='sound-btn'>
-            Make it stop, I'm too scared!
-          </Button>
+      {/* <audio id='scare-sound' autoplay> */}
+      <audio id='scare-sound'>
+        <source src={ScareSound} type='audio/mp3'></source>
+      </audio>
 
-          {/* <p id="demo"></p> */}
+      <button onClick={playEffect} className='sound-btn'>
+        Enter at your own risk...
+      </button>
 
-          {/* <Switch onClick={darkMode} className='darkmode-btn'>Enable dark mode</Switch> */}
-        </Stack>
+      <button onClick={pauseEffect} className='sound-btn'>
+        Make it stop, I'm too scared!
+      </button>
 
-        <ReviewsList reviews={reviews}
-          title="Some Feed for Review(s)..." />
 
-      </div>
+      <ReviewsList reviews={reviews}
+        title="Some Feed for Review(s)..." />
 
-    </ThemeProvider>
+    </div>
+
   );
 };
 

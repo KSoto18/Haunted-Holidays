@@ -24,16 +24,16 @@ const ReviewForm = () => {
       } catch (e) {
         console.error(e);
       }
-        // update me object's cache
-        // const { me } = cache.readQuery({ query: QUERY_ME });
-        // cache.writeQuery({
-        //   query: QUERY_ME,
-        //   data: { me: { ...me, reviews: [...me.reviews, addReview] } },
-        // });
+      // update me object's cache
+      // const { me } = cache.readQuery({ query: QUERY_ME });
+      // cache.writeQuery({
+      //   query: QUERY_ME,
+      //   data: { me: { ...me, reviews: [...me.reviews, addReview] } },
+      // });
     },
   });
 
-  
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -68,9 +68,8 @@ const ReviewForm = () => {
       {Auth.loggedIn() ? (
         <>
           <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
+            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
+              }`}
           >
             Character Count: {characterCount}/280
           </p>
@@ -105,7 +104,7 @@ const ReviewForm = () => {
       ) : (
         <p>
           You need to be logged in to share your sightings. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">login</Link> or <Link to="/signup">signup</Link>.
         </p>
       )}
     </div>

@@ -12,7 +12,7 @@ const ReviewsList = ({
     return <h3>No Haunted Stories Yet</h3>;
   }
   return (
-    <div>
+    <div className='review-list-container'>
 
       {showTitle && <h3>{title}</h3>}
       {reviews &&

@@ -171,6 +171,55 @@ header {
   border: none;
 }
 
+.sound-btn {
+  background-color: gray;
+  border: none;
+  border-radius: 5px 5px;
+  padding: 5px;
+  margin-right: 3px;
+  opacity: 0.7;
+}
+
+.sound-btn:hover {
+  opacity: 1;
+}
+
+.single-review-container {
+  border: 1px solid white;
+  border-radius: 10px 10px;
+  padding: 10px;
+  backdrop-filter: blur(5px);
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 15px;
+}
+
+/* user comment input thats posted */
+.comment-block {
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.review-list-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.comment-form-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.comment-list-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
 .addaplace-btn {
   border: none;
   border-radius: 5px 5px;
