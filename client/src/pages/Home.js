@@ -45,31 +45,28 @@ const Home = () => {
   }
 
   return (
-<ThemeProvider theme={theme}>
-    <div className=''>
+    <ThemeProvider theme={theme}>
+      <div className=''>
 
-      {/* <audio id='scare-sound' autoplay> */}
-      <audio id='scare-sound'>
-        <source src={ScareSound} type='audio/mp3'></source>
-      </audio>
-      <Stack direction="row" spacing={2}>
-      <Button  size="small" variant="contained" color="neutral"  onClick={playEffect} type="button" className='sound-btn'>
-        Enter at your own risk...
-      </Button>
+        {/* <audio id='scare-sound' autoplay> */}
+        <audio id='scare-sound'>
+          <source src={ScareSound} type='audio/mp3'></source>
+        </audio>
+        <Stack direction="row" spacing={2}>
+          <Button size="small" variant="contained" color="neutral" onClick={playEffect} type="button" className='sound-btn'>
+            Enter at your own risk...
+          </Button>
 
-      <Button  size="small" variant="contained" color='primary' font-weight="bold"  onClick={pauseEffect} type="button" className='sound-btn'>
-        Make it stop, I'm too scared!
-      </Button>
+          <Button size="small" variant="contained" color='primary' font-weight="bold" onClick={pauseEffect} type="button" className='sound-btn'>
+            Make it stop, I'm too scared!
+          </Button>
 
-      {/* <p id="demo"></p> */}
+          {/* <p id="demo"></p> */}
 
-   
-     </Stack> 
+        <ReviewsList reviews={reviews}
+          title="Some Feed for Review(s)..." />
 
-      <ReviewsList reviews={reviews}
-        title="Some Feed for Review(s)..." />
-
-    </div>
+      </div>
 
     </ThemeProvider>
   );
