@@ -8,6 +8,7 @@ import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { SlLogin, SlLogout } from 'react-icons/sl';
 import { FiUserPlus } from 'react-icons/fi';
+import Switch from '@mui/material/Switch';
 
 const SideNav = (props) => {
 
@@ -75,7 +76,14 @@ const SideNav = (props) => {
                     </div>
 
                     {/* dark mode button */}
-                    <button onClick={darkMode} className='darkmode-btn'>Enable dark mode</button>
+                    
+                    
+                    <Switch onClick={darkMode} className="toggleBtn">Enable dark mode</Switch>
+                    <div className="darkModeScared">
+                        <p>Scared?</p>
+                    </div>
+                    {/* <button onClick={darkMode} className='darkmode-btn'>Enable dark mode</button> */}
+                    
                 </div>
 
             </div>
