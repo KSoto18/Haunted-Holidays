@@ -419,3 +419,12 @@ header {
   margin: 10px;
 
 }
+
+.lost {
+  font-family: "Bloody";
+  font-size: 80px;
+  position: relative;
+  top: 200px;
+  color: red
+
+}

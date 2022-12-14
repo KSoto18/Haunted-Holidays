@@ -8,7 +8,7 @@ const ErrorPage = () => {
 
         <div className="errorpage">
            <div>
-           <container>YOU LOOK LOST</container>
+           <container className="lost">YOU LOOK LOST</container>
            </div>
            
         </div>
