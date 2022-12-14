@@ -122,6 +122,7 @@ header {
 #body-closenav {
   transition: margin-left .5s;
   padding: 16px;
+}
 
 /* subheader until header pg title  */
 p
