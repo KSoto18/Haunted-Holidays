@@ -45,6 +45,7 @@ const Home = () => {
   }
 
   return (
+    <div>
     <ThemeProvider theme={theme}>
       <div className=''>
 
@@ -52,7 +53,7 @@ const Home = () => {
         <audio id='scare-sound'>
           <source src={ScareSound} type='audio/mp3'></source>
         </audio>
-        <Stack direction="row" spacing={2}>
+       
           <Button size="small" variant="contained" color="neutral" onClick={playEffect} type="button" className='sound-btn'>
             Enter at your own risk...
           </Button>
@@ -69,6 +70,7 @@ const Home = () => {
       </div>
 
     </ThemeProvider>
+    </div>
   );
 };
 
