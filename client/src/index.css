@@ -183,6 +183,8 @@ p
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  flex: auto;
+  font-family: "Bloody";
 }
 /* hover effect for login/signup/logout buttons */
 .login-btn:hover,
