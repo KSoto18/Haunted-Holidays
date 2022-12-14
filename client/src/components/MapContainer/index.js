@@ -1,8 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_MARKERS } from '../../utils/queries';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import Ghost from '../../assets/img/icons8-ghost-64.png'
+import { useState } from "react";
 
 const MapContainer = () => {
   const { loading, data } = useQuery(QUERY_MARKERS);
@@ -10,6 +11,15 @@ const MapContainer = () => {
 
 const locations = data?.locations;
 
+const [ selected, setSelected ] = useState({});
+  
+const onSelect = location => {
+    setSelected(location);
+
+  }
+
+
+  
   const mapStyles = {        
     height: "100vh",
     width: "100%"};
@@ -18,10 +28,6 @@ const locations = data?.locations;
     lat: 40, lng: -100
   }
 
-  const spookyMarkers = {
-
-    
-  }
   
   return (
      <LoadScript
@@ -37,14 +43,30 @@ const locations = data?.locations;
             locations?.map(location => {
               const locationObject = {
                 lat: parseInt(location.latitude),
-                lng: parseInt(location.longitude)
+                lng: parseInt(location.longitude),
               }
+             
               return (
               <Marker key={location.location} position={locationObject}
-              icon={Ghost}
+              icon={Ghost} onClick={() => onSelect(location)}
               />
               )
             })
+         }
+         {
+
+            selected.location &&
+            (
+              
+              <InfoWindow 
+              marker={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+              <p>{selected.location.location}</p>
+            </InfoWindow>
+
+            )
          }
 
           </GoogleMap>
