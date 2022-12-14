@@ -49,6 +49,7 @@ const typeDefs = gql`
     reviews(username: String): [Review]
     review(reviewId: ID!): Review
     locations: [Location]
+    location(_id: ID!): Location
   }
 
   type Mutation {

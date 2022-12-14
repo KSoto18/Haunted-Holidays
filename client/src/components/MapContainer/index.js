@@ -6,14 +6,22 @@ import { useState } from 'react';
 
 
 
+
 const MapContainer = () => {
   const { loading, data } = useQuery(QUERY_MARKERS);
   // console.log(data?.locations[0]);
 
   const [selected, setSelected] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [location, setLocation] = useState({});
+  const [description, setDescription] = useState({});
 
-  const onSelect = location => {
-    setSelected(location);
+  const onSelect = (object, location) => {
+    setSelected(object);
+    setIsOpen(true);
+    setLocation(location);
+    setDescription(description);
+    console.log(location);
   }
 
   const locations = data?.locations;
@@ -21,13 +29,14 @@ const MapContainer = () => {
 
 
   const mapStyles = {
-    height: "100vh",
-    width: "100%"
+    height: "80vh",
+    width: "80%"
   };
 
   const defaultCenter = {
-    lat: 40, lng: -100
+    lat: 27.64891, lng: -81.550255
   }
+
 
 
   return (
@@ -37,8 +46,6 @@ const MapContainer = () => {
         mapContainerStyle={mapStyles}
         zoom={5}
         center={defaultCenter}>
-
-        {/* <Marker key={"test"} position={{lat: 42.9621061, lng: -85.50489309999999}}/> */}
 
         {
           locations?.map(location => {
@@ -52,23 +59,26 @@ const MapContainer = () => {
             
             return (
               <Marker key={location._id} position={locationObject}
-                onClick={() => onSelect(location)} />
+                onClick={() => onSelect(locationObject, location)} />
+                
             )
+      
           })
         }
 
         {
 
-          selected.location &&
+          isOpen &&
 
 
           <InfoWindow
-            position={selected.locationObject}
+            position={selected}
             clickable={true}
-            onCloseClick={() => setSelected({})}>
-           
-            <h1>HELLO</h1>
-            
+            onCloseClick={() => setIsOpen(false)}>
+            <div>
+            <p style={{color: "black"}}>{location.location}</p>
+            <p style={{color: "black"}}>{location.description}</p>
+            </div>
             
           </InfoWindow>
 

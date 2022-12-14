@@ -23,6 +23,10 @@ const resolvers = {
 
     locations: async ()=> {
       return Location.find({})
+    },
+
+    location: async ()=> {
+      return Location.findOne({ _id: location._id});
     }
    
   },

@@ -26,6 +26,7 @@ locations{
   longitude
   location
   _id
+  description
 }
 }
 `;
