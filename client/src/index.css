@@ -404,3 +404,18 @@ header {
   margin-bottom: 17px;
   margin-left: 10px;
 }
+
+.errorpage {
+  display: flex;
+  position: absolute;
+  left: 30%;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./assets/img/scary-ghost.gif');
+  background-size: 550px;
+  width: 550px;
+  height: 550px;
+  border: solid black 10px;
+  margin: 10px;
+
+}

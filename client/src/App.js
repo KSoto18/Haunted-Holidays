@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import {
   ApolloClient,
   InMemoryCache,
@@ -10,14 +10,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleReview from './pages/SingleReview';
+import ErrorPage from './pages/404Page'
 import Profile from './pages/Profile'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BackToTopBtn from './components/BackToTopBtn';
 import About from './components/About';
 import Contact from './components/Contact';
-import MapContainer from './components/MapContainer';
+
 
 import "./Fonts/BLOODY.ttf"
 import "./Fonts/ChillyUIBold.ttf"
@@ -51,23 +51,23 @@ const client = new ApolloClient({
 
 
 function App() {
-  
+
   return (
-    
+
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Header />
-         
+
           <div>
             <Routes>
               <Route path="/"
                 element={<Home />}
               />
 
-              <Route path="/login" 
-              element={<Login />}
-               
+              <Route path="/login"
+                element={<Login />}
+
 
               />
 
@@ -86,13 +86,10 @@ function App() {
               <Route path="/profile"
                 element={<Profile />}
               />
-              {/* <Route path="/profiles/:username"
-                element={<Profile />}
-              /> */}
 
               <Route
-                path="/reviews/:reviewId"
-                element={<SingleReview />}
+                path="*"
+                element={<ErrorPage />}
               />
 
 
@@ -103,11 +100,11 @@ function App() {
           <BackToTopBtn />
         </div>
       </Router>
-      
+
     </ApolloProvider>
-    
+
   );
-  
+
 }
 
 export default App;

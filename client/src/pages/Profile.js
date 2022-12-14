@@ -51,7 +51,7 @@ console.log(data);
 
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {user? `${user.username}'s` : 'your'} profile.
+         <h1 style={{fontSize: "80px", textAlign: "end"}}>Viewing {user? `${user.username}'s` : 'your'} profile.</h1>
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
