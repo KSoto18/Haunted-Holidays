@@ -33,7 +33,7 @@ const ReviewsList = ({
     console.log('testing')
     try {
       const { data } = await removeReview({
-        variables: { review },
+        variables: { reviewId: review },
       });
     } catch (err) {
       console.error(err);
@@ -95,7 +95,7 @@ const ReviewsList = ({
             
             <button
                       className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveReview(review)}
+                      onClick={() => handleRemoveReview(review._id)}
                     >
                       <DeleteIcon/>
                     </button>

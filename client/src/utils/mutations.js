@@ -63,8 +63,8 @@ export const ADD_COMMENT = gql`
   }
 `;
 export const REMOVE_REVIEW = gql`
-mutation removeReview ($review: String!) {
-  removeReview(review: $review) {
+mutation removeReview ($reviewId: ID!) {
+  removeReview(reviewId: $reviewId) {
     _id
     reviewText
     reviewAuthor
