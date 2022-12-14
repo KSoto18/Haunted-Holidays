@@ -2,21 +2,35 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { REMOVE_REVIEW } from '../../utils/mutations';
-
+import DeleteIcon from '@mui/icons-material/Delete'
+import { QUERY_USER } from '../../utils/queries';
 
 const ReviewsList = ({
   reviews,
   title,
   showTitle = true,
   showUsername = true,
+  isLoggedInUser = false
 }) => {
-  const [removeReview, {error}] = useMutation(REMOVE_REVIEW)
+  const [removeReview, {error}] = useMutation(REMOVE_REVIEW, {
+    update(cache, {data: {removeReview} }) {
+      try{
+        cache.writeQuery({
+          query: QUERY_USER,
+          data: {user: removeReview},
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   if (!reviews) {
     return <h3>No Haunted Stories Yet</h3>;
   }
 
   const handleRemoveReview = async (review) => {
+    console.log('testing')
     try {
       const { data } = await removeReview({
         variables: { review },
@@ -45,18 +59,15 @@ const ReviewsList = ({
 
               {showUsername ? (
 
-                <Link
-                  className="text-light"
-
-                  to={`/profiles/${review.reviewAuthor}`}>
+                <div>
 
                   {review.reviewAuthor} <br />
 
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {review.createdAt}
+                    had this spooky sighting on {review.createdAt}
                   </span>
 
-                </Link>
+                  </div>
 
               ) : (
 
@@ -77,20 +88,26 @@ const ReviewsList = ({
             <Link
               className=''
               to={`/reviews/${review._id}`}>
-              Join the discussion on this sighting.
+                
+              Add a comment
+              
             </Link>
+            
             <button
                       className="btn btn-sm btn-danger ml-auto"
                       onClick={() => handleRemoveReview(review)}
                     >
-                      Delete
+                      <DeleteIcon/>
                     </button>
           </div>
           
 
         ))}
-
-    </div>
+ {error && (
+         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+         )}
+         </div>
+      
   );
 };
 
