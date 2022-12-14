@@ -9,6 +9,20 @@ const typeDefs = gql`
     reviews: [Review]!
   }
 
+  type Location {
+    _id: ID
+    city: String
+    country: String
+    description: String
+    location: String
+    state: String
+    state_abbrev: String
+    longitude: String
+    latitude: String
+    city_latitude: String
+    city_longitude: String
+  }
+
   type Review {
     _id: ID
     reviewText: String
@@ -34,6 +48,7 @@ const typeDefs = gql`
     user: User
     reviews(username: String): [Review]
     review(reviewId: ID!): Review
+    locations: [Location]
   }
 
   type Mutation {
@@ -48,6 +63,8 @@ const typeDefs = gql`
     removeReview(reviewId: ID!): Review
     removeComment(reviewId: ID!, commentId: ID!): Review
   }
+
 `;
 
 module.exports = typeDefs;
+

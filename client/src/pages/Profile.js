@@ -8,8 +8,10 @@ import ReviewsList from '../components/ReviewsList';
 import { QUERY_USER } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
+  
   // const { username: userParam } = useParams();
   // const reviews = data?.reviews || [];
 
@@ -44,8 +46,9 @@ console.log(data);
   }
 
   return (
+    
     <div>
-{/* {loading && <div>loading...</div>} */}
+
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {user? `${user.username}'s` : 'your'} profile.
@@ -67,7 +70,10 @@ console.log(data);
           <div>
             <ReviewForm />
           </div>
-        
+    
+      </div>
+      <div>
+        <MapContainer />
       </div>
     </div>
   );

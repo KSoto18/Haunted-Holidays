@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const ReviewsList = ({
   reviews,
   title,
@@ -25,7 +26,9 @@ const ReviewsList = ({
 
                 <Link
                   className="text-light"
+
                   to={`/profiles/${review.reviewAuthor}`}>
+
                   {review.reviewAuthor} <br />
 
                   <span style={{ fontSize: '1rem' }}>

@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Chilly";
+  font-size: large;
 }
 
 body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
   background-size: cover;
+
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -17,13 +19,15 @@ body {
 .dark-mode {
   background-image: url('./assets/img/scarygirl.png');
   color: white;
+
 }
 
 header {
   margin-top: 1px;
   margin-left: 8px;
-  /* width: 70%; */
-  /* height: 150px; */
+
+  height: 150px;
+
 }
 
 /* site name + home link in header  */
@@ -34,10 +38,14 @@ header {
 .headertitle h1 {
   text-decoration: none;
   color: black;
+
   text-align: right;
   margin-right: 150px;
   margin-top: -30px;
-  font-size: 45px;
+
+  font-family: "Bloody";
+  font-size: 80px;
+
 }
 
 /* subheader until header pg title  */
@@ -114,7 +122,14 @@ header {
 #body-closenav {
   transition: margin-left .5s;
   padding: 16px;
-}
+
+/* subheader until header pg title  */
+p
+.subheader {
+  padding-left: 2px;
+  font-family: "Chilly";
+  font-size: large;
+  }
 
 /* positioning for login/signup/logout buttons */
 .account-btns {
@@ -156,14 +171,22 @@ header {
 }
 
 /* footer  */
-.footercopyright {
+.footertag {
   bottom: 0;
   width: 100%;
-  position: fixed;
+ 
   font-size: 12px;
   text-align: center;
+  color: gray;
+  font-size: 15px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+  
+ 
 }
-
 .homepgcontainer {
   border: none;
 }
@@ -365,8 +388,38 @@ header {
   margin: 3px;
 }
 
+
 .indiv-about-p {
   padding: 5px;
   font-size: 15px;
   margin-bottom: 5px;
+}
+
+/*font*/
+@font-face {
+  font-family: "Bloody";   
+  src: local("BloodyFont"),
+    url("../src/Fonts/BLOODY.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Chilly";   
+  src: local("Chilly"),
+    url("./Fonts/ChillyUIBold.ttf") format ("truetype");
+}
+
+#menuBtn {
+  margin: 0;
+  position: fixed;
+  bottom: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bottomCopyright{
+  color:white;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
