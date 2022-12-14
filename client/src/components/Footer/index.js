@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Modal from "../Modal/Modal";
 import Button from '@mui/material/Button';
 import BottomNavigation from '@mui/material/BottomNavigation';
-import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
@@ -25,18 +24,20 @@ const Footer = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction  label="Github" icon={<GitHubIcon />} />
+         
+        <BottomNavigationAction  href='https://github.com/KSoto18/Haunted-Holidays'  label="Github" icon={<GitHubIcon />} />
 
         <BottomNavigationAction   label="Favorites" icon={<FavoriteIcon />} />
 
-        <BottomNavigationAction   label="Search" icon={<LocationOnIcon />} />
+        <BottomNavigationAction  onClick={event =>  window.location.href='/profile'} label="Explore" icon={<LocationOnIcon />} />
+        <p className= "bottomCopyright">
+        © 2022 Four Loopin' Ladies
+      </p>
       </BottomNavigation>
+     
     </Box>
   );
 }
-//     <footer>
-//        <Button sx={{ background: "black",  position:"absolute",
-//   bottom:100, left:"90%"}} variant = "contained"
         
 //         onClick={() => {
 //           setModalOpen(true);

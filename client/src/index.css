@@ -340,3 +340,10 @@ p
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+.bottomCopyright{
+  color:white;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
