@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 import SideNav from '../SideNav';
 
 import Button from '@mui/material/Button';
@@ -45,7 +45,7 @@ const Header = () => {
       </audio> */}
 
 
-      <div>
+     
       <header>
     
         {/* link to home in pg title  */}
@@ -56,7 +56,7 @@ const Header = () => {
         <GiGhost /><GiGhost /><GiGhost /> Find your next spooky experience! <GiGhost /><GiGhost /><GiGhost />
         </p>
 
-          )}
+          </header>
 
 
 
@@ -65,7 +65,7 @@ const Header = () => {
 
 
      
-   </div>
+   
     
   );
 };
