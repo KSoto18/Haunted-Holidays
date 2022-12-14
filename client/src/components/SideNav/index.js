@@ -5,6 +5,7 @@ import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
+import { GiDamagedHouse } from 'react-icons/gi';
 
 const SideNav = (props) => {
 
@@ -42,6 +43,14 @@ const SideNav = (props) => {
                         <AiOutlineHome /> Home</a>
                     <a className="navlink" href="/profile">
                         <CgProfile /> Profile</a>
+
+                    <div>
+                        <a className="sub-navlink" href="/locationslist">
+                            <GiDamagedHouse />
+                            View Haunted Locations</a>
+                    </div>
+
+
                     <a className="navlink" href="/contact">
                         <TbMessage2Share /> Contact</a>
                     <a className="navlink" href="/about">
