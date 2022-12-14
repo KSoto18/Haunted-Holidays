@@ -14,6 +14,7 @@ const locations = data?.locations;
 const [ selected, setSelected ] = useState({});
 const [isOpen, setisOpen] = useState(false);
 const [location, setLocation] = useState({});
+const [description, setDescription] = useState({});
 // const [coordinates, setCoordinates] = useState({});
   
 const onSelect = (object, location) => {
@@ -21,6 +22,7 @@ const onSelect = (object, location) => {
     setSelected(object);
     setisOpen(true);
     setLocation(location);
+    setDescription(description);
     // console.log(location.latitude);
     // const locationClick = {
     //   lat: parseInt(location.latitude),
@@ -70,7 +72,10 @@ const onSelect = (object, location) => {
               clickable={true}
               onCloseClick={() => setisOpen(false)}
             >
+              <div>
               <h1 style={{ color: "black"}}>{location.location}</h1>
+              <h2 style={{ color: "black"}}>{location.description}</h2>
+              </div>
             </InfoWindow>
             )
          }
