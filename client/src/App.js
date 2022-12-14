@@ -14,7 +14,7 @@ import SingleReview from './pages/SingleReview';
 import Profile from './pages/Profile'
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import BackToTopBtn from './components/BackToTopBtn';
 import About from './components/About';
 import Contact from './components/Contact';
 import MapContainer from './components/MapContainer';
@@ -61,21 +61,22 @@ function App() {
          
           <div>
             <Routes>
-              <Route path="/" 
-              element={<Home />} 
+              <Route path="/"
+                element={<Home />}
               />
 
               <Route path="/login" 
               element={<Login />}
                
+
               />
 
-              <Route path="/signup" 
-              element={<Signup />} 
+              <Route path="/signup"
+                element={<Signup />}
               />
 
-              <Route path="/about" 
-              element={<About />} 
+              <Route path="/about"
+                element={<About />}
               />
 
               <Route path="/contact"
@@ -85,20 +86,21 @@ function App() {
               <Route path="/profile"
                 element={<Profile />}
               />
-                {/* <Route path="/profiles/:username"
+              {/* <Route path="/profiles/:username"
                 element={<Profile />}
               /> */}
-              
+
               <Route
                 path="/reviews/:reviewId"
-                 element={<SingleReview />} 
-                 />
-                 
+                element={<SingleReview />}
+              />
+
 
             </Routes>
           </div>
 
           <Footer />
+          <BackToTopBtn />
         </div>
       </Router>
       
