@@ -49,6 +49,8 @@ const SideNav = (props) => {
                         <TbMessage2Share /> Contact</a>
                     <a className="navlink" href="/about">
                         <HiUserGroup /> About Us</a>
+                    <a className="navlink" href="/forum">
+                         Forum </a>
                     <a className="navlink" target="_blank"
                         rel="noreferrer"
                         href="https://github.com/KSoto18/Haunted-Holidays">
