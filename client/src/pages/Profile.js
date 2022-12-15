@@ -1,14 +1,12 @@
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+// import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import ReviewForm from '../components/ReviewForm';
 import ReviewsList from '../components/ReviewsList';
-
 import { QUERY_USER } from '../utils/queries';
-
-import Auth from '../utils/auth';
-import MapContainer from '../components/MapContainer';
+import { GiSpookyHouse } from 'react-icons/gi';
+// import Auth from '../utils/auth';
+// import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
 
@@ -50,8 +48,12 @@ const Profile = () => {
 
     <div className="profilepg-container">
 
-      <h2 className="user-profile-pgtitle">
+      {/* <h2 className="user-profile-pgtitle">
         Viewing {user ? `${user.username}'s` : 'your'} profile.
+      </h2> */}
+
+      <h2 className='hl-redirect-btn'>
+        <a href='/hauntedlocations'>Explore Haunted Locations <GiSpookyHouse size={'1.8em'} /></a>
       </h2>
 
       <div className='reviewform-profilepg'>
@@ -61,7 +63,7 @@ const Profile = () => {
       <div className="userreviews-container">
 
         <h2 className="user-reviews-title">
-          {user ? `${user.username}'s` : 'your'} reviews.
+          {user ? `${user.username}'s` : 'your'} reviews
         </h2>
 
         <ReviewsList
