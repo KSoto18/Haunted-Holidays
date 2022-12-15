@@ -5,7 +5,7 @@ import { ADD_COMMENT } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 import { MdAddComment } from 'react-icons/md';
 
-const CommentForm = ({ reviewsId }) => {
+const CommentForm = ({ reviewId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -17,7 +17,7 @@ const CommentForm = ({ reviewsId }) => {
     try {
       const { data } = await addComment({
         variables: {
-          reviewsId,
+          reviewId,
           commentText,
           commentAuthor: Auth.getProfile().data.username,
         },

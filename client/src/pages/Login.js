@@ -31,6 +31,7 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
+  
     
     try {
       const { data } = await login({
@@ -38,6 +39,7 @@ const Login = (props) => {
       });
      
       Auth.login(data.login.token);
+      window.location.replace("/profile");
     
     } catch (e) {
       console.error(e);
