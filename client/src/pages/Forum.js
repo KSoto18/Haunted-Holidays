@@ -14,12 +14,9 @@ const Forum = () => {
 
     return (
 
-        <div>
-
-            <ReviewsList
-                reviews={reviews}
-                title="Some Feed for Review(s)..."
-            />
+        <div className='forumpg-container'>
+            <h2 className='forumpg-title'>Haunted Forum</h2>
+            <ReviewsList reviews={reviews} title='User Reviews' />
         </div>
 
     );

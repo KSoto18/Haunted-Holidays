@@ -2,12 +2,11 @@
 import React from 'react';
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
-import { QUERY_USER } from '../utils/queries';
-import { GiSpookyHouse } from 'react-icons/gi';
+// import { GiSpookyHouse } from 'react-icons/gi';
+// import DarkMap from '../assets/img/darkmap.png';
+import { MdOutlineForum } from 'react-icons/md';
 // import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
-
 
 // Components
 import ReviewForm from '../components/ReviewForm';
@@ -27,7 +26,7 @@ const Profile = () => {
 
 
   // console.log(user);
- 
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -45,35 +44,43 @@ const Profile = () => {
 
   return (
 
+    <div>
+      <div align='center' className='redirect-btns-profilepg'>
 
-    <div className="profilepg-container">
+        <div className='hl-redirect'>
+          <a href='/hauntedlocations'>
+            <div className='darkmapimg'>
+              <p className='hl-redirect-link'>
+                View Haunted Locations</p>
+            </div>
+          </a>
+        </div>
 
-      {/* <h2 className="user-profile-pgtitle">
-        Viewing {user ? `${user.username}'s` : 'your'} profile.
-      </h2> */}
-
-      <h2 className='hl-redirect-btn'>
-        <a href='/hauntedlocations'>Explore Haunted Locations <GiSpookyHouse size={'1.8em'} /></a>
-      </h2>
-
-      <div className='reviewform-profilepg'>
-        <ReviewForm />
-      </div>
-
-      <div className="userreviews-container">
-
-        <h2 className="user-reviews-title">
-
-
-          {user ? `${user.username}'s` : 'your'} reviews
+        <h2 className='forum-redirect-btn'>
+          <a href='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></a>
         </h2>
 
-        <ReviewsList
-          reviews={user.reviews}
-          title={`${user.username}'s reviews...`}
-          showTitle={false}
-          showUsername={false}
-        />
+      </div>
+
+      <div className="profilepg-container">
+
+        <div className='reviewform-profilepg'>
+          <ReviewForm />
+        </div>
+
+        <div className="userreviews-container">
+          <h2 className="user-reviews-title">
+            {user ? `${user.username}'s` : 'your'} reviews
+          </h2>
+
+          <ReviewsList
+            reviews={user.reviews}
+            title={`${user.username}'s reviews...`}
+            showTitle={false}
+            showUsername={false}
+          />
+
+        </div>
 
       </div>
 

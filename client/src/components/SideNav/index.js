@@ -5,6 +5,7 @@ import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
+import { MdOutlineForum } from 'react-icons/md';
 import Switch from '@mui/material/Switch';
 
 const SideNav = (props) => {
@@ -44,24 +45,23 @@ const SideNav = (props) => {
                         <AiOutlineHome /> Home</a>
                     <a className="navlink" href="/profile">
                         <CgProfile /> Profile</a>
+                    <a className="navlink" href="/forum">
+                        <MdOutlineForum /> Forum </a>
                     <a className="navlink" href="/hauntedlocations">
-                        <GiSpookyHouse /> View Haunted &nbsp;&nbsp;&nbsp;&nbsp;Locations</a>
+                        <GiSpookyHouse /> Haunted &nbsp;&nbsp;&nbsp;&nbsp;Locations</a>
                     <a className="navlink" href="/contact">
                         <TbMessage2Share /> Contact</a>
                     <a className="navlink" href="/about">
                         <HiUserGroup /> About Us</a>
-                    <a className="navlink" href="/forum">
-                         Forum </a>
-                    <a className="navlink" target="_blank"
-                        rel="noreferrer"
-                        href="https://github.com/KSoto18/Haunted-Holidays">
-                        <FiGithub /> Repository</a>
 
                     {/* dark mode button */}
-                    <Switch onClick={darkMode} className='darkmode-btn'> Dark mode</Switch>
-                     
-                   
-                    
+                    <div className='dark-mode-container'>
+                        <p>Enable Dark Mode?</p><br />
+                        <Switch onClick={darkMode} className='darkmode-btn'> Dark mode</Switch>
+                    </div>
+
+
+
 
                 </div>
 

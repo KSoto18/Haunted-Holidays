@@ -7,18 +7,18 @@ import { useState } from "react";
 
 const MapContainer = () => {
   const { loading, data } = useQuery(QUERY_MARKERS);
-// console.log(data?.locations[0]);
+  // console.log(data?.locations[0]);
 
-const locations = data?.locations;
+  const locations = data?.locations;
 
-const [ selected, setSelected ] = useState({});
-const [isOpen, setisOpen] = useState(false);
-const [location, setLocation] = useState({});
-const [description, setDescription] = useState({});
-// const [coordinates, setCoordinates] = useState({});
-  
-const onSelect = (object, location) => {
-  console.log(location);
+  const [selected, setSelected] = useState({});
+  const [isOpen, setisOpen] = useState(false);
+  const [location, setLocation] = useState({});
+  const [description, setDescription] = useState({});
+  // const [coordinates, setCoordinates] = useState({});
+
+  const onSelect = (object, location) => {
+    console.log(location);
     setSelected(object);
     setisOpen(true);
     setLocation(location);
@@ -29,60 +29,61 @@ const onSelect = (object, location) => {
     //   lng: parseInt(location.longitude),
     // };
     // setCoordinates(locationClick);
-    
+
 
   }
-  
-  const mapStyles = {        
+
+  const mapStyles = {
     height: "100vh",
-    width: "100%"};
-  
+    width: "100%"
+  };
+
   const defaultCenter = {
     lat: 40, lng: -100
   }
-  
-  return (
-     <LoadScript
-       googleMapsApiKey='AIzaSyDDij4cxj3hedeOOwizEz0KFBgxhFSko_E'>
-        <GoogleMap
-          mapContainerStyle={mapStyles}
-          zoom={5}
-          center={defaultCenter}>
 
-             {
-            locations?.map((location, index) => {
-              const locationObject = {
-                lat: parseInt(location.latitude),
-                lng: parseInt(location.longitude),
-              }
-             
-              return (
+  return (
+    <LoadScript
+      googleMapsApiKey='AIzaSyDDij4cxj3hedeOOwizEz0KFBgxhFSko_E'>
+      <GoogleMap
+        mapContainerStyle={mapStyles}
+        zoom={4}
+        center={defaultCenter}>
+
+        {
+          locations?.map((location, index) => {
+            const locationObject = {
+              lat: parseInt(location.latitude),
+              lng: parseInt(location.longitude),
+            }
+
+            return (
               <Marker key={index} position={locationObject}
-              icon={Ghost} onClick={() => onSelect(locationObject, location)}
+                icon={Ghost} onClick={() => onSelect(locationObject, location)}
               />
-              )
-            })
-         }
-         {
-          
-            isOpen &&
-            (
-              <InfoWindow 
+            )
+          })
+        }
+        {
+
+          isOpen &&
+          (
+            <InfoWindow
               position={selected}
               clickable={true}
               onCloseClick={() => setisOpen(false)}
             >
               <div>
-              <h1 style={{ color: "black"}}>{location.location}</h1>
-              <h2 style={{ color: "black"}}>{location.description}</h2>
+                <p className='location-name'>{location.location}</p>
+                <p className='location-description'>{location.description}</p>
               </div>
             </InfoWindow>
-            )
-         }
+          )
+        }
 
-          </GoogleMap>
-        
-     </LoadScript>
+      </GoogleMap>
+
+    </LoadScript>
   )
 }
 export default MapContainer;

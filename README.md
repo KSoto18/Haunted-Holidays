@@ -34,7 +34,7 @@ Feel free to contact us with any questions or comments.
 
 - Iia Wolak
     - [GitHub](https://github.com/wolaki96)
-    - [Portfolio]()
+    - [Portfolio](https://wolaki96.github.io/Iia_Wolak_React_Portfolio/)
     - [LinkedIn](https://www.linkedin.com/in/iia-wolak-466b63252/)
     - [Email](mailto:wolaki96@gmail.com)
 
@@ -46,14 +46,14 @@ Feel free to contact us with any questions or comments.
 
 - Khris Soto
     - [GitHub](https://github.com/ksoto18)
-    - [Portfolio]()
+    - [Portfolio](https://ksoto18.github.io/Portfolio-React/)
     - [LinkedIn](https://www.linkedin.com/in/khristel-soto-9468a6259/)
     - [Email](mailto:khris.soto@live.com)
 
 - Maggie Lively
     - [GitHub](https://github.com/mmllively)
-    - [Portfolio]()
-    - [LinkedIn]()
+    - [Portfolio](https://mmllively.github.io/portfolio_react/)
+    - [LinkedIn](https://www.linkedin.com/in/maggie-lively-359893120/)
     - [Email](mailto:maggie.lively@gmail.com)
 
 [Back to top](#haunted-holidays)
