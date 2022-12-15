@@ -21,7 +21,7 @@ const Footer = () => {
     <div>
 
       <Box >
-        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black" }}
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black;opacity 0.75" }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
@@ -29,12 +29,12 @@ const Footer = () => {
           }}
         >
 
-          <BottomNavigationAction onClick={() => {
+          <BottomNavigationAction sx={{color:"white"}} onClick={() => {
             setModalOpen(true);
           }} label="What's This?" icon={<HelpIcon />} />
 
-          <BottomNavigationAction href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
-          <BottomNavigationAction href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
+          <BottomNavigationAction sx={{color:"white"}} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
+          <BottomNavigationAction sx={{color:"white"}} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
 
         </BottomNavigation>
