@@ -62,8 +62,9 @@ const Profile = () => {
       <div className="userreviews-container">
 
         <h2 className="user-reviews-title">
-          {user ? `${user.username}'s` : 'your'} reviews.
-</h2>
+
+          {user ? `${user.username}'s` : 'your'} reviews.</h2>
+
         <ReviewsList
           reviews={user.reviews}
           title={`${user.username}'s reviews...`}
