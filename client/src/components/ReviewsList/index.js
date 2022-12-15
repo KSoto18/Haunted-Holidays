@@ -20,7 +20,7 @@ const ReviewsList = ({
 
         cache.writeQuery({
           query: QUERY_USER,
-          data: { removeReview, user: user},
+          data: {user: user},
         });
         
       } catch (e) {
@@ -38,6 +38,12 @@ const ReviewsList = ({
     try {
       const { data } = await removeReview({
         variables: { reviewId: review },
+        refetchQueries: [
+          { 
+            query: QUERY_USER,
+        
+          },
+        ],
       });
     } catch (err) {
       console.error(err);
