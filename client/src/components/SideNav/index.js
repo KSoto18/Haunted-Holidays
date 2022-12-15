@@ -6,7 +6,7 @@ import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
 import Switch from '@mui/material/Switch';
-
+import logo from './../../assets/img/boo-blanco.gif'
 const SideNav = (props) => {
 
     const openNav = () => {
@@ -62,11 +62,11 @@ const SideNav = (props) => {
                      
                    
                     
-
+                    
                 </div>
-
+                <img className="ghost" src={logo} alt="Logo" />
             </div>
-
+           
         </div >
 
     );
