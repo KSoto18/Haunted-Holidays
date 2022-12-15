@@ -2,7 +2,8 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { REMOVE_REVIEW } from '../../utils/mutations';
-import DeleteIcon from '@mui/icons-material/Delete'
+import { MdAddComment } from 'react-icons/md';
+import { RiChatDeleteFill } from 'react-icons/ri';
 import { QUERY_USER } from '../../utils/queries';
 
 const ReviewsList = ({
@@ -12,12 +13,12 @@ const ReviewsList = ({
   showUsername = true,
   isLoggedInUser = false
 }) => {
-  const [removeReview, {error}] = useMutation(REMOVE_REVIEW, {
-    update(cache, {data: {removeReview} }) {
-      try{
+  const [removeReview, { error }] = useMutation(REMOVE_REVIEW, {
+    update(cache, { data: { removeReview } }) {
+      try {
         cache.writeQuery({
           query: QUERY_USER,
-          data: {user: removeReview},
+          data: { user: removeReview },
         });
       } catch (e) {
         console.error(e);
@@ -26,7 +27,7 @@ const ReviewsList = ({
   });
 
   if (!reviews) {
-    return <h3>No Haunted Stories Yet</h3>;
+    return <h3 align='center'>No haunted stories... yet!</h3>;
   }
 
   const handleRemoveReview = async (review) => {
@@ -41,73 +42,64 @@ const ReviewsList = ({
   };
 
   if (!reviews.length) {
-    return <h3>No Reviews Yet</h3>;
+    return <h3 align='center'>You have not posted any reviews... yet!</h3>;
   }
 
 
 
   return (
-    <div>
+    <div className='review-list-container'>
 
       {showTitle && <h3>{title}</h3>}
       {reviews &&
         reviews.map((review) => (
 
-          <div key={review._id} className=''>
+          <div key={review._id} className='posted-review-form'>
+
+            {showUsername ? (
+
+              <div>
+
+                {review.reviewAuthor} <br />
+
+                <span style={{ fontSize: '0.8rem' }}>
+                  had this spooky sighting on {review.createdAt}
+                </span>
+
+              </div>
+
+            ) : (
+
+              <>
+                <span style={{ fontSize: '0.8rem' }}>
+                  You had this review on {review.createdAt}
+                </span>
+              </>
+
+            )}
 
             <div className=''>
-
-              {showUsername ? (
-
-                <div>
-
-                  {review.reviewAuthor} <br />
-
-                  <span style={{ fontSize: '1rem' }}>
-                    had this spooky sighting on {review.createdAt}
-                  </span>
-
-                  </div>
-
-              ) : (
-
-                <>
-                  <span style={{ fontSize: '1rem' }}>
-                    You had this review on {review.createdAt}
-                  </span>
-                </>
-
-              )}
-
+              <p style={{ fontSize: '1.2rem' }}>
+                <i>{review.reviewText}</i></p>
             </div>
 
-            <div className=''>
-              <p>{review.reviewText}</p>
-            </div>
+            <button className='add-comment-btn2'>
+              <Link className='' to={`/reviews/${review._id}`}>
+                Add a comment <MdAddComment /></Link></button>
 
-            <Link
-              className=''
-              to={`/reviews/${review._id}`}>
-                
-              Add a comment
-              
-            </Link>
-            
-            <button
-                      className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveReview(review._id)}
-                    >
-                      <DeleteIcon/>
-                    </button>
+            <button className="delete-btn"
+              onClick={() => handleRemoveReview(review._id)}>
+              Delete comment <RiChatDeleteFill />
+            </button>
           </div>
-          
+
 
         ))}
- {error && (
-         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
-         )}
-         </div>
-      
+      {error && (
+        <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+      )}
+    </div>
+
   );
 };
 

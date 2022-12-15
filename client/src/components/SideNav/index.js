@@ -3,7 +3,7 @@ import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
-import { GiTombstone } from "react-icons/gi";
+import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
 
 const SideNav = (props) => {
@@ -26,6 +26,7 @@ const SideNav = (props) => {
 
     return (
         <div>
+
             {/* button to open sidenav */}
             <a className="opennav" onClick={openNav}>
                 <GiTombstone size={'2em'} />
@@ -42,6 +43,8 @@ const SideNav = (props) => {
                         <AiOutlineHome /> Home</a>
                     <a className="navlink" href="/profile">
                         <CgProfile /> Profile</a>
+                    <a className="navlink" href="/hauntedlocations">
+                        <GiSpookyHouse /> View Haunted &nbsp;&nbsp;&nbsp;&nbsp;Locations</a>
                     <a className="navlink" href="/contact">
                         <TbMessage2Share /> Contact</a>
                     <a className="navlink" href="/about">
@@ -59,6 +62,7 @@ const SideNav = (props) => {
             </div>
 
         </div >
+
     );
 };
 export default SideNav;
