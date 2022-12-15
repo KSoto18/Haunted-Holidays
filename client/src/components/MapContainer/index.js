@@ -15,22 +15,18 @@ const [ selected, setSelected ] = useState({});
 const [isOpen, setisOpen] = useState(false);
 const [location, setLocation] = useState({});
 const [description, setDescription] = useState({});
-// const [coordinates, setCoordinates] = useState({});
-  
+const [city, setCity] = useState({});
+const [state_abbrev, setState_abbrev] = useState({});
+
 const onSelect = (object, location) => {
   console.log(location);
     setSelected(object);
     setisOpen(true);
     setLocation(location);
     setDescription(description);
-    // console.log(location.latitude);
-    // const locationClick = {
-    //   lat: parseInt(location.latitude),
-    //   lng: parseInt(location.longitude),
-    // };
-    // setCoordinates(locationClick);
-    
-
+    setCity(city);
+    setState_abbrev(state_abbrev);
+     
   }
   
   const mapStyles = {        
@@ -74,7 +70,8 @@ const onSelect = (object, location) => {
             >
               <div>
               <h1 style={{ color: "black"}}>{location.location}</h1>
-              <h2 style={{ color: "black"}}>{location.description}</h2>
+              <p style={{ color: "black"}}>{location.description}</p>
+              <p>City: {location.city}, {location.state_abbrev}.</p>
               </div>
             </InfoWindow>
             )
