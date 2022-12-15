@@ -26,6 +26,8 @@ locations{
   longitude
   location
   description
+  city
+  state_abbrev
 }
 }
 `;
