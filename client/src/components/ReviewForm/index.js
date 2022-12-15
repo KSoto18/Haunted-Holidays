@@ -14,7 +14,7 @@ const ReviewForm = () => {
   const [addReview, { error }] = useMutation(ADD_REVIEW, {
     update(cache, { data: { addReview } }) {
       try {
-        const { user } = cache.readQuery({ query: QUERY_USER });
+        const { user } = cache.readQuery({ query: (QUERY_USER, QUERY_REVIEWS) });
 
         cache.writeQuery({
           query: QUERY_USER,
@@ -41,7 +41,7 @@ const ReviewForm = () => {
         },
         refetchQueries: [
           { 
-            query: QUERY_USER,
+            query: (QUERY_USER, QUERY_REVIEWS),
         
           },
         ],
