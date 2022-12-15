@@ -51,6 +51,8 @@ const Login = (props) => {
   var scareEffect = document.getElementById('scare-sound');
   const playEffect = () => {
     scareEffect.play();
+
+    window.location.replace("/profile");
   }
 
   return (
