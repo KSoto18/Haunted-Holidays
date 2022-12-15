@@ -7,6 +7,7 @@ import { QUERY_REVIEWS } from '../utils/queries';
 
 // Components
 import ReviewsList from '../components/ReviewsList';
+import ReviewForm from '../components/ReviewForm';
 
 const Forum = () => {
     const { loading, data } = useQuery(QUERY_REVIEWS);
@@ -15,6 +16,10 @@ const Forum = () => {
     return (
 
         <div>
+
+            <div className='reviewform-profilepg'>
+                <ReviewForm />
+            </div>
 
             <ReviewsList
                 reviews={reviews}
