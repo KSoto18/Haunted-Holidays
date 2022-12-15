@@ -15,16 +15,16 @@ const Forum = () => {
 
     return (
 
-        <div>
+        <div className='forumpg-container'>
+            <h2 className='forumpg-title'>Haunted Forum</h2>
+            <ReviewsList reviews={reviews} title='User Reviews' />
+  
 
             <div className='reviewform-profilepg'>
                 <ReviewForm />
             </div>
 
-            <ReviewsList
-                reviews={reviews}
-                title="Some Feed for Review(s)..."
-            />
+
         </div>
 
     );

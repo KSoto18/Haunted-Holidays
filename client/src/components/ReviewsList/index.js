@@ -69,10 +69,12 @@ const ReviewsList = ({
 
               <div>
 
-                {review.reviewAuthor} <br />
-
                 <span style={{ fontSize: '0.8rem' }}>
-                  had this spooky sighting on {review.createdAt}
+                  <h2 className='single-rvw-username'>
+                    {review.reviewAuthor}</h2>
+                  <p className='review-info'>
+                    had this spooky sighting on {review.createdAt}.
+                  </p>
                 </span>
 
               </div>
@@ -95,7 +97,7 @@ const ReviewsList = ({
                 <i>{review.reviewText}</i></p>
             </div>
 
-            <button className='add-comment-btn2'>
+            <button className='add-comment-btn-profilepg'>
               <Link className='' to={`/reviews/${review._id}`}>Reply <MdAddComment /></Link></button>
 
           </div>

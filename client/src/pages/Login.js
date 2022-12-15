@@ -31,16 +31,15 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-  
-    
+
     try {
       const { data } = await login({
         variables: { ...formState },
       });
-     
+
       Auth.login(data.login.token);
       window.location.replace("/profile");
-    
+
     } catch (e) {
       console.error(e);
     }
@@ -63,7 +62,7 @@ const Login = (props) => {
         <source src={ImpactSound} type='audio/mp3'></source>
       </audio>
 
-      
+
 
       <div className="login-form">
 
@@ -75,7 +74,7 @@ const Login = (props) => {
           <p className='success-msg'>
             Success! Redirecting {' '}
             <Link to="/profile"> to your profile.</Link>
-            
+
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
@@ -103,7 +102,7 @@ const Login = (props) => {
               style={{ cursor: 'pointer' }}
               type="submit">Submit
             </button>
-           
+
             <p className='signup-redirect'>
               Don't have an account? Sign up <a href="/signup">here</a>.
             </p>

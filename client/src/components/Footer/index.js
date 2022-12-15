@@ -11,7 +11,6 @@ import Box from '@mui/material/Box';
 import HelpIcon from '@mui/icons-material/Help';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HotelIcon from '@mui/icons-material/Hotel';
-import logo from './../../assets/img/boo-blanco.gif'
 
 
 const Footer = () => {
@@ -21,8 +20,8 @@ const Footer = () => {
     <div>
 
       <Box >
-   
-        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: "black;opacity 0.75" }}
+
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: '#31587a; opacity:0.75' }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
@@ -37,7 +36,6 @@ const Footer = () => {
           <BottomNavigationAction sx={{color:"white"}} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
           <BottomNavigationAction sx={{color:"white"}} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
-
         </BottomNavigation>
         {modalOpen && <Modal setOpenModal={setModalOpen} />}
        
@@ -47,7 +45,7 @@ const Footer = () => {
         © 2022 Four Loopin' Ladies
       </p>
 
-    </div>
+    </div >
   );
 }
 
