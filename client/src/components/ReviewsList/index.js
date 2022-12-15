@@ -16,10 +16,13 @@ const ReviewsList = ({
   const [removeReview, { error }] = useMutation(REMOVE_REVIEW, {
     update(cache, { data: { removeReview } }) {
       try {
+        const { user } = cache.readQuery({ query: QUERY_USER });
+
         cache.writeQuery({
           query: QUERY_USER,
-          data: { user: removeReview },
+          data: {user: user},
         });
+        
       } catch (e) {
         console.error(e);
       }
@@ -35,6 +38,12 @@ const ReviewsList = ({
     try {
       const { data } = await removeReview({
         variables: { reviewId: review },
+        refetchQueries: [
+          { 
+            query: QUERY_USER,
+        
+          },
+        ],
       });
     } catch (err) {
       console.error(err);

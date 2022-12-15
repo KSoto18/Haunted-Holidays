@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
 // import DarkMap from '../assets/img/darkmap.png';
 import { MdOutlineForum } from 'react-icons/md';
+
 // import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
 

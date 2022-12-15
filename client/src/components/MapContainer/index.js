@@ -11,26 +11,24 @@ const MapContainer = () => {
 
   const locations = data?.locations;
 
-  const [selected, setSelected] = useState({});
-  const [isOpen, setisOpen] = useState(false);
-  const [location, setLocation] = useState({});
-  const [description, setDescription] = useState({});
-  // const [coordinates, setCoordinates] = useState({});
 
-  const onSelect = (object, location) => {
-    console.log(location);
+const [ selected, setSelected ] = useState({});
+const [isOpen, setisOpen] = useState(false);
+const [location, setLocation] = useState({});
+const [description, setDescription] = useState({});
+const [city, setCity] = useState({});
+const [state_abbrev, setState_abbrev] = useState({});
+
+const onSelect = (object, location) => {
+  console.log(location);
     setSelected(object);
     setisOpen(true);
     setLocation(location);
     setDescription(description);
-    // console.log(location.latitude);
-    // const locationClick = {
-    //   lat: parseInt(location.latitude),
-    //   lng: parseInt(location.longitude),
-    // };
-    // setCoordinates(locationClick);
-
-
+]
+    setCity(city);
+    setState_abbrev(state_abbrev);
+     
   }
 
   const mapStyles = {
@@ -74,8 +72,11 @@ const MapContainer = () => {
               onCloseClick={() => setisOpen(false)}
             >
               <div>
+
                 <p className='location-name'>{location.location}</p>
                 <p className='location-description'>{location.description}</p>
+              <p>City: {location.city}, {location.state_abbrev}.</p>
+              
               </div>
             </InfoWindow>
           )

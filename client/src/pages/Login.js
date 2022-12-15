@@ -39,6 +39,7 @@ const Login = (props) => {
 
       Auth.login(data.login.token);
       window.location.replace("/profile");
+
     } catch (e) {
       console.error(e);
     }

@@ -7,7 +7,7 @@ import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
 import { MdOutlineForum } from 'react-icons/md';
 import Switch from '@mui/material/Switch';
-
+import logo from './../../assets/img/boo-blanco.gif'
 const SideNav = (props) => {
 
     const openNav = () => {
@@ -60,13 +60,10 @@ const SideNav = (props) => {
                         <Switch onClick={darkMode} className='darkmode-btn'> Dark mode</Switch>
                     </div>
 
-
-
-
                 </div>
-
+                <img className="ghost" src={logo} alt="Logo" />
             </div>
-
+           
         </div >
 
     );
