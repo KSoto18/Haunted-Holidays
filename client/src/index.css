@@ -72,7 +72,7 @@ header {
   margin-top: 60%;
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -788,4 +788,12 @@ header {
   top: 200px;
   color: red
 
+}
+.ghost{
+ position:absolute;
+  top: 50%;
+  left: -35%;
+  width: 50px 50px;
+  
+ 
 }

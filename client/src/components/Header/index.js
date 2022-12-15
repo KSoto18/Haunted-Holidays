@@ -7,6 +7,7 @@ import { SlLogin, SlLogout } from 'react-icons/sl';
 import { FiUserPlus } from 'react-icons/fi';
 // import Whispering from '../../assets/mp3/whispering.mp3';
 
+
 const Header = () => {
 
   const logout = (event) => {
@@ -69,6 +70,7 @@ const Header = () => {
               </div>
             </>
           )}
+           
         </div>
       </header>
     </div>

@@ -7,6 +7,7 @@ import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
 import { RiGhost2Line } from 'react-icons/ri';
 import { GiDarkSquad, GiHaunting } from 'react-icons/gi';
 
+
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
   const reviews = data?.reviews || [];
@@ -24,6 +25,7 @@ const Home = () => {
   return (
 
     <div>
+      
 
       {/* <audio id='scare-sound' autoplay> */}
       <audio id='scare-sound'>
@@ -48,6 +50,7 @@ const Home = () => {
           <br /><br />
         </p>
         <h2>Happy Hunting! <GiHaunting color='white' size={'1.8em'} /></h2>
+        
       </div>
 
       <div className='homepg-scare-sound' align='center'>
@@ -59,6 +62,7 @@ const Home = () => {
           Make it stop, I'm too scared!
         </button>
       </div>
+      
 
     </div >
 
