@@ -1,15 +1,15 @@
 import React from 'react';
-// import { useQuery } from '@apollo/client';
-// import ReviewsList from '../components/ReviewsList';
+import { useQuery } from '@apollo/client';
+import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
-// import { QUERY_REVIEWS } from '../utils/queries';
+import { QUERY_REVIEWS } from '../utils/queries';
 import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
 import { RiGhost2Line } from 'react-icons/ri';
 import { GiDarkSquad, GiHaunting } from 'react-icons/gi';
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_REVIEWS);
-  // const reviews = data?.reviews || [];
+  const { loading, data } = useQuery(QUERY_REVIEWS);
+  const reviews = data?.reviews || [];
 
   var scareEffect = document.getElementById('scare-sound');
   // .autoplay;
@@ -59,10 +59,6 @@ const Home = () => {
           Make it stop, I'm too scared!
         </button>
       </div>
-
-
-      {/* <ReviewsList reviews={reviews}
-        title="Some Feed for Review(s)..." /> */}
 
     </div >
 

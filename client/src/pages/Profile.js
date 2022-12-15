@@ -1,34 +1,33 @@
+// Main Imports
 import React from 'react';
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import ReviewForm from '../components/ReviewForm';
-import ReviewsList from '../components/ReviewsList';
+
 import { QUERY_USER } from '../utils/queries';
 import { GiSpookyHouse } from 'react-icons/gi';
 // import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
 
-const Profile = () => {
 
-  // const { username: userParam } = useParams();
-  // const reviews = data?.reviews || [];
+// Components
+import ReviewForm from '../components/ReviewForm';
+import ReviewsList from '../components/ReviewsList';
+
+// Query Imports
+import { QUERY_USER, QUERY_REVIEWS, QUERY_SINGLE_REVIEW } from '../utils/queries';
+
+
+const Profile = () => {
 
   const { loading, data } = useQuery(QUERY_USER);
 
-  console.log(data);
+  // console.log(data);
 
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_REVIEWS);
-
-  // const user = Auth.getProfile();
   const user = data?.user || {};
 
-  // const user = data?.me || data?.user || {};
 
-  console.log(user);
-  // navigate to personal profile page if username is yours
-  // if (Auth.loggedIn()) {
-  //   return <Navigate to="/profile" />;
-  // }
+  // console.log(user);
+ 
 
   if (loading) {
     return <div>Loading...</div>;
@@ -65,9 +64,9 @@ const Profile = () => {
 
         <h2 className="user-reviews-title">
 
+
           {user ? `${user.username}'s` : 'your'} reviews
         </h2>
-
 
         <ReviewsList
           reviews={user.reviews}
@@ -75,13 +74,8 @@ const Profile = () => {
           showTitle={false}
           showUsername={false}
         />
-      </div>
 
-      {/* {!user && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          > */}
+      </div>
 
     </div>
   );
