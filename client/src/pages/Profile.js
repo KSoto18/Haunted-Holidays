@@ -48,6 +48,7 @@ const Profile = () => {
 
   return (
 
+
     <div className="profilepg-container">
 
       <h2 className="user-profile-pgtitle">
@@ -62,7 +63,6 @@ const Profile = () => {
 
         <h2 className="user-reviews-title">
           {user ? `${user.username}'s` : 'your'} reviews.
-        </h2>
 
         <ReviewsList
           reviews={user.reviews}
