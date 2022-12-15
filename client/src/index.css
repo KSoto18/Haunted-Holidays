@@ -1,9 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  color: white;
   font-family: "Arial";
   font-size: large;
+}
+
+a {
+  color: white;
 }
 
 /*font*/
@@ -15,7 +18,7 @@
 
 body {
   background-color: black;
-  background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
+  background-image: url('./assets/img/tombstones.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -46,6 +49,10 @@ header {
   margin-top: -60px;
   font-family: "Bloody";
   font-size: 75px;
+}
+
+.header-ghost {
+  color: white;
 }
 
 /* subheader until header pg title  */
@@ -175,6 +182,9 @@ header {
 
 .hello-user-msg {
   margin-bottom: 8px;
+  font-family: Bloody;
+  font-size: 24px;
+  color: white;
 }
 
 /* hover effect for login/signup/logout buttons */
@@ -188,7 +198,7 @@ header {
 
 .backtotop-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 70px;
   right: 40px;
   cursor: pointer;
 }
@@ -202,8 +212,7 @@ header {
   margin-bottom: 15px;
   border: 1px solid black;
   border-radius: 8px 8px;
-  /* backdrop-filter: blur(5px); */
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.8;
   padding: 15px;
   text-align: center;
@@ -215,9 +224,19 @@ header {
   padding-bottom: 10px;
 }
 
-/* .homepg-welcome p {
-  font-weight: bold;
-} */
+.homepg-welcome p {
+  color: black;
+}
+
+.homepg-welcome a {
+  color: white;
+}
+
+.homepg-welcome a:hover {
+  color: rgb(50, 69, 111);
+}
+
+
 
 /* container with buttons for scare sounds */
 .homepg-scare-sound {
@@ -225,7 +244,7 @@ header {
 }
 
 .sound-btn {
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   border: 1px solid black;
   border-radius: 5px 5px;
   padding: 5px;
@@ -241,7 +260,7 @@ header {
   border: 1px solid black;
   border-radius: 10px 10px;
   padding: 10px;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.8;
   width: 60%;
   margin-left: 20%;
@@ -272,6 +291,10 @@ header {
   font-size: 16px;
   text-align: center;
   width: 100%;
+}
+
+.add-comment-btn:hover {
+  opacity: 1;
 }
 
 .review-list-container {
@@ -322,7 +345,7 @@ header {
   margin-left: 30%;
   margin-right: 30%;
   /* backdrop-filter: blur(6px); */
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.8;
 }
 
@@ -339,7 +362,7 @@ header {
   border-radius: 8px 8px;
   /* backdrop-filter: blur(5px); */
   opacity: 0.85;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   padding: 15px;
 }
 
@@ -351,7 +374,7 @@ header {
 .hauntedloc-pgtitle {
   padding-bottom: 5px;
   text-align: center;
-  color: white;
+  color: black;
   font-family: Bloody;
   font-size: 36px;
 }
@@ -360,14 +383,14 @@ header {
 .login-subtitle,
 .contactus-subtitle {
   text-align: center;
-  color: white;
+  color: black;
   margin-bottom: 10px;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 5px 5px;
   opacity: 0.8;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
 }
 
 /* input containers for each field in signup pg */
@@ -417,11 +440,18 @@ header {
   font-size: 12px;
   padding-top: 5px;
   text-align: center;
+  color: black;
 }
 
 .login-redirect a,
 .signup-redirect a {
   font-size: 12px;
+  color: black;
+}
+
+.login-redirect a:hover,
+.signup-redirect a:hover {
+  color: white;
 }
 
 .success-msg {
@@ -432,7 +462,7 @@ header {
 /* beginning of css for about pg */
 /* container with about us info  */
 .aboutpg-subtitle {
-  /* color: black; */
+  color: black;
   padding-bottom: 5px;
 }
 
@@ -447,7 +477,7 @@ header {
   margin-bottom: 30px;
   border: 1px solid black;
   border-radius: 8px 8px;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.85;
   padding: 15px;
   text-align: center;
@@ -455,6 +485,7 @@ header {
 
 .fourloopinladies-p {
   padding-bottom: 10px;
+  color: black;
 }
 
 .meet-contrib-btn {
@@ -485,12 +516,12 @@ header {
   margin-left: 15px;
   margin-right: 15px;
   text-align: center;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.9;
 }
 
 .nametitle {
-  color: white;
+  color: black;
   font-size: 28px;
 }
 
@@ -509,7 +540,7 @@ header {
 }
 
 .contactlinks .contactlink-icon:hover {
-  color: rgb(64, 77, 106);
+  color: #7f99ad;
 }
 
 /* styling for contact icons in about pg  */
@@ -527,7 +558,7 @@ header {
 .hauntedloc-pg-container {
   border-radius: 5px 5px;
   border: 1px solid black;
-  background-color: rgb(64, 77, 106);
+  background-color: #7f99ad;
   opacity: 0.8;
   width: 70%;
   margin-left: 15%;
@@ -536,8 +567,6 @@ header {
 }
 
 .hauntedloc-pgtitle {
-  font-size: 28px;
-  color: white;
   padding-top: 15px;
   padding-bottom: 5px;
 }
@@ -545,6 +574,7 @@ header {
 .hauntedloc-pg-subtitle {
   text-align: center;
   padding-bottom: 10px;
+  font-size: 16px;
 }
 
 /* container for haunted locations pg */
@@ -579,11 +609,38 @@ header {
   color: white;
 }
 
+.hl-redirect-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 15px 15px;
+  background-color: white;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: black;
+  opacity: 0.7;
+  text-align: center;
+  width: 40%;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hl-redirect-btn a {
+  font-family: Bloody;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.hl-redirect-btn:hover {
+  opacity: 1;
+}
+
 /* "{user's name}" reviews title in profile pg */
 .user-reviews-title {
   text-align: center;
   font-size: 28px;
   font-family: Bloody;
+  color: black;
 }
 
 /* users's reviews in profile pg */
@@ -592,10 +649,9 @@ header {
   border-radius: 5px 5px;
   width: 40%;
   padding: 15px 15px;
-  background-color: rgb(64, 77, 106);
-  opacity: 0.8;
-  margin-left: 45%;
-  margin-top: -180px;
+  background-color: #7f99ad;
+  opacity: 0.9;
+  margin-top: 15px;
   margin-bottom: 60px;
 }
 
@@ -605,8 +661,8 @@ header {
   border-radius: 5px 5px;
   width: 40%;
   padding: 15px 15px;
-  background-color: rgb(64, 77, 106);
-  opacity: 0.8;
+  background-color: #7f99ad;
+  opacity: 0.9;
 }
 
 /* character count */
@@ -639,11 +695,10 @@ header {
   border-top: 1px solid black;
 }
 
-.add-comment-btn2,
-.delete-btn {
+.add-comment-btn2 {
   border: none;
   border-radius: 5px 5px;
-  padding: 8px 8px;
+  padding: 4px 4px;
   background-color: black;
   margin: 2px 2px;
   margin-top: 10px;
@@ -652,7 +707,7 @@ header {
   opacity: 0.7;
   font-size: 16px;
   text-align: center;
-  width: 40%;
+  width: 21%;
 }
 
 .add-comment-btn2 a {
@@ -668,10 +723,23 @@ header {
   border: none;
   border-radius: 5px 5px;
   background-color: black;
-  color: black;
+  padding: 2px 2px;
+  color: white;
   opacity: 0.7;
   font-size: 16px;
   text-align: center;
+  margin-left: 92%;
+  margin-top: 5px;
+}
+
+.review-content {
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.single-rvw-username {
+  font-family: Bloody;
+  font-size: 30px;
 }
 
 /* footer  */

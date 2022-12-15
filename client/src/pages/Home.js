@@ -32,8 +32,8 @@ const Home = () => {
 
       <div className='homepg-welcome'>
         <h2>Welcome to Haunted Holidays!</h2>
-        <p>Do you consider yourself a ghost buster? <RiGhost2Line /><br />
-          A supernatural aficionado? Seeker of the dark arts? <GiDarkSquad />
+        <p>Do you consider yourself a ghost buster? <RiGhost2Line color='white' /><br />
+          A supernatural aficionado? Seeker of the dark arts? <GiDarkSquad color='white' />
           <br /><br />
           Use our app to find the most haunting, cringe-worthy places to visit in the US!
           <br />
@@ -47,7 +47,7 @@ const Home = () => {
           Already a member? <a href='/login'>Log in</a> and drop a review, or find your next destination!
           <br /><br />
         </p>
-        <h2>Happy Hunting! <GiHaunting size={'1.8em'} /></h2>
+        <h2>Happy Hunting! <GiHaunting color='white' size={'1.8em'} /></h2>
       </div>
 
       <div className='homepg-scare-sound' align='center'>
