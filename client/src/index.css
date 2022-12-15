@@ -6,6 +6,13 @@
   font-size: large;
 }
 
+/*font*/
+@font-face {
+  font-family: "Bloody";
+  src: local("BloodyFont"),
+    url("../src/Fonts/BLOODY.ttf") format("truetype");
+}
+
 body {
   background-color: black;
   background-image: url('https://cdn.pixabay.com/photo/2022/10/09/02/16/haunted-house-7508035_1280.jpg');
@@ -92,6 +99,10 @@ header {
   color: gray;
 }
 
+.sub-navlink {
+  overflow: hidden;
+}
+
 .nav-menu-items {
   margin-top: 30px;
 }
@@ -138,7 +149,7 @@ header {
   border: none;
   border-radius: 5px 5px;
   padding: 8px 8px;
-  background-color: gray;
+  background-color: black;
   margin: 2px 2px;
   text-decoration: none;
   color: white;
@@ -167,8 +178,103 @@ header {
   cursor: pointer;
 }
 
-.homepgcontainer {
+/* container with welcome paragraph */
+.homepg-welcome {
+  /* background-color: black; */
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 8px 8px;
+  /* backdrop-filter: blur(5px); */
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
+  padding: 15px;
+  text-align: center;
+}
+
+.homepg-welcome h2 {
+  color: black;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+/* .homepg-welcome p {
+  font-weight: bold;
+} */
+
+/* container with buttons for scare sounds */
+.homepg-scare-sound {
+  margin-top: 10px;
+}
+
+.sound-btn {
+  background-color: rgb(64, 77, 106);
+  border: 1px solid black;
+  border-radius: 5px 5px;
+  padding: 5px;
+  margin-right: 10px;
+  opacity: 0.8;
+}
+
+.sound-btn:hover {
+  opacity: 1;
+}
+
+.single-review-container {
+  border: 1px solid black;
+  border-radius: 10px 10px;
+  padding: 10px;
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 15px;
+}
+
+/* user comment input thats posted */
+.comment-block {
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.no-comments-msg {
+  font-size: 14px;
+}
+
+.add-comment-btn {
   border: none;
+  border-radius: 5px 5px;
+  padding: 8px 8px;
+  background-color: black;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.review-list-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.comment-form-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.comment-list-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .addaplace-btn {
@@ -194,11 +300,17 @@ header {
 .login-signup-redirect {
   text-align: center;
   padding: 15px 15px;
-  border: 1px solid white;
+  border: 1px solid black;
+  color: white;
   border-radius: 5px 5px;
-  width: 35%;
-  backdrop-filter: blur(5px);
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  /* backdrop-filter: blur(6px); */
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
 }
+
 
 /* beginning of css for login/signup/contact pg  */
 /* container with contact form */
@@ -208,9 +320,11 @@ header {
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 8px 8px;
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(5px); */
+  opacity: 0.85;
+  background-color: rgb(64, 77, 106);
   padding: 15px;
 }
 
@@ -218,18 +332,27 @@ header {
 .signup-pgtitle,
 .loginpg-title,
 .aboutpg-title,
-.contactus-pgtitle {
+.contactus-pgtitle,
+.hauntedloc-pgtitle {
   padding-bottom: 5px;
   text-align: center;
-  color: black;
+  color: white;
+  font-family: Bloody;
+  font-size: 36px;
 }
 
 .signup-subtitle,
 .login-subtitle,
 .contactus-subtitle {
   text-align: center;
-  color: black;
-  padding-bottom: 10px;
+  color: white;
+  margin-bottom: 10px;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px 5px;
+  opacity: 0.8;
+  background-color: rgb(64, 77, 106);
 }
 
 /* input containers for each field in signup pg */
@@ -281,6 +404,11 @@ header {
   text-align: center;
 }
 
+.login-redirect a,
+.signup-redirect a {
+  font-size: 12px;
+}
+
 .success-msg {
   text-align: center;
   color: black;
@@ -302,9 +430,10 @@ header {
   margin-left: 25%;
   margin-right: 25%;
   margin-bottom: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 8px 8px;
   background-color: rgb(64, 77, 106);
+  opacity: 0.85;
   padding: 15px;
   text-align: center;
 }
@@ -342,6 +471,7 @@ header {
   margin-right: 15px;
   text-align: center;
   background-color: rgb(64, 77, 106);
+  opacity: 0.9;
 }
 
 .nametitle {
@@ -363,6 +493,10 @@ header {
   margin-bottom: 10px;
 }
 
+.contactlinks .contactlink-icon:hover {
+  color: rgb(64, 77, 106);
+}
+
 /* styling for contact icons in about pg  */
 .contactlinks {
   margin: 3px;
@@ -374,11 +508,155 @@ header {
   margin-bottom: 5px;
 }
 
-/*font*/
-@font-face {
-  font-family: "Bloody";
-  src: local("BloodyFont"),
-    url("../src/Fonts/BLOODY.ttf") format("truetype");
+/* beginning of css for haunted locations */
+.hauntedloc-pg-container {
+  border-radius: 5px 5px;
+  border: 1px solid black;
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 100px;
+}
+
+.hauntedloc-pgtitle {
+  font-size: 28px;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.hauntedloc-pg-subtitle {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* container for haunted locations pg */
+.hauntedloc-map-container {
+  width: 100%;
+  /* margin-bottom: 150px; */
+}
+
+/* container with the map in haunted locations pg */
+.map-container {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px;
+}
+
+.map-container:hover {
+  opacity: 1;
+}
+
+/* beginning of css for profile pg */
+/* container for the profile pg content */
+.profilepg-container {
+  margin-left: 10%;
+}
+
+/* "viewing {users-name} profile" title */
+.user-profile-pgtitle {
+  font-size: 32px;
+  font-family: Bloody;
+  margin-bottom: 5px;
+  text-align: left;
+  color: white;
+}
+
+/* "{user's name}" reviews title in profile pg */
+.user-reviews-title {
+  text-align: center;
+  font-size: 28px;
+  font-family: Bloody;
+}
+
+/* users's reviews in profile pg */
+.userreviews-container {
+  border: 1px solid black;
+  border-radius: 5px 5px;
+  width: 40%;
+  padding: 15px 15px;
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
+  margin-left: 45%;
+  margin-top: -180px;
+  margin-bottom: 60px;
+}
+
+/* review form in users profile pg */
+.reviewform-profilepg {
+  border: 1px solid black;
+  border-radius: 5px 5px;
+  width: 40%;
+  padding: 15px 15px;
+  background-color: rgb(64, 77, 106);
+  opacity: 0.8;
+}
+
+/* character count */
+.m-0 {
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.add-sighting-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 8px 8px;
+  background-color: black;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.add-sighting-btn:hover {
+  opacity: 1;
+}
+
+.posted-review-form {
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+}
+
+.add-comment-btn2,
+.delete-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 8px 8px;
+  background-color: black;
+  margin: 2px 2px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  font-size: 16px;
+  text-align: center;
+  width: 40%;
+}
+
+.add-comment-btn2 a {
+  text-decoration: none;
+}
+
+.add-comment-btn2:hover,
+.delete-btn:hover {
+  opacity: 1;
+}
+
+.delete-btn {
+  border: none;
+  border-radius: 5px 5px;
+  background-color: black;
+  color: black;
+  opacity: 0.7;
+  font-size: 16px;
+  text-align: center;
 }
 
 /* footer  */

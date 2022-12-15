@@ -67,7 +67,7 @@ const Login = (props) => {
 
         {data ? (
           <p className='success-msg'>
-            Success! You may now head{' '}
+            Success! Redirecting {' '}
             <Link to="/profile"> to your profile.</Link>
           </p>
         ) : (

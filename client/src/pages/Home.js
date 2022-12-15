@@ -1,38 +1,15 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import ReviewsList from '../components/ReviewsList';
+// import { useQuery } from '@apollo/client';
+// import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
-import { QUERY_REVIEWS } from '../utils/queries';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-
+// import { QUERY_REVIEWS } from '../utils/queries';
 import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
-import Switch from '@mui/material/Switch';
-
-import MapContainer from '../components/MapContainer';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme({
-  status: {
-    danger: '#e53e3e',
-  },
-  palette: {
-    primary: {
-      main: '#a3bed6',
-      darker: '#053e85',
-    },
-    neutral: {
-      main: '#010914',
-      contrastText: '#a3bed6',
-    },
-  },
-});
-
-
+import { RiGhost2Line } from 'react-icons/ri';
+import { GiDarkSquad, GiHaunting } from 'react-icons/gi';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_REVIEWS);
-  const reviews = data?.reviews || [];
+  // const { loading, data } = useQuery(QUERY_REVIEWS);
+  // const reviews = data?.reviews || [];
 
   var scareEffect = document.getElementById('scare-sound');
   // .autoplay;
@@ -45,32 +22,50 @@ const Home = () => {
   }
 
   return (
+
     <div>
-    <ThemeProvider theme={theme}>
-      <div className=''>
 
-        {/* <audio id='scare-sound' autoplay> */}
-        <audio id='scare-sound'>
-          <source src={ScareSound} type='audio/mp3'></source>
-        </audio>
-       
-          <Button size="small" variant="contained" color="neutral" onClick={playEffect} type="button" className='sound-btn'>
-            Enter at your own risk...
-          </Button>
+      {/* <audio id='scare-sound' autoplay> */}
+      <audio id='scare-sound'>
+        <source src={ScareSound} type='audio/mp3'></source>
+      </audio>
 
-          <Button size="small" variant="contained" color='primary' font-weight="bold" onClick={pauseEffect} type="button" className='sound-btn'>
-            Make it stop, I'm too scared!
-          </Button>
-
-          {/* <p id="demo"></p> */}
-
-        <ReviewsList reviews={reviews}
-          title="Some Feed for Review(s)..." />
-
+      <div className='homepg-welcome'>
+        <h2>Welcome to Haunted Holidays!</h2>
+        <p>Do you consider yourself a ghost buster? <RiGhost2Line /><br />
+          A supernatural aficionado? Seeker of the dark arts? <GiDarkSquad />
+          <br /><br />
+          Use our app to find the most haunting, cringe-worthy places to visit in the US!
+          <br />
+          You can also report your own findings, and view other user's spooky encounters!
+          <br /><br />
+          We encourage your to step out of your comfort zone,<br />
+          and set yourself up for possibly the scariest experience of a lifetime.
+          <br /><br />
+          <a href='/signup'>Sign up</a> today and discover your first scare-venture!
+          <br />
+          Already a member? <a href='/login'>Log in</a> and drop a review, or find your next destination!
+          <br /><br />
+        </p>
+        <h2>Happy Hunting! <GiHaunting size={'1.8em'} /></h2>
       </div>
 
-    </ThemeProvider>
-    </div>
+      <div className='homepg-scare-sound' align='center'>
+        <button onClick={playEffect} className='sound-btn'>
+          Enter at your own risk...
+        </button>
+
+        <button onClick={pauseEffect} className='sound-btn'>
+          Make it stop, I'm too scared!
+        </button>
+      </div>
+
+
+      {/* <ReviewsList reviews={reviews}
+        title="Some Feed for Review(s)..." /> */}
+
+    </div >
+
   );
 };
 

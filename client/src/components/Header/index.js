@@ -69,11 +69,11 @@ const Header = () => {
               </div>
             </>
           )}
-          </div>
-          </header>
-          
         </div>
-      );
-          }  
+      </header>
+    </div>
+
+  );
+}
 
 export default Header;

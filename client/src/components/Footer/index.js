@@ -30,7 +30,9 @@ const Footer = () => {
             setModalOpen(true);
           }} label="What's This?" icon={<HelpIcon />} />
 
+
           <BottomNavigationAction onClick={event => window.location.href = '/profile'} label="Explore" icon={<LocationOnIcon />} />
+
 
         </BottomNavigation>
         {modalOpen && <Modal setOpenModal={setModalOpen} />}

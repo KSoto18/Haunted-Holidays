@@ -52,15 +52,13 @@ const Signup = () => {
       </audio>
 
       <div className="signup-form">
-
         <h2 className="signup-pgtitle">Sign Up</h2>
         <p className='signup-subtitle'>Please fill in this form to create an account.</p>
 
-
         {data ? (
           <p className='success-msg'>
-            Success! You may now head{' '}
-            <Link to="/profile">back to your profile.</Link>
+            Success! Redirecting {' '}
+            <Link to="/profile"> to your profile.</Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
