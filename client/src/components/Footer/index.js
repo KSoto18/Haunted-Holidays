@@ -9,6 +9,9 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 // import GitHubIcon from '@mui/icons-material/GitHub';
 import Box from '@mui/material/Box';
 import HelpIcon from '@mui/icons-material/Help';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import HotelIcon from '@mui/icons-material/Hotel';
+
 
 
 const Footer = () => {
@@ -30,8 +33,8 @@ const Footer = () => {
             setModalOpen(true);
           }} label="What's This?" icon={<HelpIcon />} />
 
-
-          <BottomNavigationAction onClick={event => window.location.href = '/profile'} label="Explore" icon={<LocationOnIcon />} />
+          <BottomNavigationAction href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
+          <BottomNavigationAction href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
 
         </BottomNavigation>

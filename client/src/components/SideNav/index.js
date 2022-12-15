@@ -5,6 +5,7 @@ import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { FiGithub } from 'react-icons/fi';
+import Switch from '@mui/material/Switch';
 
 const SideNav = (props) => {
 
@@ -55,7 +56,10 @@ const SideNav = (props) => {
                         <FiGithub /> Repository</a>
 
                     {/* dark mode button */}
-                    <button onClick={darkMode} className='darkmode-btn'>Enable dark mode</button>
+                    <Switch onClick={darkMode} className='darkmode-btn'> Dark mode</Switch>
+                     
+                   
+                    
 
                 </div>
 
