@@ -33,9 +33,9 @@ const Header = () => {
 
         {/* link to home in pg title  */}
         <Link className="headertitle" to="/">
-          <h1>Haunted Holidays<GiGhost size={'4em'} /></h1>
+          <h1>Haunted Holidays<GiGhost className='header-ghost' size={'4em'} /></h1>
         </Link>
-        <p className='subheader' style={{ color: "offwhite" }}>
+        <p className='subheader'>
           Find your next spooky experience!
         </p>
 

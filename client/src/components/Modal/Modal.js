@@ -7,7 +7,7 @@ function Modal({ setOpenModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
-      
+
         <div className="titleCloseBtn">
           <button
             onClick={() => {
@@ -18,20 +18,9 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1 className= "modalheader">BOO!</h1>
+          <h1 className="modalheader">BOO!</h1>
         </div>
-        
-        <div className="footer">
-          <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
-            id="cancelBtn"
-          >
-            That was Scary! GO BACK!
-          </button>
-        
-        </div>
+
       </div>
     </div>
   );

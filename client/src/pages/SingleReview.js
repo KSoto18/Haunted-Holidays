@@ -7,9 +7,9 @@ import CommentForm from '../components/CommentForm';
 import { QUERY_SINGLE_REVIEW } from '../utils/queries';
 
 const SingleReview = () => {
-  // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { reviewId } = useParams();
 
+  const { reviewId } = useParams();
+ 
   const { loading, data } = useQuery(QUERY_SINGLE_REVIEW, {
     // pass URL parameter
     variables: { reviewId: reviewId },
@@ -23,7 +23,7 @@ const SingleReview = () => {
   return (
     <div className="single-review-container">
 
-      <h2 style={{ fontSize: '1.3rem' }}>
+      <h2 className='single-rvw-username'>
         {review.reviewAuthor} <br />
       </h2>
 
@@ -37,7 +37,7 @@ const SingleReview = () => {
           style={{
             fontSize: '1.3rem',
             fontStyle: 'italic',
-            lineHeight: '1.5',
+            lineHeight: '2',
           }}
         >
           {review.reviewText}

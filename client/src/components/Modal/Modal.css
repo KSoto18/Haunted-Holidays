@@ -2,15 +2,16 @@
   width: 100vw;
   height: 100vh;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .modalContainer {
   width: 500px;
-  height: 500px;
+  height: 300px;
   border-radius: 12px;
   background-image: url("https://cdn.pixabay.com/photo/2018/10/27/20/18/silhouette-3777403_960_720.jpg");
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -27,19 +28,19 @@
   font-family: "Bloody";
   font-size: 80px;
   position: relative;
-  
+
 }
- 
-.modalheader{
+
+.modalheader {
   font-family: "Bloody";
   font-size: 100px;
   color: red;
   text-align: center;
   position: relative;
-  margin:auto;
+  margin: auto;
   display: flex;
   justify-content: center;
- 
+
 
 }
 

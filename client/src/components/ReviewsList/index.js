@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { REMOVE_REVIEW } from '../../utils/mutations';
 import { MdAddComment } from 'react-icons/md';
-import { RiChatDeleteFill } from 'react-icons/ri';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { QUERY_USER } from '../../utils/queries';
 
 const ReviewsList = ({
@@ -16,10 +16,13 @@ const ReviewsList = ({
   const [removeReview, { error }] = useMutation(REMOVE_REVIEW, {
     update(cache, { data: { removeReview } }) {
       try {
+        const { user } = cache.readQuery({ query: QUERY_USER });
+
         cache.writeQuery({
           query: QUERY_USER,
-          data: { user: removeReview },
+          data: {user: user},
         });
+        
       } catch (e) {
         console.error(e);
       }
@@ -35,6 +38,12 @@ const ReviewsList = ({
     try {
       const { data } = await removeReview({
         variables: { reviewId: review },
+        refetchQueries: [
+          { 
+            query: QUERY_USER,
+        
+          },
+        ],
       });
     } catch (err) {
       console.error(err);
@@ -71,26 +80,24 @@ const ReviewsList = ({
             ) : (
 
               <>
-                <span style={{ fontSize: '0.8rem' }}>
-                  You had this review on {review.createdAt}
-                </span>
+                {/* <span style={{ fontSize: '0.8rem' }}>
+                  Posted on: {review.createdAt}
+                </span> */}
               </>
 
             )}
 
-            <div className=''>
-              <p style={{ fontSize: '1.2rem' }}>
+            <div className='users-reviews'>
+              <button className="delete-btn"
+                onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
+              </button>
+              <p className="review-content" style={{ fontSize: '1.2rem' }}>
                 <i>{review.reviewText}</i></p>
             </div>
 
             <button className='add-comment-btn2'>
-              <Link className='' to={`/reviews/${review._id}`}>
-                Add a comment <MdAddComment /></Link></button>
+              <Link className='' to={`/reviews/${review._id}`}>Reply <MdAddComment /></Link></button>
 
-            <button className="delete-btn"
-              onClick={() => handleRemoveReview(review._id)}>
-              Delete comment <RiChatDeleteFill />
-            </button>
           </div>
 
 

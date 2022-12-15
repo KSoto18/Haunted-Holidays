@@ -20,6 +20,8 @@ import Contact from './components/Contact';
 import MapContainer from './components/MapContainer';
 import HauntedLocations from './components/HauntedLocations';
 import "./Fonts/BLOODY.ttf"
+import Forum from './pages/Forum';
+import SingleReview from './pages/SingleReview'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -85,11 +87,13 @@ function App() {
                 element={<Profile />}
               />
 
+              <Route path="/forum"
+                element={<Forum />}
+              />
 
-              {/* <Route path="/profiles/:username"
-                element={<Profile />}
-              /> */}
-
+              <Route path="/reviews/:reviewId"
+                element={<SingleReview />}
+              />
 
               <Route path="/hauntedlocations"
                 element={<HauntedLocations />} />

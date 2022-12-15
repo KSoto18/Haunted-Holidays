@@ -1,36 +1,32 @@
+// Main Imports
 import React from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+// import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import { GiSpookyHouse } from 'react-icons/gi';
+// import Auth from '../utils/auth';
+// import MapContainer from '../components/MapContainer';
+
+
+// Components
 import ReviewForm from '../components/ReviewForm';
 import ReviewsList from '../components/ReviewsList';
 
-import { QUERY_USER } from '../utils/queries';
+// Query Imports
+import { QUERY_USER, QUERY_REVIEWS, QUERY_SINGLE_REVIEW } from '../utils/queries';
 
-import Auth from '../utils/auth';
-import MapContainer from '../components/MapContainer';
 
 const Profile = () => {
 
-  // const { username: userParam } = useParams();
-  // const reviews = data?.reviews || [];
-
   const { loading, data } = useQuery(QUERY_USER);
 
-  console.log(data);
+  // console.log(data);
 
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_REVIEWS);
-
-  // const user = Auth.getProfile();
   const user = data?.user || {};
 
-  // const user = data?.me || data?.user || {};
 
-  console.log(user);
-  // navigate to personal profile page if username is yours
-  // if (Auth.loggedIn()) {
-  //   return <Navigate to="/profile" />;
-  // }
+  // console.log(user);
+ 
 
   if (loading) {
     return <div>Loading...</div>;
@@ -51,8 +47,12 @@ const Profile = () => {
 
     <div className="profilepg-container">
 
-      <h2 className="user-profile-pgtitle">
+      {/* <h2 className="user-profile-pgtitle">
         Viewing {user ? `${user.username}'s` : 'your'} profile.
+      </h2> */}
+
+      <h2 className='hl-redirect-btn'>
+        <a href='/hauntedlocations'>Explore Haunted Locations <GiSpookyHouse size={'1.8em'} /></a>
       </h2>
 
       <div className='reviewform-profilepg'>
@@ -62,21 +62,19 @@ const Profile = () => {
       <div className="userreviews-container">
 
         <h2 className="user-reviews-title">
-          {user ? `${user.username}'s` : 'your'} reviews.
-</h2>
+
+
+          {user ? `${user.username}'s` : 'your'} reviews
+        </h2>
+
         <ReviewsList
           reviews={user.reviews}
           title={`${user.username}'s reviews...`}
           showTitle={false}
           showUsername={false}
         />
-      </div>
 
-      {/* {!user && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
-          > */}
+      </div>
 
     </div>
   );
