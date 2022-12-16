@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';

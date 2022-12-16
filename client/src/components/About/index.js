@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { RiFolderUserLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const About = () => {
 
@@ -57,14 +58,14 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        <a className="contactlinks" title="Connect with me on LinkedIn!" target="_blank" href="https://www.linkedin.com/in/iia-wolak-466b63252/" rel="noreferrer"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" title="Connect with me on LinkedIn!" target="_blank" to="https://www.linkedin.com/in/iia-wolak-466b63252/" rel="noreferrer"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" title="Send me an email!" href="mailto: wolaki96@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
+                        <Link className="contactlinks" title="Send me an email!" to="mailto: wolaki96@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!" href="https://github.com/wolaki96"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!" to="https://github.com/wolaki96"><FaGithub className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="https://wolaki96.github.io/Iia_Wolak_React_Portfolio/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
+                            to="https://wolaki96.github.io/Iia_Wolak_React_Portfolio/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></Link>
                     </div>
 
                     {/* about paragraph */}
@@ -93,16 +94,16 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!"
-                            href="https://www.linkedin.com/in/karinadrummond/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!"
+                            to="https://www.linkedin.com/in/karinadrummond/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" title="Send me an email!" href="mailto: k.drummond528@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
+                        <Link className="contactlinks" title="Send me an email!" to="mailto: k.drummond528@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
-                            href="https://github.com/kdrummond528"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
+                            to="https://github.com/kdrummond528"><FaGithub className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="https://kdrummond528.github.io/React_Portfolio/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
+                            to="https://kdrummond528.github.io/React_Portfolio/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></Link>
                     </div>
 
                     {/* about paragraph */}
@@ -127,17 +128,17 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!"
-                            href="https://www.linkedin.com/in/khristel-soto-9468a6259/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!"
+                            to="https://www.linkedin.com/in/khristel-soto-9468a6259/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a class="contactlinks" title="Send me an email!" href="mailto: khris.soto@live.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
+                        <Link class="contactlinks" title="Send me an email!" to="mailto: khris.soto@live.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></Link>
                         &nbsp;&nbsp;
-                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
-                            href="https://github.com/ksoto18"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
+                            to="https://github.com/ksoto18"><FaGithub className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
                         {/* ADD PORTFOLIO */}
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="https://ksoto18.github.io/Portfolio-React/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
+                            to="https://ksoto18.github.io/Portfolio-React/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></Link>
                     </div>
 
                     {/* about paragraph */}
@@ -159,15 +160,15 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!" href="https://www.linkedin.com/in/maggie-lively-359893120/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!" to="https://www.linkedin.com/in/maggie-lively-359893120/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a class="contactlinks" title="Send me an email!" href="mailto: maggie.lively@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
+                        <Link class="contactlinks" title="Send me an email!" to="mailto: maggie.lively@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></Link>
                         &nbsp;&nbsp;
-                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
-                            href="https://github.com/mmllively"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
+                            to="https://github.com/mmllively"><FaGithub className="contactlink-icon" size={"1.5em"} /></Link>
                         &nbsp;&nbsp;
-                        <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="https://mmllively.github.io/portfolio_react/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                        <Link className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
+                            to="https://mmllively.github.io/portfolio_react/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></Link>
                     </div>
 
                     {/* about paragraph */}
