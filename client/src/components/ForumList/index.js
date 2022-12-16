@@ -20,9 +20,9 @@ const ForumList = ({
 
         cache.writeQuery({
           query: QUERY_USER,
-          data: {user: user},
+          data: { user: user },
         });
-        
+
       } catch (e) {
         console.error(e);
       }
@@ -39,9 +39,9 @@ const ForumList = ({
       const { data } = await removeReview({
         variables: { reviewId: review },
         refetchQueries: [
-          { 
+          {
             query: QUERY_USER,
-        
+
           },
         ],
       });
@@ -68,9 +68,7 @@ const ForumList = ({
             {showUsername ? (
 
               <div>
-
-{review.reviewAuthor} <br />
-
+                <br />
                 <span style={{ fontSize: '0.8rem' }}>
                   <h2 className='single-rvw-username'>
                     {review.reviewAuthor}</h2>
@@ -78,7 +76,6 @@ const ForumList = ({
                     had this spooky sighting on {review.createdAt}.
                   </p>
                 </span>
-
               </div>
 
             ) : (
@@ -92,21 +89,21 @@ const ForumList = ({
             )}
 
             <div className='users-reviews'>
-            
-            {isLoggedInUser && (
-              <button className="delete-btn"
-                onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
-              </button>
+
+              {isLoggedInUser && (
+                <button className="delete-btn"
+                  onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
+                </button>
               )}
-              
+
               <p className="review-content" style={{ fontSize: '1.2rem' }}>
                 <i>{review.reviewText}</i></p>
             </div>
 
-            <button className='add-comment-btn-profilepg'>
+            <button className='add-comment-btn-forumpg'>
               <Link className='' to={`/reviews/${review._id}`}>Reply <MdAddComment /></Link>
-              
-              </button>
+
+            </button>
 
           </div>
 

@@ -21,7 +21,7 @@ const Footer = () => {
 
       <Box >
 
-        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: '#31587a; opacity:0.75' }}
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: 'black; opacity:0.8' }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
@@ -29,16 +29,16 @@ const Footer = () => {
           }}
         >
 
-          <BottomNavigationAction sx={{color:"white"}} onClick={() => {
+          <BottomNavigationAction sx={{ color: "white" }} onClick={() => {
             setModalOpen(true);
           }} label="What's This?" icon={<HelpIcon />} />
 
-          <BottomNavigationAction sx={{color:"white"}} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
-          <BottomNavigationAction sx={{color:"white"}} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
+          <BottomNavigationAction sx={{ color: "white" }} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
+          <BottomNavigationAction sx={{ color: "white" }} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
         </BottomNavigation>
         {modalOpen && <Modal setOpenModal={setModalOpen} />}
-       
+
       </Box>
 
       <p className="footer-copyright">

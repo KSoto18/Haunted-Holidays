@@ -28,7 +28,7 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-    
+
 
     try {
       const { data } = await addUser({
@@ -46,7 +46,6 @@ const Signup = () => {
   var scareEffect = document.getElementById('scare-sound');
   const playEffect = () => {
     scareEffect.play();
-
   }
 
   return (

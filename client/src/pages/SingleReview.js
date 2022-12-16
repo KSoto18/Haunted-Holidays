@@ -32,10 +32,10 @@ const SingleReview = () => {
 
       <div className='reroute-btns'>
         <button className='goback-btn'>
-          <a href='/profile'>Back to profile <TbArrowBackUp /></a>
+          <a href='/profile'><TbArrowBackUp /> Profile</a>
         </button>
         <button className='gotoforum-btn'>
-          <a href='/forum'>Go to forum <MdOutlineForum /></a>
+          <a href='/forum'>Forum <MdOutlineForum /></a>
         </button>
       </div>
 
@@ -47,6 +47,7 @@ const SingleReview = () => {
         <blockquote
           className="comment-block"
           style={{
+            // textAlign: 'center',
             fontSize: '1.3rem',
             fontStyle: 'italic',
             lineHeight: '2',

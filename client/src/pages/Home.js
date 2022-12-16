@@ -3,33 +3,16 @@ import { useQuery } from '@apollo/client';
 import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
 import { QUERY_REVIEWS } from '../utils/queries';
-import ScareSound from '../assets/mp3/dark-sitar-7546.mp3';
 import { RiGhost2Line } from 'react-icons/ri';
 import { GiDarkSquad, GiHaunting } from 'react-icons/gi';
-
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_REVIEWS);
   const reviews = data?.reviews || [];
 
-  var scareEffect = document.getElementById('scare-sound');
-  // .autoplay;
-  // document.getElementById('demo').innerHTML = scareEffect;
-  const playEffect = () => {
-    scareEffect.play();
-  }
-  const pauseEffect = () => {
-    scareEffect.pause();
-  }
-
   return (
 
     <div className='homepg-div'>
-
-      {/* <audio id='scare-sound' autoplay> */}
-      <audio id='scare-sound'>
-        <source src={ScareSound} type='audio/mp3'></source>
-      </audio>
 
       <div className='homepg-welcome'>
         <h2>Welcome to Haunted Holidays!</h2>
@@ -52,7 +35,7 @@ const Home = () => {
 
       </div>
 
-      <div className='homepg-scare-sound' align='center'>
+      {/* <div className='homepg-scare-sound' align='center'>
         <button onClick={playEffect} className='sound-btn'>
           Enter at your own risk...
         </button>
@@ -60,7 +43,7 @@ const Home = () => {
         <button onClick={pauseEffect} className='sound-btn'>
           Make it stop, I'm too scared!
         </button>
-      </div>
+      </div> */}
 
 
     </div >
