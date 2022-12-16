@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -9,13 +9,14 @@ import { GiKey } from 'react-icons/gi';
 import ImpactSound from '../assets/mp3/impactsound.mp3';
 
 const Signup = () => {
+ 
   const [formState, setFormState] = useState({
     username: '',
     email: '',
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
-
+ const navigate = useNavigate();
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -29,6 +30,7 @@ const Signup = () => {
     event.preventDefault();
     console.log(formState);
     
+    
 
     try {
       const { data } = await addUser({
@@ -36,7 +38,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
-      window.location.replace("/profile");
+      navigate('/profile');
 
     } catch (e) {
       console.error(e);
@@ -101,13 +103,15 @@ const Signup = () => {
                 onChange={handleChange}
               />
             </div>
-
+        
             <button onClick={playEffect}
               className="signupsubmit-btn"
               style={{ cursor: 'pointer' }}
               type="submit"
+              
             >Submit
             </button>
+            
 
             <p className='login-redirect'>
               Already have an account? Sign in <Link to="/login">here</Link>.

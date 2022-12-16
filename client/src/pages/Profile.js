@@ -1,5 +1,6 @@
 // Main Imports
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
@@ -38,7 +39,7 @@ const Profile = () => {
       <h3 className='login-signup-redirect' align='center'>
         You need to be logged in to view your profile.
         <br />
-        Please <a href='/login'>log in</a> or <a href='/signup'>sign up</a>.
+        Please <Link to='/login'>log in</Link> or <Link to='/signup'>sign up</Link>.
       </h3>
     );
   }
@@ -58,7 +59,7 @@ const Profile = () => {
         </div>
 
         <h2 className='forum-redirect-btn'>
-          <a href='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></a>
+          <Link to='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></Link>
         </h2>
 
       </div>

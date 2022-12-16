@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import { AiOutlineMail } from 'react-icons/ai';
@@ -8,9 +8,10 @@ import ImpactSound from '../assets/mp3/impactsound.mp3';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
+  
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
+  const navigate = useNavigate();
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,6 +26,7 @@ const Login = (props) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
+   
 
     try {
       const { data } = await login({
@@ -32,7 +34,7 @@ const Login = (props) => {
       });
 
       Auth.login(data.login.token);
-      window.location.replace("/profile");
+     
 
     } catch (e) {
       console.error(e);
@@ -90,15 +92,18 @@ const Login = (props) => {
                 placeholder="******" name="password" type="password"
                 value={formState.password} onChange={handleChange} />
             </div>
-
+            
             <button onClick={playEffect}
               className="loginsubmit-btn"
               style={{ cursor: 'pointer' }}
-              type="submit">Submit
+              type="submit"
+              
+              >Submit
+              
             </button>
-
+           
             <p className='signup-redirect'>
-              Don't have an account? Sign up <a href="/signup">here</a>.
+              Don't have an account? Sign up <Link to="/signup">here</Link>.
             </p>
 
           </form>
