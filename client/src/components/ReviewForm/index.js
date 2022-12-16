@@ -18,13 +18,13 @@ const ReviewForm = () => {
 
         cache.writeQuery({
           query: QUERY_USER,
-          data: { user: user},
+          data: { user: user },
         });
-        
+
       } catch (e) {
         console.error(e);
       }
-    
+
     },
   });
 
@@ -40,9 +40,9 @@ const ReviewForm = () => {
           reviewAuthor: Auth.getProfile().data.username,
         },
         refetchQueries: [
-          { 
-            query: (QUERY_USER, QUERY_REVIEWS),
-        
+          {
+            query: (QUERY_USER),
+
           },
         ],
       });

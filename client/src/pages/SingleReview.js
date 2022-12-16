@@ -5,11 +5,13 @@ import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import { QUERY_SINGLE_REVIEW } from '../utils/queries';
+import { TbArrowBackUp } from 'react-icons/tb';
+import { MdOutlineForum } from 'react-icons/md';
 
 const SingleReview = () => {
 
   const { reviewId } = useParams();
- 
+
   const { loading, data } = useQuery(QUERY_SINGLE_REVIEW, {
     // pass URL parameter
     variables: { reviewId: reviewId },
@@ -20,6 +22,7 @@ const SingleReview = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
   return (
     <div className="single-review-container">
 
@@ -27,11 +30,20 @@ const SingleReview = () => {
         {review.reviewAuthor} <br />
       </h2>
 
+      <div className='reroute-btns'>
+        <button className='goback-btn'>
+          <a href='/profile'>Back to profile <TbArrowBackUp /></a>
+        </button>
+        <button className='gotoforum-btn'>
+          <a href='/forum'>Go to forum <MdOutlineForum /></a>
+        </button>
+      </div>
+
       <p style={{ fontSize: '0.8rem' }}>
         Posted on: {review.createdAt}
       </p>
 
-      <div className="">
+      <div>
         <blockquote
           className="comment-block"
           style={{

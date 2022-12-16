@@ -1,25 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
-import { FiGithub } from 'react-icons/fi';
+// import { FiGithub } from 'react-icons/fi';
 import { MdOutlineForum } from 'react-icons/md';
 import Switch from '@mui/material/Switch';
 import logo from './../../assets/img/boo-blanco.gif'
+
 const SideNav = (props) => {
 
-    const openNav = () => {
-        document.getElementById("sidenav").style.width = "225px";
-        // document.getElementById("body-closenav").style.marginLeft = "250px";
-        // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-    const closeNav = () => {
-        document.getElementById("sidenav").style.width = "0";
-        // document.getElementById("body-closenav").style.marginLeft = "0";
-        // document.body.style.backgroundColor = "white";
-    }
+    const [show, setShow] = useState(false)
+
+
 
     const darkMode = () => {
         var element = document.body;
@@ -27,32 +22,64 @@ const SideNav = (props) => {
     }
 
     return (
-        <div>
-
+        <div >
             {/* button to open sidenav */}
-            <a className="opennav" onClick={openNav}>
+            <a className="opennav" onClick={() => {
+                setShow(true)
+                props.sideNav(true)
+            }}>
                 <GiTombstone size={'2em'} />
                 <p className="nav-title">Navigation</p>
             </a>
 
-            <div className="sidenav" id="sidenav">
+            <div className="sidenav" id="sidenav" style={show ? { width: '250px' } : { width: '0px' }}>
                 {/* button to close sidenav */}
-                <AiOutlineClose onClick={closeNav} className="closenav" />
+                <AiOutlineClose onClick={() => {
+                    setShow(false)
+                    props.sideNav(false)
+                }} className="closenav" />
 
                 <div className="nav-menu-items">
                     {/* navigation menu */}
-                    <a className="navlink" href="/">
+                    <a className="navlink" href="/"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
                         <AiOutlineHome /> Home</a>
-                    <a className="navlink" href="/profile">
+                    <a className="navlink" href="/profile"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
                         <CgProfile /> Profile</a>
-                    <a className="navlink" href="/forum">
+                    <a className="navlink" href="/forum"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
                         <MdOutlineForum /> Forum </a>
-                    <a className="navlink" href="/hauntedlocations">
-                        <GiSpookyHouse /> Haunted &nbsp;&nbsp;&nbsp;&nbsp;Locations</a>
-                    <a className="navlink" href="/contact">
+                    <a className="navlink" href="/hauntedlocations"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
+                        <GiSpookyHouse /> Haunted <br />
+                        <span style={{ marginLeft: '25px', fontSize: '22px' }}>Locations</span></a>
+                    <a className="navlink" href="/contact"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
                         <TbMessage2Share /> Contact</a>
-                    <a className="navlink" href="/about">
+                    <a className="navlink" href="/about"
+                        onClick={() => {
+                            setShow(false)
+                            props.sideNav(false)
+                        }}>
                         <HiUserGroup /> About Us</a>
+
+                    <img className="ghost" src={logo} alt="Logo" />
 
                     {/* dark mode button */}
                     <div className='dark-mode-container'>
@@ -61,9 +88,9 @@ const SideNav = (props) => {
                     </div>
 
                 </div>
-                <img className="ghost" src={logo} alt="Logo" />
+
             </div>
-           
+
         </div >
 
     );

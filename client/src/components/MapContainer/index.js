@@ -12,23 +12,23 @@ const MapContainer = () => {
   const locations = data?.locations;
 
 
-const [ selected, setSelected ] = useState({});
-const [isOpen, setisOpen] = useState(false);
-const [location, setLocation] = useState({});
-const [description, setDescription] = useState({});
-const [city, setCity] = useState({});
-const [state_abbrev, setState_abbrev] = useState({});
+  const [selected, setSelected] = useState({});
+  const [isOpen, setisOpen] = useState(false);
+  const [location, setLocation] = useState({});
+  const [description, setDescription] = useState({});
+  const [city, setCity] = useState({});
+  const [state_abbrev, setState_abbrev] = useState({});
 
-const onSelect = (object, location) => {
-  console.log(location);
+  const onSelect = (object, location) => {
+    console.log(location);
     setSelected(object);
     setisOpen(true);
     setLocation(location);
     setDescription(description);
-]
+
     setCity(city);
     setState_abbrev(state_abbrev);
-     
+
   }
 
   const mapStyles = {
@@ -75,8 +75,8 @@ const onSelect = (object, location) => {
 
                 <p className='location-name'>{location.location}</p>
                 <p className='location-description'>{location.description}</p>
-              <p>City: {location.city}, {location.state_abbrev}.</p>
-              
+                <p>City: {location.city}, {location.state_abbrev}.</p>
+
               </div>
             </InfoWindow>
           )
@@ -87,4 +87,5 @@ const onSelect = (object, location) => {
     </LoadScript>
   )
 }
+
 export default MapContainer;

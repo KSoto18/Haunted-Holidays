@@ -57,16 +57,14 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        {/* ADD IIA'S LINKEDIN  */}
                         <a className="contactlinks" title="Connect with me on LinkedIn!" target="_blank" href="https://www.linkedin.com/in/iia-wolak-466b63252/" rel="noreferrer"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
                         &nbsp;&nbsp;
                         <a className="contactlinks" title="Send me an email!" href="mailto: wolaki96@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
                         &nbsp;&nbsp;
                         <a className="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!" href="https://github.com/wolaki96"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
                         &nbsp;&nbsp;
-                        {/* ADD PORTFOLIO */}
                         <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="github.com"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                            href="https://wolaki96.github.io/Iia_Wolak_React_Portfolio/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
                     </div>
 
                     {/* about paragraph */}
@@ -129,7 +127,6 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        {/* ADD KHRIS'S LINKEDIN */}
                         <a class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!"
                             href="https://www.linkedin.com/in/khristel-soto-9468a6259/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
                         &nbsp;&nbsp;
@@ -140,7 +137,7 @@ const About = () => {
                         &nbsp;&nbsp;
                         {/* ADD PORTFOLIO */}
                         <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="github.com"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                            href="https://ksoto18.github.io/Portfolio-React/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
                     </div>
 
                     {/* about paragraph */}
@@ -162,17 +159,15 @@ const About = () => {
 
                     {/* contact links */}
                     <div className="contactlinks-container">
-                        {/* ADD MAGGIE'S LINKEDIN */}
-                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!" href="https://linkedin.com"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
+                        <a class="contactlinks" target="_blank" rel="noreferrer" title="Connect with me on LinkedIn!" href="https://www.linkedin.com/in/maggie-lively-359893120/"><FaLinkedin className="contactlink-icon" size={"1.5em"} /></a>
                         &nbsp;&nbsp;
                         <a class="contactlinks" title="Send me an email!" href="mailto: maggie.lively@gmail.com"><MdEmail className="contactlink-icon" size={"1.65em"} /></a>
                         &nbsp;&nbsp;
                         <a class="contactlinks" target="_blank" rel="noreferrer" title="Check out my GitHub!"
                             href="https://github.com/mmllively"><FaGithub className="contactlink-icon" size={"1.5em"} /></a>
                         &nbsp;&nbsp;
-                        {/* ADD PORTFOLIO */}
                         <a className="contactlinks" target="_blank" rel="noreferrer" title="View my porfolio!"
-                            href="github.com"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
+                            href="https://mmllively.github.io/portfolio_react/"><RiFolderUserLine className="contactlink-icon" size={"1.5em"} /></a>
                     </div>
 
                     {/* about paragraph */}
