@@ -6,8 +6,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_REVIEWS } from '../utils/queries';
 
 // Components
-import ReviewsList from '../components/ReviewsList';
-import ReviewForm from '../components/ReviewForm';
+import ForumList from '../components/ForumList';
+import ForumForm from '../components/ForumForm';
 
 import { TbArrowBackUp } from 'react-icons/tb';
 
@@ -18,14 +18,14 @@ const Forum = () => {
     return (
         <div>
 
-            <div className='reviewform-forumpg'>
-                <ReviewForm />
-            </div>
+            {/* <div className='reviewform-forumpg'>
+                <ForumForm />
+            </div> */}
 
             <div className='forumpg-container'>
                 <h2 className='forumpg-title'>Haunted Forum</h2>
 
-                <ReviewsList reviews={reviews} title='User Reviews' />
+                <ForumList reviews={reviews} title='User Reviews' />
             </div>
 
         </div>

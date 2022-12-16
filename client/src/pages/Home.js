@@ -40,7 +40,7 @@ const Home = () => {
           <br />
           You can also report your own findings, and view other user's spooky encounters!
           <br /><br />
-          We encourage your to step out of your comfort zone,<br />
+          We encourage you to step out of your comfort zone,<br />
           and set yourself up for possibly the scariest experience of a lifetime.
           <br /><br />
           <a href='/signup'>Sign up</a> today and discover your first scare-venture!

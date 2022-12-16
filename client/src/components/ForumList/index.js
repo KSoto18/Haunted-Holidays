@@ -6,7 +6,7 @@ import { MdAddComment } from 'react-icons/md';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { QUERY_USER } from '../../utils/queries';
 
-const ReviewsList = ({
+const ForumList = ({
   reviews,
   title,
   showTitle = true,
@@ -92,15 +92,21 @@ const ReviewsList = ({
             )}
 
             <div className='users-reviews'>
+            
+            {isLoggedInUser && (
               <button className="delete-btn"
                 onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
               </button>
+              )}
+              
               <p className="review-content" style={{ fontSize: '1.2rem' }}>
                 <i>{review.reviewText}</i></p>
             </div>
 
             <button className='add-comment-btn-profilepg'>
-              <Link className='' to={`/reviews/${review._id}`}>Reply <MdAddComment /></Link></button>
+              <Link className='' to={`/reviews/${review._id}`}>Reply <MdAddComment /></Link>
+              
+              </button>
 
           </div>
 
@@ -114,4 +120,4 @@ const ReviewsList = ({
   );
 };
 
-export default ReviewsList;
+export default ForumList;

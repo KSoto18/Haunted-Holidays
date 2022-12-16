@@ -280,6 +280,7 @@ header {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 15px;
+  margin-bottom: 50px;
 }
 
 /* user comment input thats posted */
@@ -891,6 +892,7 @@ header {
   width: 60%;
   margin-left: 20%;
   margin-right: 20%;
+  margin-bottom: 25px;
 }
 
 .forumpg-container {
