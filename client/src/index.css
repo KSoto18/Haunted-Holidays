@@ -63,12 +63,13 @@ header {
 }
 
 .dark-mode-container {
-  margin-top: 95%;
+  margin-top: 20%;
 }
 
 .dark-mode-container p {
   color: white;
   text-align: center;
+  font-size: 16px;
 }
 
 .darkmode-btn {
@@ -213,6 +214,10 @@ header {
   bottom: 70px;
   right: 40px;
   cursor: pointer;
+}
+
+.homepg-div {
+  margin-bottom: 60px;
 }
 
 /* container with welcome paragraph */
@@ -638,9 +643,13 @@ header {
   width: 50%;
   font-size: 50px;
   position: relative;
-  top: -70px;
+  top: -22px;
   margin-left: -30px;
   color: #7f99ad
+}
+
+.hl-redirect-link:hover {
+  color: white;
 }
 
 .darkmapimg {
@@ -654,14 +663,14 @@ header {
   background-repeat: no-repeat;
   top: 140px;
   width: 550px;
-  height: 400px;
+  height: 300px;
   margin: 10px;
 }
 
 .forum-redirect-btn {
   border: none;
   border-radius: 5px 5px;
-  padding: 15px 15px;
+  padding: 8px 8px;
   background-color: white;
   margin: 2px 2px;
   text-decoration: none;
@@ -671,8 +680,8 @@ header {
   width: 25%;
   font-weight: bold;
   margin-bottom: 15px;
-  margin-left: 50%;
-  margin-top: 300px;
+  margin-left: 52%;
+  margin-top: 310px;
 }
 
 .hl-redirect-btn a,
@@ -733,6 +742,18 @@ header {
   opacity: 0.9;
 }
 
+.reviewform-forumpg {
+  border: 1px solid black;
+  border-radius: 5px 5px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 2%;
+  padding: 15px 15px;
+  background-color: #7f99ad;
+  opacity: 0.9;
+}
+
 /* character count */
 .m-0 {
   font-size: 14px;
@@ -756,6 +777,42 @@ header {
 
 .add-sighting-btn:hover {
   opacity: 1;
+}
+
+.reroute-btns {
+  margin-left: 67%;
+  margin-top: -30px;
+}
+
+.goback-btn,
+.gotoforum-btn {
+  border: none;
+  border-radius: 5px 5px;
+  padding: 5px 5px;
+  background-color: black;
+  margin: 2px 2px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.goback-btn a,
+.gotoforum-btn a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.goback-btn:hover,
+.gotoforum-btn:hover {
+  opacity: 1;
+}
+
+.comments-section {
+  border-bottom: 1px black dotted;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .posted-review-form {
@@ -899,12 +956,9 @@ header {
   color: red
 }
 
-}
-.ghost{
- position:absolute;
-  top: 50%;
+.ghost {
+  position: absolute;
+  top: 55%;
   left: -35%;
-  width: 50px 50px;
-  
- 
+  width: 35px 35px;
 }

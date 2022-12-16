@@ -5,10 +5,11 @@ import Auth from '../../utils/auth';
 import SideNav from '../SideNav';
 import { SlLogin, SlLogout } from 'react-icons/sl';
 import { FiUserPlus } from 'react-icons/fi';
+// import ImpactSound from '../../assets/mp3/impactsound.mp3';
 // import Whispering from '../../assets/mp3/whispering.mp3';
 
 
-const Header = () => {
+const Header = (props) => {
 
   const logout = (event) => {
     event.preventDefault();
@@ -24,11 +25,11 @@ const Header = () => {
   return (
     <div>
 
-      <SideNav />
-
       {/* <audio id='scare-sound'>
-        <source src={Whispering} type='audio/mp3'></source>
+        <source src={ImpactSound} type='audio/mp3'></source>
       </audio> */}
+
+      <SideNav sideNav={props.sideNav} />
 
       <header>
 
@@ -64,16 +65,16 @@ const Header = () => {
                   Login <SlLogin />
                 </Link>
 
-                <Link className="signup-btn" to="/signup">
+                <Link className="signup-btn" to="/signup" >
                   Signup <FiUserPlus />
                 </Link>
               </div>
             </>
           )}
-           
+
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
 
   );
 }

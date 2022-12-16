@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -48,19 +49,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-
-
 function App() {
+  const [navOpen, setNavOpen] = useState(false)
 
   return (
 
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
+          <Header sideNav={setNavOpen} />
 
-          <div>
+          <div style={navOpen ? {
+            marginLeft: '250px', transition: '.5s ease'
+          } : { marginLeft: '0px', transition: '.5s ease' }}>
             <Routes>
               <Route path="/"
                 element={<Home />}

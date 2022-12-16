@@ -9,23 +9,20 @@ const CommentList = ({ comments = [] }) => {
 
   return (
     <div className='comment-list-container'>
-      <h3 className="">
+      <h3 className="comments-section">
         Comments
       </h3>
 
-      <div className="">
+      <div>
         {comments &&
           comments.map((comment) => (
 
-            <div key={comment._id} className="">
-              <div className="">
-                <h5 className="">
-                  {comment.commentAuthor} commented{' '}
-                  <span style={{ fontSize: '0.825rem' }}>
-                    on {comment.createdAt}
-                  </span>
-                </h5>
-                <p className="">{comment.commentText}</p>
+            <div key={comment._id}>
+              <div>
+                <p style={{ fontSize: '0.825rem' }}>
+                  {comment.commentAuthor} commented{' '} on {comment.createdAt}
+                </p>
+                <p><i>{comment.commentText}</i></p>
               </div>
             </div>
 

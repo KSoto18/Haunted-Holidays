@@ -24,8 +24,7 @@ const Home = () => {
 
   return (
 
-    <div>
-      
+    <div className='homepg-div'>
 
       {/* <audio id='scare-sound' autoplay> */}
       <audio id='scare-sound'>
@@ -50,7 +49,7 @@ const Home = () => {
           <br /><br />
         </p>
         <h2>Happy Hunting! <GiHaunting color='white' size={'1.8em'} /></h2>
-        
+
       </div>
 
       <div className='homepg-scare-sound' align='center'>
@@ -62,7 +61,7 @@ const Home = () => {
           Make it stop, I'm too scared!
         </button>
       </div>
-      
+
 
     </div >
 

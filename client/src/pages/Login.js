@@ -2,15 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
-
-
 import { AiOutlineMail } from 'react-icons/ai';
 import { GiKey } from 'react-icons/gi';
 import ImpactSound from '../assets/mp3/impactsound.mp3';
-
-
-
 import Auth from '../utils/auth';
 
 const Login = (props) => {
