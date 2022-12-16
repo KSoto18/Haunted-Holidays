@@ -23,7 +23,7 @@ import HauntedLocations from './components/HauntedLocations';
 import "./Fonts/BLOODY.ttf"
 import Forum from './pages/Forum';
 import SingleReview from './pages/SingleReview'
-
+import WhatsThis from './components/Modal/Modal';
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -103,7 +103,10 @@ function App() {
                 path="*"
                 element={<ErrorPage />}
               />
-
+                <Route
+                path="whatsthis"
+                element={<WhatsThis/>}
+              />
 
             </Routes>
           </div>
