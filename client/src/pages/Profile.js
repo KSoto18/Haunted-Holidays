@@ -45,7 +45,7 @@ const Profile = () => {
 
   return (
 
-    <div>
+    <div className='profile-pg-container'>
       <div align='center' className='redirect-btns-profilepg'>
 
         <div className='hl-redirect'>

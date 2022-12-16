@@ -52,6 +52,7 @@ const client = new ApolloClient({
 function App() {
   const [navOpen, setNavOpen] = useState(false)
 
+
   return (
 
     <ApolloProvider client={client}>

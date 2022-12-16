@@ -6,31 +6,64 @@ import { CgProfile } from 'react-icons/cg';
 import { TbMessage2Share } from 'react-icons/tb';
 import { HiUserGroup } from 'react-icons/hi';
 import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
-// import { FiGithub } from 'react-icons/fi';
 import { MdOutlineForum } from 'react-icons/md';
 import Switch from '@mui/material/Switch';
 import logo from './../../assets/img/boo-blanco.gif'
+import { Link } from "react-router-dom";
+// import ScaryMusic from '../../assets/mp3/darksitar.mp3';
+// import ImpactSound from '../../assets/mp3/impactsound.mp3';
+// import Whispering from '../../assets/mp3/whispering.mp3';
+// import { RxSpeakerLoud } from 'react-icons/rx';
+// import { RxSpeakerOff } from 'react-icons/rx';
 
 const SideNav = (props) => {
 
     const [show, setShow] = useState(false)
-
-
 
     const darkMode = () => {
         var element = document.body;
         element.classList.toggle("dark-mode");
     }
 
+    // const [sound, setSound] = useState(true)
+
+    // var scareEffect = document.getElementById('scare-sound');
+    // const playEffect = () => {
+    //     scareEffect.play();
+    // }
+    // const pauseEffect = () => {
+    //     scareEffect.pause();
+    // }
+
     return (
-        <div >
+        <div>
+
+            {/* <audio id='scare-sound'>
+                <source src={ScaryMusic} type='audio/mp3'></source>
+            </audio>
+
+            <button className='speakers'>
+                {sound ? <RxSpeakerLoud style={{ color: 'white' }}
+                    onClick={() => {
+                        playEffect()
+                        setSound(true)
+                    }} /> : <RxSpeakerOff style={{ color: 'white' }}
+                        onClick={() => {
+                            pauseEffect()
+                            setSound(false)
+                        }} />
+                }
+            </button> */}
+
             {/* button to open sidenav */}
             <a className="opennav" onClick={() => {
                 setShow(true)
                 props.sideNav(true)
             }}>
-                <GiTombstone size={'2em'} />
-                <p className="nav-title">Navigation</p>
+                <button className="nav-btn">
+                    <GiTombstone size={'1.4em'} />
+                    Navigation
+                </button>
             </a>
 
             <div className="sidenav" id="sidenav" style={show ? { width: '250px' } : { width: '0px' }}>

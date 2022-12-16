@@ -6,22 +6,23 @@ const CommentList = ({ comments = [] }) => {
       No comments have been made on this post.
     </p>;
   }
+  console.table(comments)
 
   return (
     <div className='comment-list-container'>
-      <h3 className="comments-section">
+      {/* <h3 className="comments-section">
         Comments
-      </h3>
+      </h3> */}
 
       <div>
         {comments &&
           comments.map((comment) => (
 
             <div key={comment._id}>
-              <div>
-                <p style={{ fontSize: '0.825rem' }}>
+              <div className='comment-content-container'>
+                <h3 className='comment-content'>
                   {comment.commentAuthor} commented{' '} on {comment.createdAt}
-                </p>
+                </h3>
                 <p><i>{comment.commentText}</i></p>
               </div>
             </div>

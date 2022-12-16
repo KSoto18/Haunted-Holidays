@@ -56,8 +56,6 @@ const Login = (props) => {
         <source src={ImpactSound} type='audio/mp3'></source>
       </audio>
 
-
-
       <div className="login-form">
 
         <h2 className="loginpg-title">Login</h2>
