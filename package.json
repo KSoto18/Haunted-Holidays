@@ -1,9 +1,10 @@
 {
-  "name": "Haunted-Holidays",
+  "name": "haunted-holidays",
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "8.19.2"
   },
   "main": "server/server.js",
   "scripts": {

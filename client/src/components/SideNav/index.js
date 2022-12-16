@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineHome } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
@@ -41,43 +42,43 @@ const SideNav = (props) => {
 
                 <div className="nav-menu-items">
                     {/* navigation menu */}
-                    <a className="navlink" href="/"
+                    <Link className="navlink" to="/"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
-                        <AiOutlineHome /> Home</a>
-                    <a className="navlink" href="/profile"
+                        <AiOutlineHome /> Home</Link>
+                    <Link className="navlink" to="/profile"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
-                        <CgProfile /> Profile</a>
-                    <a className="navlink" href="/forum"
+                        <CgProfile /> Profile</Link>
+                    <Link className="navlink" to="/forum"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
-                        <MdOutlineForum /> Forum </a>
-                    <a className="navlink" href="/hauntedlocations"
+                        <MdOutlineForum /> Forum </Link>
+                    <Link className="navlink" to="/hauntedlocations"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
                         <GiSpookyHouse /> Haunted <br />
-                        <span style={{ marginLeft: '25px', fontSize: '22px' }}>Locations</span></a>
-                    <a className="navlink" href="/contact"
+                        <span style={{ marginLeft: '25px', fontSize: '22px' }}>Locations</span></Link>
+                    <Link className="navlink" to="/contact"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
-                        <TbMessage2Share /> Contact</a>
-                    <a className="navlink" href="/about"
+                        <TbMessage2Share /> Contact</Link>
+                    <Link className="navlink" to="/about"
                         onClick={() => {
                             setShow(false)
                             props.sideNav(false)
                         }}>
-                        <HiUserGroup /> About Us</a>
+                        <HiUserGroup /> About Us</Link>
 
                     <img className="ghost" src={logo} alt="Logo" />
 
