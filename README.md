@@ -75,7 +75,7 @@ We also used [Google Maps API](https://mapsplatform.google.com/) to include the 
 
 ## Links
 
-- [Deployed Link](https://secure-atoll-14230.herokuapp.com)
+- [Deployed Link](https://boiling-ridge-27905.herokuapp.com/)
 
 [Back to top](#haunted-holidays)
 

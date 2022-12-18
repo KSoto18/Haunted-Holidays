@@ -105,7 +105,7 @@ function App() {
                 element={<ErrorPage />}
               />
                 <Route
-                path="whatsthis"
+                path="/whatsthis"
                 element={<WhatsThis/>}
               />
 
