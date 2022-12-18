@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
 import { QUERY_REVIEWS } from '../utils/queries';
@@ -26,9 +27,9 @@ const Home = () => {
           We encourage you to step out of your comfort zone,<br />
           and set yourself up for possibly the scariest experience of a lifetime.
           <br /><br />
-          <a href='/signup'>Sign up</a> today and discover your first scare-venture!
+          <Link to='/signup'>Sign up</Link> today and discover your first scare-venture!
           <br />
-          Already a member? <a href='/login'>Log in</a> and drop a review, or find your next destination!
+          Already a member? <Link to='/login'>Log in</Link> and drop a review, or find your next destination!
           <br /><br />
         </p>
         <h2>Happy Hunting! <GiHaunting color='white' size={'1.8em'} /></h2>
