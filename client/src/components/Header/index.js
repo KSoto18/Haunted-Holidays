@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiGhost } from 'react-icons/gi';
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
 import SideNav from '../SideNav';
-import { SlLogin, SlLogout } from 'react-icons/sl';
-import { FiUserPlus } from 'react-icons/fi';
+// import { SlLogin, SlLogout } from 'react-icons/sl';
+// import { FiUserPlus } from 'react-icons/fi';
 
 const Header = (props) => {
- 
+
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Header = (props) => {
       <header>
 
         {/* login/signup/logout buttons */}
-        <div>
+        {/* <div>
           {Auth.loggedIn() ? (
             <>
 
@@ -34,20 +34,20 @@ const Header = (props) => {
                 </Link>
               </div>
             </>
-          )}
+          )} */}
 
 
-          {/* link to home in pg title  */}
-          <div className='header-title-container'>
-            <Link className="headertitle" to="/">
-              <h1>Haunted Holidays<GiGhost className='header-ghost' /></h1>
-            </Link>
-            <p className='subheader'>
-              Find your next spooky experience!
-            </p>
-          </div>
-
+        {/* link to home in pg title  */}
+        <div className='header-title-container'>
+          <Link className="headertitle" to="/">
+            <h1>Haunted Holidays<GiGhost className='header-ghost' /></h1>
+          </Link>
+          <p className='subheader'>
+            Find your next spooky experience!
+          </p>
         </div>
+
+        {/* </div> */}
       </header >
     </div >
 

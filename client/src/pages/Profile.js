@@ -6,8 +6,8 @@ import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
 // import DarkMap from '../assets/img/darkmap.png';
 import { MdOutlineForum } from 'react-icons/md';
-import { SlLogout } from 'react-icons/sl';
-import Auth from '../utils/auth';
+// import { SlLogout } from 'react-icons/sl';
+// import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
 
 // Components
@@ -15,15 +15,15 @@ import ReviewForm from '../components/ReviewForm';
 import ReviewsList from '../components/ReviewsList';
 
 // Query Imports
-import { QUERY_USER, QUERY_REVIEWS, QUERY_SINGLE_REVIEW } from '../utils/queries';
+import { QUERY_USER } from '../utils/queries';
 
 
 const Profile = () => {
 
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+  // const logout = (event) => {
+  //   event.preventDefault();
+  //   Auth.logout();
+  // };
   const { loading, data } = useQuery(QUERY_USER);
 
   const user = data?.user || {};
@@ -48,16 +48,18 @@ const Profile = () => {
   return (
 
     <div className='profile-pg-container'>
-          <div>
-                  <Link className="logout-btn"
-                    style={{ fontSize: '14px' }}
-                    onClick={logout}>
-                    Logout <SlLogout />
-                  </Link>
-                </div>
+      {/* <div>
+        <Link className="logout-btn"
+          style={{ fontSize: '14px' }}
+          onClick={logout}>
+          Logout <SlLogout />
+        </Link>
+      </div> */}
+
       <div align='center' className='redirect-btns-profilepg'>
-      <p className='hello-user-msg'>
-                  Hello, {user.username}!</p>
+        {/* <p className='hello-user-msg'>
+          Hello, {user.username}!</p> */}
+
         <div className='hl-redirect'>
           <Link to='/hauntedlocations'>
             <div className='darkmapimg'>

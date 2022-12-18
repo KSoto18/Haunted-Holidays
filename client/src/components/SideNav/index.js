@@ -14,8 +14,22 @@ import logo from './../../assets/img/boo-blanco.gif'
 // import Whispering from '../../assets/mp3/whispering.mp3';
 // import { RxSpeakerLoud } from 'react-icons/rx';
 // import { RxSpeakerOff } from 'react-icons/rx';
+import { SlLogin, SlLogout } from 'react-icons/sl';
+import Auth from '../../utils/auth';
+import { FiUserPlus } from 'react-icons/fi';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../../utils/queries';
 
 const SideNav = (props) => {
+
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    };
+
+    const { loading, data } = useQuery(QUERY_USER);
+
+    const user = data?.user || {};
 
     const [show, setShow] = useState(false)
 
@@ -36,12 +50,12 @@ const SideNav = (props) => {
 
     return (
         <div>
-
+            {/* <div> */}
             {/* <audio id='scare-sound'>
                 <source src={ScaryMusic} type='audio/mp3'></source>
-            </audio>
+                </audio>
 
-            <button className='speakers'>
+                <button className='speakers'>
                 {sound ? <RxSpeakerLoud style={{ color: 'white' }}
                     onClick={() => {
                         playEffect()
@@ -52,7 +66,8 @@ const SideNav = (props) => {
                             setSound(false)
                         }} />
                 }
-            </button> */}
+                </button> */}
+            {/* </div>  */}
 
             {/* button to open sidenav */}
             <a className="opennav" onClick={() => {
@@ -124,7 +139,35 @@ const SideNav = (props) => {
 
             </div>
 
-        </div >
+            <div>
+                {Auth.loggedIn() ? (
+                    <>
+                        <div className="logout-btn-container">
+                            <p className='hello-user-msg'>
+                                Hello, {user.username}!</p>
+                            <Link className="logout-btn"
+                                style={{ fontSize: '14px' }}
+                                onClick={logout}>
+                                Logout <SlLogout />
+                            </Link>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className='login-signup-btn-container'>
+                            <Link className="login-btn" to="/login">
+                                Login <SlLogin />
+                            </Link>
+
+                            <Link className="signup-btn" to="/signup" >
+                                Signup <FiUserPlus />
+                            </Link>
+                        </div>
+                    </>
+                )}
+            </div>
+
+        </div>
 
     );
 };

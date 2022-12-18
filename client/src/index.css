@@ -34,12 +34,12 @@ body {
 .login-signup-btn-container,
 .logout-btn-container {
   text-align: right;
-  margin-top: -45px;
+  margin-top: -50px;
   margin-right: 10px;
 }
 
 header {
-  height: 200px;
+  height: 150px;
   width: 100%;
 }
 
