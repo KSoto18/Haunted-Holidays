@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import { AiOutlineMail } from 'react-icons/ai';
@@ -10,6 +10,7 @@ import Auth from '../utils/auth';
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+const [shouldRedirect, setShouldRedirect] = useState(false)
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -30,9 +31,11 @@ const Login = (props) => {
       const { data } = await login({
         variables: { ...formState },
       });
+console.log("TESTING!", data)
 
       Auth.login(data.login.token);
-      window.location.replace("/profile");
+      // window.location.replace("/profile");
+      setShouldRedirect(true);
 
     } catch (e) {
       console.error(e);
@@ -52,6 +55,7 @@ const Login = (props) => {
 
   return (
     <div>
+      {shouldRedirect && <Navigate to="/profile" replace={true}/>}
       <audio id='scare-sound'>
         <source src={ImpactSound} type='audio/mp3'></source>
       </audio>
@@ -59,7 +63,7 @@ const Login = (props) => {
       <div className="login-form">
 
         <h2 className="loginpg-title">Login</h2>
-        <p className='login-subtitle'>Please fill in this form to log in to your account.</p>
+        <p className='login-subtitle'>Please fill in this form to log in to your account!</p>
 
 
         {data ? (
@@ -100,7 +104,7 @@ const Login = (props) => {
             </p>
 
           </form>
-        )}
+         )}
 
         {error && (
           <div className="my-3 p-3 bg-danger text-white">

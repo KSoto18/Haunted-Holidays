@@ -6,8 +6,8 @@ import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
 // import DarkMap from '../assets/img/darkmap.png';
 import { MdOutlineForum } from 'react-icons/md';
-
-// import Auth from '../utils/auth';
+import { SlLogout } from 'react-icons/sl';
+import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
 
 // Components
@@ -20,9 +20,14 @@ import { QUERY_USER, QUERY_REVIEWS, QUERY_SINGLE_REVIEW } from '../utils/queries
 
 const Profile = () => {
 
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   const { loading, data } = useQuery(QUERY_USER);
 
   const user = data?.user || {};
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -30,18 +35,29 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <p className='login-signup-redirect' align='center'>
-        You need to be logged in to view your profile.<br />
+
+      <h3 className='login-signup-redirect' align='center'>
+        You need to be logged in to view your profile.
+        <br />
         Please <Link to='/login'>log in</Link> or <Link to='/signup'>sign up</Link>.
-      </p>
+      </h3>
+
     );
   }
 
   return (
 
     <div className='profile-pg-container'>
+          <div>
+                  <Link className="logout-btn"
+                    style={{ fontSize: '14px' }}
+                    onClick={logout}>
+                    Logout <SlLogout />
+                  </Link>
+                </div>
       <div align='center' className='redirect-btns-profilepg'>
-
+      <p className='hello-user-msg'>
+                  Hello, {user.username}!</p>
         <div className='hl-redirect'>
           <Link to='/hauntedlocations'>
             <div className='darkmapimg'>

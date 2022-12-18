@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -15,6 +15,7 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [shouldRedirect, setShouldRedirect] = useState(false)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +37,8 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
-      window.location.replace("/profile");
+      // window.location.replace("/profile");
+      setShouldRedirect(true);
 
     } catch (e) {
       console.error(e);
@@ -50,6 +52,7 @@ const Signup = () => {
 
   return (
     <div>
+      {shouldRedirect && <Navigate to="/profile" replace={true}/>}
       <audio id='scare-sound'>
         <source src={ImpactSound} type='audio/mp3'></source>
       </audio>
