@@ -74,8 +74,8 @@ const MapContainer = () => {
               <div>
 
                 <p className='location-name'>{location.location}</p>
+                <p className='location-city'>{location.city}, {location.state_abbrev}.</p>
                 <p className='location-description'>{location.description}</p>
-                <p>City: {location.city}, {location.state_abbrev}.</p>
 
               </div>
             </InfoWindow>

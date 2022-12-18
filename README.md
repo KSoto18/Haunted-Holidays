@@ -1,9 +1,12 @@
 # Haunted-Holidays
 
+## Summary 
+
 An application that allows users the ability to search a database with 10,000+ haunted locations in the United States. They can sign up for an account to be able to post reviews on specific locations and comment on other user's reviews on their experience. Our application also provides a short description on each haunted location.
 
 ## Table of Contents 
 - [Description](#description)
+- [APIs](#apis)
 - [Demo](#demo)
 - [Links](#links)
 - [Contact](#contact)
@@ -11,6 +14,14 @@ An application that allows users the ability to search a database with 10,000+ h
 ## Description
 
 A MERN-stack single-page application, with a MongoDB back end, a GraphQL API, and an Express.js and Node.js server, with a React front end, implementing user authentication with JWT to build a user-focused platform, deployed through Heroku.
+
+[Back to top](#haunted-holidays)
+
+## APIs
+
+We used the [Haunted Places API](https://data.world/timothyrenner/haunted-places) by [Timothy Renner](https://data.world/timothyrenner).
+
+We also used [Google Maps API](https://mapsplatform.google.com/) to include the haunted places locations on a map with their name, city, state, and description.
 
 [Back to top](#haunted-holidays)
 
