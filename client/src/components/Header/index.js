@@ -7,10 +7,7 @@ import { SlLogin, SlLogout } from 'react-icons/sl';
 import { FiUserPlus } from 'react-icons/fi';
 
 const Header = (props) => {
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+ 
 
   return (
     <div>
@@ -32,17 +29,9 @@ const Header = (props) => {
 
           {Auth.loggedIn() ? (
             <>
-              <div className='logout-btn-container'>
-                <p className='hello-user-msg'>
-                  Hello, {Auth.getProfile().data.username}!</p>
-                <div>
-                  <Link className="logout-btn"
-                    style={{ fontSize: '14px' }}
-                    onClick={logout}>
-                    Logout <SlLogout />
-                  </Link>
-                </div>
-              </div>
+             
+            
+            
             </>
           ) : (
             <>
