@@ -1,5 +1,6 @@
 import React from 'react';
 // Import the `useParams()` hook
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
@@ -32,10 +33,10 @@ const SingleReview = () => {
 
       <div className='reroute-btns'>
         <button className='goback-btn'>
-          <a href='/profile'>Back to profile <TbArrowBackUp /></a>
+          <Link to='/profile'><TbArrowBackUp /> Profile</Link>
         </button>
         <button className='gotoforum-btn'>
-          <a href='/forum'>Go to forum <MdOutlineForum /></a>
+          <Link to='/forum'>Forum <MdOutlineForum /></Link>
         </button>
       </div>
 
@@ -47,6 +48,7 @@ const SingleReview = () => {
         <blockquote
           className="comment-block"
           style={{
+            // textAlign: 'center',
             fontSize: '1.3rem',
             fontStyle: 'italic',
             lineHeight: '2',

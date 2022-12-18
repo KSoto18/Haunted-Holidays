@@ -18,13 +18,14 @@ const Footer = () => {
 
       <Box >
 
-        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: '#31587a; opacity:0.75' }}
+        <BottomNavigation sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor: 'black; opacity:0.8' }}
           showLabels
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
         >
+
 
          
         <BottomNavigationAction sx={{color:"white"}} href="/whatsthis" label="What's This?" icon={<ContactSupportIcon />} />
@@ -33,7 +34,7 @@ const Footer = () => {
 
         </BottomNavigation>
        
-       
+
       </Box>
 
       <p className="footer-copyright">

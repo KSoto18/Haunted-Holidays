@@ -52,6 +52,7 @@ const client = new ApolloClient({
 function App() {
   const [navOpen, setNavOpen] = useState(false)
 
+
   return (
 
     <ApolloProvider client={client}>
@@ -96,7 +97,7 @@ function App() {
                 element={<SingleReview />}
               />
 
-              <Route path="/hauntedlocations"
+              <Route path="/*hauntedlocations"
                 element={<HauntedLocations />} />
 
               <Route

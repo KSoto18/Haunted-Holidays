@@ -10,6 +10,7 @@ query user {
       _id
       reviewAuthor
       reviewText
+      createdAt
       comments {
         commentText
         commentAuthor
@@ -54,6 +55,7 @@ export const QUERY_SINGLE_REVIEW = gql`
         _id
         commentText
         createdAt
+        commentAuthor
       }
     }
   }
