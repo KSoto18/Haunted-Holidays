@@ -1,17 +1,17 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Review, Location } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Review, Location } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('reviews');
+      return User.find().populate("reviews");
     },
     user: async (parent, args, context) => {
-      if (context.user){
-      return User.findOne({ _id:context.user._id}).populate('reviews')
-      //TODO: .populate for comments
-    };
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate("reviews");
+        //TODO: .populate for comments
+      }  throw new AuthenticationError("No user logged in.");
     },
     reviews: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -21,12 +21,10 @@ const resolvers = {
       return Review.findOne({ _id: reviewId });
     },
 
-    locations: async ()=> {
-      return Location.find({})
-    }
-   
+    locations: async () => {
+      return Location.find({});
+    },
   },
-
 
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -38,13 +36,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
