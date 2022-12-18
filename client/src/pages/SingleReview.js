@@ -10,6 +10,7 @@ import { QUERY_SINGLE_REVIEW } from '../utils/queries';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineForum } from 'react-icons/md';
 import { TbArrowBackUp } from 'react-icons/tb';
+
 const SingleReview = () => {
 
   const { reviewId } = useParams();
