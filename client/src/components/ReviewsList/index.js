@@ -20,9 +20,9 @@ const ReviewsList = ({
 
         cache.writeQuery({
           query: QUERY_USER,
-          data: {user: user},
+          data: { user: user },
         });
-        
+
       } catch (e) {
         console.error(e);
       }
@@ -39,9 +39,9 @@ const ReviewsList = ({
       const { data } = await removeReview({
         variables: { reviewId: review },
         refetchQueries: [
-          { 
+          {
             query: QUERY_USER,
-        
+
           },
         ],
       });
@@ -55,7 +55,7 @@ const ReviewsList = ({
   }
 
 
-
+  console.table(reviews)
   return (
     <div className='review-list-container'>
 
@@ -69,12 +69,13 @@ const ReviewsList = ({
 
               <div>
 
-{review.reviewAuthor} <br />
+                {review.reviewAuthor} <br />
 
                 <span style={{ fontSize: '0.8rem' }}>
                   <h2 className='single-rvw-username'>
                     {review.reviewAuthor}</h2>
                   <p className='review-info'>
+                    {console.log("WORDS", review)}
                     had this spooky sighting on {review.createdAt}.
                   </p>
                 </span>
@@ -84,17 +85,19 @@ const ReviewsList = ({
             ) : (
 
               <>
-                {/* <span style={{ fontSize: '0.8rem' }}>
+                <button className="delete-btn"
+                  onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
+                </button>
+
+                <p className='user-review-content'>
                   Posted on: {review.createdAt}
-                </span> */}
+                </p>
               </>
 
             )}
 
             <div className='users-reviews'>
-              <button className="delete-btn"
-                onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
-              </button>
+
               <p className="review-content" style={{ fontSize: '1.2rem' }}>
                 <i>{review.reviewText}</i></p>
             </div>

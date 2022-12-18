@@ -1,12 +1,13 @@
 // Main Imports
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
 // import DarkMap from '../assets/img/darkmap.png';
 import { MdOutlineForum } from 'react-icons/md';
-
-// import Auth from '../utils/auth';
+import { SlLogout } from 'react-icons/sl';
+import Auth from '../utils/auth';
 // import MapContainer from '../components/MapContainer';
 
 // Components
@@ -19,6 +20,10 @@ import { QUERY_USER, QUERY_REVIEWS, QUERY_SINGLE_REVIEW } from '../utils/queries
 
 const Profile = () => {
 
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   const { loading, data } = useQuery(QUERY_USER);
 
   // console.log(data);
@@ -26,7 +31,7 @@ const Profile = () => {
   const user = data?.user || {};
 
 
-  // console.log(user);
+  console.log(user);
 
 
   if (loading) {
@@ -38,27 +43,35 @@ const Profile = () => {
       <h3 className='login-signup-redirect' align='center'>
         You need to be logged in to view your profile.
         <br />
-        Please <a href='/login'>log in</a> or <a href='/signup'>sign up</a>.
+        Please <Link to='/login'>log in</Link> or <Link to='/signup'>sign up</Link>.
       </h3>
     );
   }
 
   return (
 
-    <div>
+    <div className='profile-pg-container'>
+          <div>
+                  <Link className="logout-btn"
+                    style={{ fontSize: '14px' }}
+                    onClick={logout}>
+                    Logout <SlLogout />
+                  </Link>
+                </div>
       <div align='center' className='redirect-btns-profilepg'>
-
+      <p className='hello-user-msg'>
+                  Hello, {user.username}!</p>
         <div className='hl-redirect'>
-          <a href='/hauntedlocations'>
+          <Link to='/hauntedlocations'>
             <div className='darkmapimg'>
               <p className='hl-redirect-link'>
                 View Haunted Locations</p>
             </div>
-          </a>
+          </Link>
         </div>
 
         <h2 className='forum-redirect-btn'>
-          <a href='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></a>
+          <Link to='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></Link>
         </h2>
 
       </div>
