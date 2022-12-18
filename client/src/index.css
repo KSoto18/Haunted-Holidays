@@ -31,13 +31,17 @@ body {
 }
 
 /* positioning for login/signup/logout buttons */
-.login-signup-btn-container,
-.logout-btn-container {
+.login-signup-btn-container
+{
   text-align: right;
   margin-top: -45px;
   margin-right: 10px;
 }
-
+.logout-btn-container {
+  text-align: left;
+  margin-top: -220px;
+  margin-left: 10px;
+}
 header {
   height: 200px;
   width: 100%;
@@ -211,8 +215,11 @@ header {
 .hello-user-msg {
   margin-bottom: 8px;
   font-family: Bloody;
-  font-size: 24px;
+  font-size: 30px;
   color: white;
+  text-align: center;
+  width: 50%;
+
 }
 
 /* hover effect for login/signup/logout buttons */
@@ -436,6 +443,10 @@ header {
   color: black;
   font-family: Bloody;
   font-size: 36px;
+}
+
+.forumpg-title{
+  margin-top: -30px;
 }
 
 .signup-subtitle,
@@ -704,7 +715,7 @@ header {
   justify-content: center;
   background-size: 550px;
   background-repeat: no-repeat;
-  top: 200px;
+  top: 250px;
   width: 550px;
   height: 300px;
   margin: 10px;
@@ -724,7 +735,7 @@ header {
   font-weight: bold;
   margin-bottom: 15px;
   margin-left: 52%;
-  margin-top: 330px;
+  margin-top: 480px;
 }
 
 .hl-redirect-btn a,
@@ -835,6 +846,7 @@ header {
 }
 
 .goback-btn,
+.goback-btn-forum,
 .gotoforum-btn {
   border: none;
   border-radius: 5px 5px;
@@ -848,14 +860,21 @@ header {
 }
 
 .goback-btn a,
+.goback-btn-forum a,
 .gotoforum-btn a {
   font-size: 16px;
   text-decoration: none;
 }
 
 .goback-btn:hover,
+.goback-btn-forum:hover,
 .gotoforum-btn:hover {
   opacity: 1;
+}
+
+.goback-btn-forum {
+margin-left: 85%;
+
 }
 
 .comments-section {

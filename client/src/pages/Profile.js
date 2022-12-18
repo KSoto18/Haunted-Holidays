@@ -48,16 +48,16 @@ const Profile = () => {
   return (
 
     <div className='profile-pg-container'>
-          <div>
+          <div className='logout-btn-container'>
                   <Link className="logout-btn"
                     style={{ fontSize: '14px' }}
                     onClick={logout}>
                     Logout <SlLogout />
                   </Link>
                 </div>
+             
       <div align='center' className='redirect-btns-profilepg'>
-      <p className='hello-user-msg'>
-                  Hello, {user.username}!</p>
+      
         <div className='hl-redirect'>
           <Link to='/hauntedlocations'>
             <div className='darkmapimg'>
@@ -74,7 +74,10 @@ const Profile = () => {
       </div>
 
       <div className="profilepg-container">
-
+      <div>
+                <p className='hello-user-msg'>
+                  Hello, {user.username}!</p>
+                </div>
         <div className='reviewform-profilepg'>
           <ReviewForm />
         </div>
