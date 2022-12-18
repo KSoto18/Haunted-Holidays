@@ -6,6 +6,7 @@ import { MdAddComment } from 'react-icons/md';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { QUERY_USER } from '../../utils/queries';
 
+
 const ForumList = ({
   reviews,
   title,
@@ -45,6 +46,7 @@ const ForumList = ({
           },
         ],
       });
+    
     } catch (err) {
       console.error(err);
     }

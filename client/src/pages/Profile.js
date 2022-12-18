@@ -24,10 +24,10 @@ const Profile = () => {
     event.preventDefault();
     Auth.logout();
   };
-  const { loading, data } = useQuery(QUERY_USER);
+  const { loading, data, error } = useQuery(QUERY_USER);
 
   const user = data?.user || {};
-
+// console.log(user, data, error);
 
   if (loading) {
     return <div>Loading...</div>;

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import { AiOutlineMail } from 'react-icons/ai';
 import { GiKey } from 'react-icons/gi';
 import ImpactSound from '../assets/mp3/impactsound.mp3';
 import Auth from '../utils/auth';
+import { QUERY_USER } from '../utils/queries';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data }] = useMutation(LOGIN_USER, {
+   
+  });
+  const {refetch} = useQuery(QUERY_USER)
 const [shouldRedirect, setShouldRedirect] = useState(false)
 
   // update state based on form input changes
@@ -35,6 +39,7 @@ console.log("TESTING!", data)
 
       Auth.login(data.login.token);
       // window.location.replace("/profile");
+      await refetch()
       setShouldRedirect(true);
 
     } catch (e) {

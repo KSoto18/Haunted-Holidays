@@ -41,9 +41,13 @@ const ReviewForm = () => {
         },
         refetchQueries: [
           {
-            query: (QUERY_USER),
+            query: QUERY_USER,
+          
 
           },
+          {
+            query: QUERY_REVIEWS,
+          }
         ],
       });
 
