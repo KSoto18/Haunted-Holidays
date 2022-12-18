@@ -3,13 +3,15 @@ import Modal from "../Modal/Modal";
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Box from '@mui/material/Box';
-import HelpIcon from '@mui/icons-material/Help';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HotelIcon from '@mui/icons-material/Hotel';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 
 
 const Footer = () => {
   const [value, setValue] = React.useState(0);
+  
+
   
   return (
     <div>
@@ -25,7 +27,7 @@ const Footer = () => {
         >
 
          
-        <BottomNavigationAction sx={{color:"white"}} href="/whatsthis" label="Github" icon={<GitHubIcon />} />
+        <BottomNavigationAction sx={{color:"white"}} href="/whatsthis" label="What's This?" icon={<ContactSupportIcon />} />
           <BottomNavigationAction sx={{color:"white"}} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
           <BottomNavigationAction sx={{color:"white"}} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
