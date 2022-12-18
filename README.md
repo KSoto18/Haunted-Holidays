@@ -27,15 +27,55 @@ We also used [Google Maps API](https://mapsplatform.google.com/) to include the 
 
 ## Demo
 
-- [Video Demonstration]()
+- [Video Demonstration](https://drive.google.com/file/d/1TSjczzJJN7sp5YxQMp9wt89jxUyxhULM/view)
 
-- Screenshots:
+### Screenshots:
+
+### - Home page
+![homepage](../Haunted-Holidays/client/src/assets/img/screenshots/homepg.png)
+
+### - Navigation bar
+![navigationbar](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar1.png)
+
+### - Log in page
+![loginpage](../Haunted-Holidays/client/src/assets/img/screenshots/loginpg.png)
+
+### - Sign up page
+![signuppage](../Haunted-Holidays/client/src/assets/img/screenshots/signuppg.png)
+
+### - Profile page when the user is logged in.
+![profilepage](../Haunted-Holidays/client/src/assets/img/screenshots/profilepg1.png)
+
+![profilepage](../Haunted-Holidays/client/src/assets/img/screenshots/profilepg2.png)
+
+### - Forum page when the user is logged in.
+![forumpage](../Haunted-Holidays/client/src/assets/img/screenshots/forumpg.png)
+
+### - Individual comment page
+![commentpage](../Haunted-Holidays/client/src/assets/img/screenshots/individualcommentpg.png)
+
+### - The Haunted Locations map with the city and state, as well as a short description.
+![hauntedlocationspage](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg1.png)
+
+![hauntedlocationspage](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg2.png)
+
+### - Contact us page
+![contactuspage](../Haunted-Holidays/client/src/assets/img/screenshots/contactuspg.png)
+
+### - About us page
+![aboutuspage](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg.png)
+
+### - About us page with each contributors information.
+![aboutuspage](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg2.png)
+
+### - You can even enable our version of dark mode from the navigation bar.
+![darkmode](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar2.png)
 
 [Back to top](#haunted-holidays)
 
 ## Links
 
-- [Deployed Link]()
+- [Deployed Link](https://secure-atoll-14230.herokuapp.com)
 
 [Back to top](#haunted-holidays)
 

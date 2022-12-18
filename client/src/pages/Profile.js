@@ -26,12 +26,7 @@ const Profile = () => {
   };
   const { loading, data } = useQuery(QUERY_USER);
 
-  // console.log(data);
-
   const user = data?.user || {};
-
-
-  console.log(user);
 
 
   if (loading) {
@@ -40,11 +35,13 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
+
       <h3 className='login-signup-redirect' align='center'>
         You need to be logged in to view your profile.
         <br />
         Please <Link to='/login'>log in</Link> or <Link to='/signup'>sign up</Link>.
       </h3>
+
     );
   }
 
