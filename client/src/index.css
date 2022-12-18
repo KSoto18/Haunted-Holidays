@@ -952,6 +952,39 @@ header {
   margin-bottom: 25px;
 }
 
+.rating-container {
+  padding: 5px;
+  margin: 5px auto;
+}
+
+.rating-result {
+  text-align: center;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rating-star {
+  position: relative;
+  cursor: pointer;
+}
+
+.stars_radio-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.stars_radio-input:checked~svg {
+  fill: #31587a;
+}
+
 .forumpg-container {
   width: 60%;
   margin-left: 20%;

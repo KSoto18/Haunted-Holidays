@@ -5,6 +5,7 @@ import { REMOVE_REVIEW } from '../../utils/mutations';
 import { MdAddComment } from 'react-icons/md';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { QUERY_USER } from '../../utils/queries';
+import RatingReview from '../RatingReview';
 
 const ForumList = ({
   reviews,
@@ -72,6 +73,7 @@ const ForumList = ({
                 <span style={{ fontSize: '0.8rem' }}>
                   <h2 className='single-rvw-username'>
                     {review.reviewAuthor}</h2>
+                  <RatingReview />
                   <p className='review-info'>
                     had this spooky sighting on {review.createdAt}.
                   </p>
@@ -95,9 +97,9 @@ const ForumList = ({
                   onClick={() => handleRemoveReview(review._id)}><AiOutlineDelete />
                 </button>
               )}
-
               <p className="review-content" style={{ fontSize: '1.2rem' }}>
-                <i>{review.reviewText}</i></p>
+                <i>{review.reviewText}</i>
+              </p>
             </div>
 
             <button className='add-comment-btn-forumpg'>
