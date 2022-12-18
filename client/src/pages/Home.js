@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import ReviewsList from '../components/ReviewsList';
 // import ReviewForm from '../components/ReviewForm';
 import { QUERY_REVIEWS } from '../utils/queries';
