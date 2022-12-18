@@ -7,17 +7,23 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+   margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modalContainer {
   width: 500px;
   height: 300px;
   border-radius: 12px;
-  background-image: url("https://cdn.pixabay.com/photo/2018/10/27/20/18/silhouette-3777403_960_720.jpg");
+  background-image: url("../../assets/img/boo.png");
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
+  
 }
 
 
