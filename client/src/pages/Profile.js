@@ -1,5 +1,6 @@
 // Main Imports
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 // import { GiSpookyHouse } from 'react-icons/gi';
@@ -21,13 +22,7 @@ const Profile = () => {
 
   const { loading, data } = useQuery(QUERY_USER);
 
-  // console.log(data);
-
   const user = data?.user || {};
-
-
-  // console.log(user);
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,11 +30,10 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h3 className='login-signup-redirect' align='center'>
-        You need to be logged in to view your profile.
-        <br />
-        Please <a href='/login'>log in</a> or <a href='/signup'>sign up</a>.
-      </h3>
+      <p className='login-signup-redirect' align='center'>
+        You need to be logged in to view your profile.<br />
+        Please <Link to='/login'>log in</Link> or <Link to='/signup'>sign up</Link>.
+      </p>
     );
   }
 
@@ -49,16 +43,16 @@ const Profile = () => {
       <div align='center' className='redirect-btns-profilepg'>
 
         <div className='hl-redirect'>
-          <a href='/hauntedlocations'>
+          <Link to='/hauntedlocations'>
             <div className='darkmapimg'>
               <p className='hl-redirect-link'>
                 View Haunted Locations</p>
             </div>
-          </a>
+          </Link>
         </div>
 
         <h2 className='forum-redirect-btn'>
-          <a href='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></a>
+          <Link to='/forum'>Go to the Forum <MdOutlineForum size={'1.8em'} /></Link>
         </h2>
 
       </div>

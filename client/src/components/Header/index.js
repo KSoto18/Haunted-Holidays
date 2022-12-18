@@ -19,29 +19,21 @@ const Header = (props) => {
 
       <header>
 
-        {/* link to home in pg title  */}
-        <Link className="headertitle" to="/">
-          <h1>Haunted Holidays<GiGhost className='header-ghost' size={'4em'} /></h1>
-        </Link>
-        <p className='subheader'>
-          Find your next spooky experience!
-        </p>
-
         {/* login/signup/logout buttons */}
         <div>
-
           {Auth.loggedIn() ? (
             <>
               <div className='logout-btn-container'>
                 <p className='hello-user-msg'>
-                  Hello, {Auth.getProfile().data.username}!</p>
-                <div>
+                  Hello, {Auth.getProfile().data.username}!&nbsp;
+                  {/* <div> */}
                   <Link className="logout-btn"
                     style={{ fontSize: '14px' }}
                     onClick={logout}>
                     Logout <SlLogout />
                   </Link>
-                </div>
+                </p>
+                {/* </div> */}
               </div>
             </>
           ) : (
@@ -57,6 +49,17 @@ const Header = (props) => {
               </div>
             </>
           )}
+
+
+          {/* link to home in pg title  */}
+          <div className='header-title-container'>
+            <Link className="headertitle" to="/">
+              <h1>Haunted Holidays<GiGhost className='header-ghost' /></h1>
+            </Link>
+            <p className='subheader'>
+              Find your next spooky experience!
+            </p>
+          </div>
 
         </div>
       </header >

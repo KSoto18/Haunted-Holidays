@@ -30,15 +30,27 @@ body {
   color: white;
 }
 
+/* positioning for login/signup/logout buttons */
+.login-signup-btn-container,
+.logout-btn-container {
+  text-align: right;
+  margin-top: -45px;
+  margin-right: 10px;
+}
+
 header {
-  margin-top: 1px;
-  margin-left: 8px;
-  height: 150px;
+  height: 200px;
+  width: 100%;
+}
+
+.header-title-container {
+  margin-top: 70px;
 }
 
 /* site name + home link in header  */
 .headertitle {
   text-decoration: none;
+  margin-top: 70px;
 }
 
 .headertitle h1 {
@@ -52,6 +64,7 @@ header {
 }
 
 .header-ghost {
+  font-size: 1em;
   color: white;
 }
 
@@ -100,7 +113,6 @@ header {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
 }
 
 /* nav bar  */
@@ -177,17 +189,6 @@ header {
   font-size: 26px;
   margin-left: 50px;
   color: white;
-}
-
-/* positioning for login/signup/logout buttons */
-.login-signup-btn-container {
-  margin-top: -110px;
-  margin-left: 2px;
-}
-
-.logout-btn-container {
-  margin-top: -110px;
-  margin-left: 2px;
 }
 
 /* styling for login/signup/logout buttons */
@@ -560,15 +561,15 @@ header {
 /* container containing indiv cards */
 .contrib-cards {
   display: flex;
-  width: auto;
-  margin-left: 3%;
-  margin-right: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* each card with indiv. about info */
 .individual-aboutinfo {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 275px;
+  width: 25%;
   border-radius: 10px 10px;
   margin-left: 15px;
   margin-right: 15px;
@@ -655,7 +656,7 @@ header {
 /* container for the profile pg content */
 .profilepg-container {
   margin-left: 8%;
-  margin-top: -380px;
+  margin-top: -400px;
 }
 
 /* "viewing {users-name} profile" title */
@@ -703,7 +704,7 @@ header {
   justify-content: center;
   background-size: 550px;
   background-repeat: no-repeat;
-  top: 140px;
+  top: 200px;
   width: 550px;
   height: 300px;
   margin: 10px;
@@ -723,7 +724,7 @@ header {
   font-weight: bold;
   margin-bottom: 15px;
   margin-left: 52%;
-  margin-top: 310px;
+  margin-top: 330px;
 }
 
 .hl-redirect-btn a,
@@ -1022,35 +1023,7 @@ header {
   height: 100px;
 }
 
-/* 768px max for tablets */
-@media screen and (max-width: 780px) {
-  /* body {} */
-}
-
-/* 425px max for mobile device */
-@media screen and (max-width: 480px) {
-
-
-  header {
-    margin-top: 50px;
-    margin-bottom: 70px;
-  }
-
-  .headertitle h1 {
-    margin-right: 10px;
-    margin-top: -20px;
-  }
-
-  .login-signup-btn-container {
-    margin-top: -290px;
-    margin-left: 60%;
-  }
-
-  .logout-btn-container {
-    margin-top: -315px;
-    text-align: right;
-    margin-right: 2%;
-  }
+@media screen and (max-width:1200px) {
 
   .homepg-welcome,
   .signup-form,
@@ -1059,8 +1032,121 @@ header {
   .aboutus-section,
   .forumpg-container,
   .single-review-container {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 60px;
+  }
+
+  .hauntedloc-pg-container {
     width: 80%;
     margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .aboutus-section {
+    margin-bottom: 20px;
+  }
+
+  .contrib-cards {
+    display: grid;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+
+  .individual-aboutinfo {
+    width: 30%;
+  }
+
+  /* div with both links in profile pg */
+  .redirect-btns-profilepg {
+    display: none;
+  }
+
+  .profilepg-container {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 60px;
+    margin-top: 0px;
+  }
+
+  .reviewform-profilepg {
+    width: 100%;
+  }
+
+  .userreviews-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .contrib-cards {
+    display: grid;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .individual-aboutinfo {
+    width: 50%;
+  }
+}
+
+/* 768px max for tablets */
+@media screen and (max-width: 770px) {
+
+  header {
+    height: 180px;
+  }
+
+  .headertitle h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 635px) {
+
+  header {
+    height: 170px;
+  }
+
+  .headertitle h1 {
+    font-size: 50px;
+  }
+}
+
+/* 425px max for mobile device */
+@media screen and (max-width: 520px) {
+
+  header {
+    height: 220px;
+  }
+
+  .header-title-container {
+    width: 70%;
+    margin-left: 27%;
+  }
+
+  .headertitle h1 {
+    margin-right: 5px;
+  }
+
+  .signup-form,
+  .login-form,
+  .homepg-welcome,
+  .aboutus-section,
+  .contact-form,
+  .forumpg-container {
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-bottom: 60px;
+  }
+
+  .single-review-container {
+    width: 80%;
+    margin-left: 7%;
     margin-right: 10%;
     margin-bottom: 60px;
   }
@@ -1083,7 +1169,7 @@ header {
 
   .individual-aboutinfo {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 100%;
+    width: 80%;
     border-radius: 10px 10px;
     margin-bottom: 20px;
     text-align: center;
@@ -1092,52 +1178,36 @@ header {
   }
 
   .redirect-btns-profilepg {
-    width: 80%;
-    margin-right: 0%;
+    display: none;
   }
-
-  .hl-redirect-link {
-    font-size: 24px;
-    top: -18px;
-    margin-left: -6px;
-  }
-
-  .darkmapimg {
-    left: 0;
-    background-size: 280px;
-    top: 290px;
-    width: 260px;
-    height: 160px;
-    margin: 10px;
-  }
-
-  .forum-redirect-btn {
-    margin-top: 100px;
-    padding: 5px 5px;
-    width: 25%;
-    margin-left: 45%;
-    /* display: none; */
-  }
-
-  .forum-redirect-btn a {
-    font-size: 20px;
-  }
-
 
   .profilepg-container {
-    width: 60%;
-    margin-left: 10%;
+    width: 80%;
+    margin-left: 6%;
     margin-right: 10%;
     margin-bottom: 60px;
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
   .reviewform-profilepg {
-    width: 80%;
+    width: 100%;
   }
 
   .userreviews-container {
-    width: 80%;
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 460px) {
+
+  header {
+    height: 240px;
+  }
+
+  .login-signup-btn-container,
+  .logout-btn-container {
+    margin-top: 20px;
   }
 
 }

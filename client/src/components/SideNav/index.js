@@ -9,7 +9,6 @@ import { GiTombstone, GiSpookyHouse } from "react-icons/gi";
 import { MdOutlineForum } from 'react-icons/md';
 import Switch from '@mui/material/Switch';
 import logo from './../../assets/img/boo-blanco.gif'
-import { Link } from "react-router-dom";
 // import ScaryMusic from '../../assets/mp3/darksitar.mp3';
 // import ImpactSound from '../../assets/mp3/impactsound.mp3';
 // import Whispering from '../../assets/mp3/whispering.mp3';

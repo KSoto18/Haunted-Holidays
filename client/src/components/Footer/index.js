@@ -34,6 +34,7 @@ const Footer = () => {
           }} label="What's This?" icon={<HelpIcon />} />
 
           <BottomNavigationAction sx={{ color: "white" }} href='https://github.com/KSoto18/Haunted-Holidays' label="Github" icon={<GitHubIcon />} />
+
           <BottomNavigationAction sx={{ color: "white" }} href='https://www.hotels.com/' label="Book a Spooky Stay" icon={<HotelIcon />} />
 
         </BottomNavigation>

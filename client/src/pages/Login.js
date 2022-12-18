@@ -96,7 +96,7 @@ const Login = (props) => {
             </button>
 
             <p className='signup-redirect'>
-              Don't have an account? Sign up <a href="/signup">here</a>.
+              Don't have an account? Sign up <Link to="/signup">here</Link>.
             </p>
 
           </form>

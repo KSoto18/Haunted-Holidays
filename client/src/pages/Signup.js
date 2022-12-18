@@ -109,7 +109,7 @@ const Signup = () => {
             </button>
 
             <p className='login-redirect'>
-              Already have an account? Sign in <a href="/login">here</a>.
+              Already have an account? Sign in <Link to="/login">here</Link>.
             </p>
 
           </form>
