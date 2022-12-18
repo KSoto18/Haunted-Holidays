@@ -97,7 +97,7 @@ function App() {
                 element={<SingleReview />}
               />
 
-              <Route path="/hauntedlocations"
+              <Route path="/*hauntedlocations"
                 element={<HauntedLocations />} />
 
               <Route
