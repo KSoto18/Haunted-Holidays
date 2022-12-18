@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // Import the `useParams()` hook
-import { Link } from 'react-router-dom';
+
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
@@ -9,7 +9,7 @@ import CommentForm from '../components/CommentForm';
 import { QUERY_SINGLE_REVIEW } from '../utils/queries';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineForum } from 'react-icons/md';
-
+import { TbArrowBackUp } from 'react-icons/tb';
 const SingleReview = () => {
 
   const { reviewId } = useParams();
