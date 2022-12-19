@@ -33,54 +33,54 @@ We also used [Google Maps API](https://mapsplatform.google.com/) to include the 
 
 Home page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/homepg.png)
+![ScreenShot](./client/src/assets/img/screenshots/homepg.png)
 
 Navigation bar
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar1.png)
+![ScreenShot](./client/src/assets/img/screenshots/darkmodenavbar1.png)
 
 Log in page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/loginpg.png)
+![ScreenShot](./client/src/assets/img/screenshots/loginpg.png)
 
 Sign up page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/signuppg.png)
+![ScreenShot](./client/src/assets/img/screenshots/signuppg.png)
 
 Profile page when the user is logged in.
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/profilepg.png)
+![ScreenShot](./client/src/assets/img/screenshots/profilepg.png)
 
 Forum page when the user is logged in.
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/forumpg.png)
+![ScreenShot](./client/src/assets/img/screenshots/forumpg.png)
 
 Individual comment page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/individualcommentpg.png)
+![ScreenShot](./client/src/assets/img/screenshots/individualcommentpg.png)
 
 The Haunted Locations map with the city and state, as well as a short description.
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg1.png)
+![ScreenShot](./client/src/assets/img/screenshots/hauntedlocationpg1.png)
 
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg2.png)
+![ScreenShot](./client/src/assets/img/screenshots/hauntedlocationpg2.png)
 
 Contact us page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/contactuspg.png)
+![ScreenShot](./client/src/assets/img/screenshots/contactuspg.png)
 
 About us page
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg.png)
+![ScreenShot](./client/src/assets/img/screenshots/aboutuspg.png)
 
 About us page with each contributors information.
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg2.png)
+![ScreenShot](./client/src/assets/img/screenshots/aboutuspg2.png)
 
 You can even enable our version of dark mode from the navigation bar.
 
-![ScreenShot](/Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar2.png)
+![ScreenShot](./client/src/assets/img/screenshots/darkmodenavbar2.png)
 
 [Back to top](#haunted-holidays)
 
