@@ -31,45 +31,56 @@ We also used [Google Maps API](https://mapsplatform.google.com/) to include the 
 
 ### Screenshots:
 
-### - Home page
-![homepage](../Haunted-Holidays/client/src/assets/img/screenshots/homepg.png)
+Home page
 
-### - Navigation bar
-![navigationbar](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar1.png)
+![home-page](../Haunted-Holidays/client/src/assets/img/screenshots/homepg.png)
 
-### - Log in page
-![loginpage](../Haunted-Holidays/client/src/assets/img/screenshots/loginpg.png)
+Navigation bar
 
-### - Sign up page
-![signuppage](../Haunted-Holidays/client/src/assets/img/screenshots/signuppg.png)
+![navigation-bar](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar1.png)
 
-### - Profile page when the user is logged in.
-![profilepage](../Haunted-Holidays/client/src/assets/img/screenshots/profilepg1.png)
+Log in page
 
-![profilepage](../Haunted-Holidays/client/src/assets/img/screenshots/profilepg2.png)
+![login-page](../Haunted-Holidays/client/src/assets/img/screenshots/loginpg.png)
 
-### - Forum page when the user is logged in.
-![forumpage](../Haunted-Holidays/client/src/assets/img/screenshots/forumpg.png)
+Sign up page
 
-### - Individual comment page
-![commentpage](../Haunted-Holidays/client/src/assets/img/screenshots/individualcommentpg.png)
+![signup-page](../Haunted-Holidays/client/src/assets/img/screenshots/signuppg.png)
 
-### - The Haunted Locations map with the city and state, as well as a short description.
-![hauntedlocationspage](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg1.png)
+Profile page when the user is logged in.
 
-![hauntedlocationspage](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg2.png)
+![profile-page](../Haunted-Holidays/client/src/assets/img/screenshots/profilepg.png)
 
-### - Contact us page
-![contactuspage](../Haunted-Holidays/client/src/assets/img/screenshots/contactuspg.png)
+Forum page when the user is logged in.
 
-### - About us page
-![aboutuspage](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg.png)
+![forum-page](../Haunted-Holidays/client/src/assets/img/screenshots/forumpg.png)
 
-### - About us page with each contributors information.
-![aboutuspage](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg2.png)
+Individual comment page
 
-### - You can even enable our version of dark mode from the navigation bar.
-![darkmode](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar2.png)
+![comment-page](../Haunted-Holidays/client/src/assets/img/screenshots/individualcommentpg.png)
+
+The Haunted Locations map with the city and state, as well as a short description.
+
+![hauntedlocations-page](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg1.png)
+
+
+![hauntedlocations-page2](../Haunted-Holidays/client/src/assets/img/screenshots/hauntedlocationpg2.png)
+
+Contact us page
+
+![contactus-page](../Haunted-Holidays/client/src/assets/img/screenshots/contactuspg.png)
+
+About us page
+
+![aboutus-page](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg.png)
+
+About us page with each contributors information.
+
+![aboutus-page2](../Haunted-Holidays/client/src/assets/img/screenshots/aboutuspg2.png)
+
+You can even enable our version of dark mode from the navigation bar.
+
+![dark-mode](../Haunted-Holidays/client/src/assets/img/screenshots/darkmodenavbar2.png)
 
 [Back to top](#haunted-holidays)
 
