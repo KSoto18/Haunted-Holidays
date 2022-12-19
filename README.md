@@ -86,7 +86,7 @@ You can even enable our version of dark mode from the navigation bar.
 
 ## Links
 
-- [Deployed Link](https://secure-atoll-14230.herokuapp.com)
+- [Deployed Link](https://boiling-ridge-27905.herokuapp.com/)
 
 [Back to top](#haunted-holidays)
 
